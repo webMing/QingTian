@@ -1,0 +1,17 @@
+//
+//  prefix.pch
+//  QingTian
+//
+//  Created by Stephanie on 2019/6/16.
+//  Copyright © 2019 Stephanie. All rights reserved.
+//
+
+#ifndef prefix_pch
+#define prefix_pch
+
+#import "SteFont.h"
+#import "Macro.h"
+#import "Colors.h"
+#import "Tool.h"
+
+#endif /* prefix_pch */

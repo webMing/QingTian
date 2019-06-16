@@ -1,0 +1,51 @@
+{
+  "images" : [
+    {
+      "idiom" : "universal",
+      "filename" : "basebar_wea_bg_nor.png",
+      "scale" : "1x"
+    },
+    {
+      "resizing" : {
+        "mode" : "9-part",
+        "center" : {
+          "mode" : "tile",
+          "width" : 1,
+          "height" : 1
+        },
+        "cap-insets" : {
+          "bottom" : 44,
+          "top" : 43,
+          "right" : 170,
+          "left" : 173
+        }
+      },
+      "idiom" : "universal",
+      "filename" : "basebar_wea_bg_nor@2x.png",
+      "scale" : "2x"
+    },
+    {
+      "resizing" : {
+        "mode" : "9-part",
+        "center" : {
+          "mode" : "tile",
+          "width" : 1,
+          "height" : 1
+        },
+        "cap-insets" : {
+          "bottom" : 66,
+          "top" : 65,
+          "right" : 255,
+          "left" : 260
+        }
+      },
+      "idiom" : "universal",
+      "filename" : "basebar_wea_bg_nor@3x.png",
+      "scale" : "3x"
+    }
+  ],
+  "info" : {
+    "version" : 1,
+    "author" : "xcode"
+  }
+}

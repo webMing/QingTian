@@ -1,0 +1,989 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		17907F923ECAF5F940193A2E /* libPods-QingTianUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E80AD6D5A2114F168485189C /* libPods-QingTianUITests.a */; };
+		27D9D6B13D9B495517ACC732 /* libPods-QingTian.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3BDF41A86A5ED68A0B7D335B /* libPods-QingTian.a */; };
+		90B22E3922B6139D00D5F93B /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 90B22E3822B6139D00D5F93B /* AppDelegate.m */; };
+		90B22E4122B6139F00D5F93B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 90B22E4022B6139F00D5F93B /* Assets.xcassets */; };
+		90B22E4422B6139F00D5F93B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 90B22E4222B6139F00D5F93B /* LaunchScreen.storyboard */; };
+		90B22E4722B6139F00D5F93B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 90B22E4622B6139F00D5F93B /* main.m */; };
+		90B22E5122B6139F00D5F93B /* QingTianTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 90B22E5022B6139F00D5F93B /* QingTianTests.m */; };
+		90B22E5C22B6139F00D5F93B /* QingTianUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 90B22E5B22B6139F00D5F93B /* QingTianUITests.m */; };
+		90B22EA522B6180500D5F93B /* UIView+TKCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 90B22E7022B6180100D5F93B /* UIView+TKCategory.m */; };
+		90B22EA922B6180500D5F93B /* UIViewController+CustomAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = 90B22E7822B6180100D5F93B /* UIViewController+CustomAlertView.m */; };
+		90B22EAC22B6180500D5F93B /* NSTimer+invoke.m in Sources */ = {isa = PBXBuildFile; fileRef = 90B22E8222B6180200D5F93B /* NSTimer+invoke.m */; };
+		90B22EAD22B6180500D5F93B /* UIImageView+XMGExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 90B22E8322B6180200D5F93B /* UIImageView+XMGExtension.m */; };
+		90B22EAE22B6180500D5F93B /* UIColor+Addition.m in Sources */ = {isa = PBXBuildFile; fileRef = 90B22E8622B6180200D5F93B /* UIColor+Addition.m */; };
+		90B22EB022B6180500D5F93B /* NSMutableDictionary+AvoidNil.m in Sources */ = {isa = PBXBuildFile; fileRef = 90B22E8922B6180200D5F93B /* NSMutableDictionary+AvoidNil.m */; };
+		90B22EB222B6180500D5F93B /* UIImage+XMGExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 90B22E8D22B6180300D5F93B /* UIImage+XMGExtension.m */; };
+		90B22EB322B6180500D5F93B /* NSDate+Common.m in Sources */ = {isa = PBXBuildFile; fileRef = 90B22E8E22B6180300D5F93B /* NSDate+Common.m */; };
+		90B22EB522B6180500D5F93B /* NSDateUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 90B22E9022B6180300D5F93B /* NSDateUtilities.m */; };
+		90B22EB622B6180500D5F93B /* NSArray+AvoidNil.m in Sources */ = {isa = PBXBuildFile; fileRef = 90B22E9122B6180300D5F93B /* NSArray+AvoidNil.m */; };
+		90B22EB922B6180500D5F93B /* NSDate+Utilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 90B22E9522B6180300D5F93B /* NSDate+Utilities.m */; };
+		90B22EBA22B6180500D5F93B /* UIImage+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 90B22E9922B6180400D5F93B /* UIImage+Extension.m */; };
+		90B22EBC22B6180500D5F93B /* NSCalendar+XMGExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 90B22E9D22B6180400D5F93B /* NSCalendar+XMGExtension.m */; };
+		90B22EC222B61B8100D5F93B /* AppDelegate+Service.m in Sources */ = {isa = PBXBuildFile; fileRef = 90B22EC122B61B8100D5F93B /* AppDelegate+Service.m */; };
+		90B22EC622B61C7D00D5F93B /* QTROOTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 90B22EC522B61C7D00D5F93B /* QTROOTVC.m */; };
+		90B22EC922B61CB800D5F93B /* QTTabBarVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 90B22EC822B61CB800D5F93B /* QTTabBarVC.m */; };
+		90B22ECE22B61EC700D5F93B /* SteFont.m in Sources */ = {isa = PBXBuildFile; fileRef = 90B22ECD22B61EC700D5F93B /* SteFont.m */; };
+		90B22ED422B6207200D5F93B /* Macro.m in Sources */ = {isa = PBXBuildFile; fileRef = 90B22ED322B6207200D5F93B /* Macro.m */; };
+		90B22ED722B6213E00D5F93B /* Colors.m in Sources */ = {isa = PBXBuildFile; fileRef = 90B22ED622B6213E00D5F93B /* Colors.m */; };
+		90B22EDA22B6242800D5F93B /* QTNaviC.m in Sources */ = {isa = PBXBuildFile; fileRef = 90B22ED922B6242800D5F93B /* QTNaviC.m */; };
+		90B22EDE22B625A000D5F93B /* QTMEVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 90B22EDD22B625A000D5F93B /* QTMEVC.m */; };
+		90B22EE022B6263F00D5F93B /* Tool.m in Sources */ = {isa = PBXBuildFile; fileRef = 90B22EDF22B6263F00D5F93B /* Tool.m */; };
+		90B22EE322B6293B00D5F93B /* Me.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 90B22EE222B6293B00D5F93B /* Me.storyboard */; };
+		90B22EE522B62C9200D5F93B /* images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 90B22EE422B62C9200D5F93B /* images.xcassets */; };
+		90B22EE822B62E0D00D5F93B /* QTLoginVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 90B22EE722B62E0D00D5F93B /* QTLoginVC.m */; };
+		90EC7DF122B636790002EEEF /* QTLoginTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 90EC7DF022B636790002EEEF /* QTLoginTextField.m */; };
+		90EC7DF422B63C9D0002EEEF /* QTRegisterVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 90EC7DF322B63C9D0002EEEF /* QTRegisterVC.m */; };
+		90EC7DF822B65C8B0002EEEF /* QTNetWork.m in Sources */ = {isa = PBXBuildFile; fileRef = 90EC7DF722B65C8B0002EEEF /* QTNetWork.m */; };
+		90EC7DFB22B6682A0002EEEF /* QTTextFieldDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 90EC7DFA22B6682A0002EEEF /* QTTextFieldDelegate.m */; };
+		90EC7E0022B669760002EEEF /* NSString+Common.m in Sources */ = {isa = PBXBuildFile; fileRef = 90EC7DFC22B669750002EEEF /* NSString+Common.m */; };
+		90EC7E0122B669760002EEEF /* NSString+Helper.m in Sources */ = {isa = PBXBuildFile; fileRef = 90EC7DFD22B669750002EEEF /* NSString+Helper.m */; };
+		90EC7E0522B671520002EEEF /* QTUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 90EC7E0422B671520002EEEF /* QTUser.m */; };
+		90EC7E0922B673BD0002EEEF /* QTConfigurationHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 90EC7E0722B673BD0002EEEF /* QTConfigurationHelper.m */; };
+		F2C908BE6BC545A2EDB6419F /* libPods-QingTianTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = EE36F8F1D571AEE20CBC4D04 /* libPods-QingTianTests.a */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		90B22E4D22B6139F00D5F93B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 90B22E2C22B6139C00D5F93B /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 90B22E3322B6139D00D5F93B;
+			remoteInfo = QingTian;
+		};
+		90B22E5822B6139F00D5F93B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 90B22E2C22B6139C00D5F93B /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 90B22E3322B6139D00D5F93B;
+			remoteInfo = QingTian;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		3BDF41A86A5ED68A0B7D335B /* libPods-QingTian.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-QingTian.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		48F2418C791632E5255FC977 /* Pods-QingTian.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-QingTian.debug.xcconfig"; path = "Pods/Target Support Files/Pods-QingTian/Pods-QingTian.debug.xcconfig"; sourceTree = "<group>"; };
+		7CBB7C0FA88C12EC8F4EFB9D /* Pods-QingTianTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-QingTianTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-QingTianTests/Pods-QingTianTests.debug.xcconfig"; sourceTree = "<group>"; };
+		8DFEEFA0D4D82823C38C315D /* Pods-QingTian.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-QingTian.release.xcconfig"; path = "Pods/Target Support Files/Pods-QingTian/Pods-QingTian.release.xcconfig"; sourceTree = "<group>"; };
+		90B22E3422B6139D00D5F93B /* QingTian.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = QingTian.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		90B22E3722B6139D00D5F93B /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		90B22E3822B6139D00D5F93B /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		90B22E4022B6139F00D5F93B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		90B22E4322B6139F00D5F93B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		90B22E4522B6139F00D5F93B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		90B22E4622B6139F00D5F93B /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		90B22E4C22B6139F00D5F93B /* QingTianTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = QingTianTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		90B22E5022B6139F00D5F93B /* QingTianTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = QingTianTests.m; sourceTree = "<group>"; };
+		90B22E5222B6139F00D5F93B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		90B22E5722B6139F00D5F93B /* QingTianUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = QingTianUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		90B22E5B22B6139F00D5F93B /* QingTianUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = QingTianUITests.m; sourceTree = "<group>"; };
+		90B22E5D22B6139F00D5F93B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		90B22E7022B6180100D5F93B /* UIView+TKCategory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+TKCategory.m"; sourceTree = "<group>"; };
+		90B22E7422B6180100D5F93B /* NSMutableDictionary+AvoidNil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSMutableDictionary+AvoidNil.h"; sourceTree = "<group>"; };
+		90B22E7822B6180100D5F93B /* UIViewController+CustomAlertView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+CustomAlertView.m"; sourceTree = "<group>"; };
+		90B22E7922B6180100D5F93B /* NSDate+Common.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+Common.h"; sourceTree = "<group>"; };
+		90B22E7C22B6180100D5F93B /* NSDate+Utilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+Utilities.h"; sourceTree = "<group>"; };
+		90B22E7F22B6180100D5F93B /* NSDateUtilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSDateUtilities.h; sourceTree = "<group>"; };
+		90B22E8222B6180200D5F93B /* NSTimer+invoke.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSTimer+invoke.m"; sourceTree = "<group>"; };
+		90B22E8322B6180200D5F93B /* UIImageView+XMGExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+XMGExtension.m"; sourceTree = "<group>"; };
+		90B22E8422B6180200D5F93B /* UIView+TKCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+TKCategory.h"; sourceTree = "<group>"; };
+		90B22E8522B6180200D5F93B /* NSArray+AvoidNil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+AvoidNil.h"; sourceTree = "<group>"; };
+		90B22E8622B6180200D5F93B /* UIColor+Addition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+Addition.m"; sourceTree = "<group>"; };
+		90B22E8922B6180200D5F93B /* NSMutableDictionary+AvoidNil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSMutableDictionary+AvoidNil.m"; sourceTree = "<group>"; };
+		90B22E8B22B6180200D5F93B /* UIViewController+CustomAlertView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+CustomAlertView.h"; sourceTree = "<group>"; };
+		90B22E8D22B6180300D5F93B /* UIImage+XMGExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+XMGExtension.m"; sourceTree = "<group>"; };
+		90B22E8E22B6180300D5F93B /* NSDate+Common.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+Common.m"; sourceTree = "<group>"; };
+		90B22E9022B6180300D5F93B /* NSDateUtilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSDateUtilities.m; sourceTree = "<group>"; };
+		90B22E9122B6180300D5F93B /* NSArray+AvoidNil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+AvoidNil.m"; sourceTree = "<group>"; };
+		90B22E9522B6180300D5F93B /* NSDate+Utilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+Utilities.m"; sourceTree = "<group>"; };
+		90B22E9622B6180400D5F93B /* UIImageView+XMGExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImageView+XMGExtension.h"; sourceTree = "<group>"; };
+		90B22E9822B6180400D5F93B /* NSCalendar+XMGExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSCalendar+XMGExtension.h"; sourceTree = "<group>"; };
+		90B22E9922B6180400D5F93B /* UIImage+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Extension.m"; sourceTree = "<group>"; };
+		90B22E9C22B6180400D5F93B /* UIImage+XMGExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+XMGExtension.h"; sourceTree = "<group>"; };
+		90B22E9D22B6180400D5F93B /* NSCalendar+XMGExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSCalendar+XMGExtension.m"; sourceTree = "<group>"; };
+		90B22E9E22B6180400D5F93B /* NSTimer+invoke.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSTimer+invoke.h"; sourceTree = "<group>"; };
+		90B22EA122B6180500D5F93B /* UIImage+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Extension.h"; sourceTree = "<group>"; };
+		90B22EA422B6180500D5F93B /* UIColor+Addition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+Addition.h"; sourceTree = "<group>"; };
+		90B22EC022B61B8100D5F93B /* AppDelegate+Service.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "AppDelegate+Service.h"; sourceTree = "<group>"; };
+		90B22EC122B61B8100D5F93B /* AppDelegate+Service.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "AppDelegate+Service.m"; sourceTree = "<group>"; };
+		90B22EC422B61C7D00D5F93B /* QTROOTVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = QTROOTVC.h; sourceTree = "<group>"; };
+		90B22EC522B61C7D00D5F93B /* QTROOTVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = QTROOTVC.m; sourceTree = "<group>"; };
+		90B22EC722B61CB800D5F93B /* QTTabBarVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = QTTabBarVC.h; sourceTree = "<group>"; };
+		90B22EC822B61CB800D5F93B /* QTTabBarVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = QTTabBarVC.m; sourceTree = "<group>"; };
+		90B22ECB22B61DCB00D5F93B /* prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = prefix.pch; sourceTree = "<group>"; };
+		90B22ECC22B61EC700D5F93B /* SteFont.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SteFont.h; sourceTree = "<group>"; };
+		90B22ECD22B61EC700D5F93B /* SteFont.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SteFont.m; sourceTree = "<group>"; };
+		90B22ED222B6206100D5F93B /* Macro.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Macro.h; sourceTree = "<group>"; };
+		90B22ED322B6207200D5F93B /* Macro.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Macro.m; sourceTree = "<group>"; };
+		90B22ED522B6213E00D5F93B /* Colors.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Colors.h; sourceTree = "<group>"; };
+		90B22ED622B6213E00D5F93B /* Colors.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Colors.m; sourceTree = "<group>"; };
+		90B22ED822B6242700D5F93B /* QTNaviC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = QTNaviC.h; sourceTree = "<group>"; };
+		90B22ED922B6242800D5F93B /* QTNaviC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = QTNaviC.m; sourceTree = "<group>"; };
+		90B22EDC22B625A000D5F93B /* QTMEVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = QTMEVC.h; sourceTree = "<group>"; };
+		90B22EDD22B625A000D5F93B /* QTMEVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = QTMEVC.m; sourceTree = "<group>"; };
+		90B22EDF22B6263F00D5F93B /* Tool.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Tool.m; sourceTree = "<group>"; };
+		90B22EE122B6264F00D5F93B /* Tool.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Tool.h; sourceTree = "<group>"; };
+		90B22EE222B6293B00D5F93B /* Me.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Me.storyboard; sourceTree = "<group>"; };
+		90B22EE422B62C9200D5F93B /* images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = images.xcassets; sourceTree = "<group>"; };
+		90B22EE622B62E0D00D5F93B /* QTLoginVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = QTLoginVC.h; sourceTree = "<group>"; };
+		90B22EE722B62E0D00D5F93B /* QTLoginVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = QTLoginVC.m; sourceTree = "<group>"; };
+		90EC7DEF22B636790002EEEF /* QTLoginTextField.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = QTLoginTextField.h; sourceTree = "<group>"; };
+		90EC7DF022B636790002EEEF /* QTLoginTextField.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = QTLoginTextField.m; sourceTree = "<group>"; };
+		90EC7DF222B63C9D0002EEEF /* QTRegisterVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = QTRegisterVC.h; sourceTree = "<group>"; };
+		90EC7DF322B63C9D0002EEEF /* QTRegisterVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = QTRegisterVC.m; sourceTree = "<group>"; };
+		90EC7DF622B65C8B0002EEEF /* QTNetWork.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = QTNetWork.h; sourceTree = "<group>"; };
+		90EC7DF722B65C8B0002EEEF /* QTNetWork.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = QTNetWork.m; sourceTree = "<group>"; };
+		90EC7DF922B6682A0002EEEF /* QTTextFieldDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QTTextFieldDelegate.h; sourceTree = "<group>"; };
+		90EC7DFA22B6682A0002EEEF /* QTTextFieldDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QTTextFieldDelegate.m; sourceTree = "<group>"; };
+		90EC7DFC22B669750002EEEF /* NSString+Common.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Common.m"; sourceTree = "<group>"; };
+		90EC7DFD22B669750002EEEF /* NSString+Helper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Helper.m"; sourceTree = "<group>"; };
+		90EC7DFE22B669750002EEEF /* NSString+Helper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Helper.h"; sourceTree = "<group>"; };
+		90EC7DFF22B669750002EEEF /* NSString+Common.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Common.h"; sourceTree = "<group>"; };
+		90EC7E0322B671520002EEEF /* QTUser.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = QTUser.h; sourceTree = "<group>"; };
+		90EC7E0422B671520002EEEF /* QTUser.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = QTUser.m; sourceTree = "<group>"; };
+		90EC7E0722B673BD0002EEEF /* QTConfigurationHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QTConfigurationHelper.m; sourceTree = "<group>"; };
+		90EC7E0822B673BD0002EEEF /* QTConfigurationHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QTConfigurationHelper.h; sourceTree = "<group>"; };
+		BBEFDA534E43E8510F35F26C /* Pods-QingTianUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-QingTianUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-QingTianUITests/Pods-QingTianUITests.release.xcconfig"; sourceTree = "<group>"; };
+		C11F498CC86BB6D95E599B84 /* Pods-QingTianTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-QingTianTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-QingTianTests/Pods-QingTianTests.release.xcconfig"; sourceTree = "<group>"; };
+		D4D29ED0B7F3CBA0F897A80B /* Pods-QingTianUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-QingTianUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-QingTianUITests/Pods-QingTianUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		E80AD6D5A2114F168485189C /* libPods-QingTianUITests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-QingTianUITests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		EE36F8F1D571AEE20CBC4D04 /* libPods-QingTianTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-QingTianTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		90B22E3122B6139D00D5F93B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				27D9D6B13D9B495517ACC732 /* libPods-QingTian.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		90B22E4922B6139F00D5F93B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F2C908BE6BC545A2EDB6419F /* libPods-QingTianTests.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		90B22E5422B6139F00D5F93B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				17907F923ECAF5F940193A2E /* libPods-QingTianUITests.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		90B22E2B22B6139C00D5F93B = {
+			isa = PBXGroup;
+			children = (
+				90EC7E0622B673870002EEEF /* Tools */,
+				90B22ECA22B61D9E00D5F93B /* AppConfigure */,
+				90B22E6E22B617CD00D5F93B /* Category */,
+				90B22E6C22B6154200D5F93B /* Resource */,
+				90B22E6B22B6153800D5F93B /* Vender */,
+				90B22E6A22B6152800D5F93B /* Sections */,
+				90B22E6922B614F200D5F93B /* AppDelegate */,
+				90B22E3622B6139D00D5F93B /* QingTian */,
+				90B22E4F22B6139F00D5F93B /* QingTianTests */,
+				90B22E5A22B6139F00D5F93B /* QingTianUITests */,
+				90B22E3522B6139D00D5F93B /* Products */,
+				F30318CEDD1DC10A4B1A27D0 /* Pods */,
+				CF72A36AF7CBB1FA46D4BFF8 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		90B22E3522B6139D00D5F93B /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				90B22E3422B6139D00D5F93B /* QingTian.app */,
+				90B22E4C22B6139F00D5F93B /* QingTianTests.xctest */,
+				90B22E5722B6139F00D5F93B /* QingTianUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		90B22E3622B6139D00D5F93B /* QingTian */ = {
+			isa = PBXGroup;
+			children = (
+				90B22E4022B6139F00D5F93B /* Assets.xcassets */,
+				90B22E4222B6139F00D5F93B /* LaunchScreen.storyboard */,
+				90B22E4522B6139F00D5F93B /* Info.plist */,
+				90B22E4622B6139F00D5F93B /* main.m */,
+			);
+			path = QingTian;
+			sourceTree = "<group>";
+		};
+		90B22E4F22B6139F00D5F93B /* QingTianTests */ = {
+			isa = PBXGroup;
+			children = (
+				90B22E5022B6139F00D5F93B /* QingTianTests.m */,
+				90B22E5222B6139F00D5F93B /* Info.plist */,
+			);
+			path = QingTianTests;
+			sourceTree = "<group>";
+		};
+		90B22E5A22B6139F00D5F93B /* QingTianUITests */ = {
+			isa = PBXGroup;
+			children = (
+				90B22E5B22B6139F00D5F93B /* QingTianUITests.m */,
+				90B22E5D22B6139F00D5F93B /* Info.plist */,
+			);
+			path = QingTianUITests;
+			sourceTree = "<group>";
+		};
+		90B22E6922B614F200D5F93B /* AppDelegate */ = {
+			isa = PBXGroup;
+			children = (
+				90B22E3722B6139D00D5F93B /* AppDelegate.h */,
+				90B22E3822B6139D00D5F93B /* AppDelegate.m */,
+				90B22EC022B61B8100D5F93B /* AppDelegate+Service.h */,
+				90B22EC122B61B8100D5F93B /* AppDelegate+Service.m */,
+			);
+			path = AppDelegate;
+			sourceTree = "<group>";
+		};
+		90B22E6A22B6152800D5F93B /* Sections */ = {
+			isa = PBXGroup;
+			children = (
+				90EC7E0222B670990002EEEF /* User */,
+				90EC7DF522B65C3E0002EEEF /* NetWork */,
+				90B22EDB22B6254C00D5F93B /* Me */,
+				90B22EC322B61C5F00D5F93B /* main */,
+				90B22E6D22B6156000D5F93B /* login */,
+			);
+			path = Sections;
+			sourceTree = "<group>";
+		};
+		90B22E6B22B6153800D5F93B /* Vender */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Vender;
+			sourceTree = "<group>";
+		};
+		90B22E6C22B6154200D5F93B /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				90B22EE422B62C9200D5F93B /* images.xcassets */,
+			);
+			path = Resource;
+			sourceTree = "<group>";
+		};
+		90B22E6D22B6156000D5F93B /* login */ = {
+			isa = PBXGroup;
+			children = (
+				90B22EE622B62E0D00D5F93B /* QTLoginVC.h */,
+				90B22EE722B62E0D00D5F93B /* QTLoginVC.m */,
+				90EC7DEF22B636790002EEEF /* QTLoginTextField.h */,
+				90EC7DF022B636790002EEEF /* QTLoginTextField.m */,
+				90EC7DF222B63C9D0002EEEF /* QTRegisterVC.h */,
+				90EC7DF322B63C9D0002EEEF /* QTRegisterVC.m */,
+				90EC7DF922B6682A0002EEEF /* QTTextFieldDelegate.h */,
+				90EC7DFA22B6682A0002EEEF /* QTTextFieldDelegate.m */,
+			);
+			path = login;
+			sourceTree = "<group>";
+		};
+		90B22E6E22B617CD00D5F93B /* Category */ = {
+			isa = PBXGroup;
+			children = (
+				90B22E8522B6180200D5F93B /* NSArray+AvoidNil.h */,
+				90B22E9122B6180300D5F93B /* NSArray+AvoidNil.m */,
+				90B22E9822B6180400D5F93B /* NSCalendar+XMGExtension.h */,
+				90B22E9D22B6180400D5F93B /* NSCalendar+XMGExtension.m */,
+				90B22E7922B6180100D5F93B /* NSDate+Common.h */,
+				90B22E8E22B6180300D5F93B /* NSDate+Common.m */,
+				90B22E7C22B6180100D5F93B /* NSDate+Utilities.h */,
+				90B22E9522B6180300D5F93B /* NSDate+Utilities.m */,
+				90B22E7F22B6180100D5F93B /* NSDateUtilities.h */,
+				90B22E9022B6180300D5F93B /* NSDateUtilities.m */,
+				90B22E7422B6180100D5F93B /* NSMutableDictionary+AvoidNil.h */,
+				90B22E8922B6180200D5F93B /* NSMutableDictionary+AvoidNil.m */,
+				90EC7DFF22B669750002EEEF /* NSString+Common.h */,
+				90EC7DFC22B669750002EEEF /* NSString+Common.m */,
+				90EC7DFE22B669750002EEEF /* NSString+Helper.h */,
+				90EC7DFD22B669750002EEEF /* NSString+Helper.m */,
+				90B22E9E22B6180400D5F93B /* NSTimer+invoke.h */,
+				90B22E8222B6180200D5F93B /* NSTimer+invoke.m */,
+				90B22EA422B6180500D5F93B /* UIColor+Addition.h */,
+				90B22E8622B6180200D5F93B /* UIColor+Addition.m */,
+				90B22EA122B6180500D5F93B /* UIImage+Extension.h */,
+				90B22E9922B6180400D5F93B /* UIImage+Extension.m */,
+				90B22E9C22B6180400D5F93B /* UIImage+XMGExtension.h */,
+				90B22E8D22B6180300D5F93B /* UIImage+XMGExtension.m */,
+				90B22E9622B6180400D5F93B /* UIImageView+XMGExtension.h */,
+				90B22E8322B6180200D5F93B /* UIImageView+XMGExtension.m */,
+				90B22E8422B6180200D5F93B /* UIView+TKCategory.h */,
+				90B22E7022B6180100D5F93B /* UIView+TKCategory.m */,
+				90B22E8B22B6180200D5F93B /* UIViewController+CustomAlertView.h */,
+				90B22E7822B6180100D5F93B /* UIViewController+CustomAlertView.m */,
+			);
+			path = Category;
+			sourceTree = "<group>";
+		};
+		90B22EC322B61C5F00D5F93B /* main */ = {
+			isa = PBXGroup;
+			children = (
+				90B22EC422B61C7D00D5F93B /* QTROOTVC.h */,
+				90B22EC522B61C7D00D5F93B /* QTROOTVC.m */,
+				90B22EC722B61CB800D5F93B /* QTTabBarVC.h */,
+				90B22EC822B61CB800D5F93B /* QTTabBarVC.m */,
+				90B22ED822B6242700D5F93B /* QTNaviC.h */,
+				90B22ED922B6242800D5F93B /* QTNaviC.m */,
+			);
+			path = main;
+			sourceTree = "<group>";
+		};
+		90B22ECA22B61D9E00D5F93B /* AppConfigure */ = {
+			isa = PBXGroup;
+			children = (
+				90B22ECB22B61DCB00D5F93B /* prefix.pch */,
+				90B22ECC22B61EC700D5F93B /* SteFont.h */,
+				90B22ECD22B61EC700D5F93B /* SteFont.m */,
+				90B22ED222B6206100D5F93B /* Macro.h */,
+				90B22ED322B6207200D5F93B /* Macro.m */,
+				90B22ED522B6213E00D5F93B /* Colors.h */,
+				90B22ED622B6213E00D5F93B /* Colors.m */,
+				90B22EE122B6264F00D5F93B /* Tool.h */,
+				90B22EDF22B6263F00D5F93B /* Tool.m */,
+			);
+			path = AppConfigure;
+			sourceTree = "<group>";
+		};
+		90B22EDB22B6254C00D5F93B /* Me */ = {
+			isa = PBXGroup;
+			children = (
+				90B22EDC22B625A000D5F93B /* QTMEVC.h */,
+				90B22EDD22B625A000D5F93B /* QTMEVC.m */,
+				90B22EE222B6293B00D5F93B /* Me.storyboard */,
+			);
+			path = Me;
+			sourceTree = "<group>";
+		};
+		90EC7DF522B65C3E0002EEEF /* NetWork */ = {
+			isa = PBXGroup;
+			children = (
+				90EC7DF622B65C8B0002EEEF /* QTNetWork.h */,
+				90EC7DF722B65C8B0002EEEF /* QTNetWork.m */,
+			);
+			path = NetWork;
+			sourceTree = "<group>";
+		};
+		90EC7E0222B670990002EEEF /* User */ = {
+			isa = PBXGroup;
+			children = (
+				90EC7E0322B671520002EEEF /* QTUser.h */,
+				90EC7E0422B671520002EEEF /* QTUser.m */,
+			);
+			path = User;
+			sourceTree = "<group>";
+		};
+		90EC7E0622B673870002EEEF /* Tools */ = {
+			isa = PBXGroup;
+			children = (
+				90EC7E0822B673BD0002EEEF /* QTConfigurationHelper.h */,
+				90EC7E0722B673BD0002EEEF /* QTConfigurationHelper.m */,
+			);
+			path = Tools;
+			sourceTree = "<group>";
+		};
+		CF72A36AF7CBB1FA46D4BFF8 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				3BDF41A86A5ED68A0B7D335B /* libPods-QingTian.a */,
+				EE36F8F1D571AEE20CBC4D04 /* libPods-QingTianTests.a */,
+				E80AD6D5A2114F168485189C /* libPods-QingTianUITests.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		F30318CEDD1DC10A4B1A27D0 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				48F2418C791632E5255FC977 /* Pods-QingTian.debug.xcconfig */,
+				8DFEEFA0D4D82823C38C315D /* Pods-QingTian.release.xcconfig */,
+				7CBB7C0FA88C12EC8F4EFB9D /* Pods-QingTianTests.debug.xcconfig */,
+				C11F498CC86BB6D95E599B84 /* Pods-QingTianTests.release.xcconfig */,
+				D4D29ED0B7F3CBA0F897A80B /* Pods-QingTianUITests.debug.xcconfig */,
+				BBEFDA534E43E8510F35F26C /* Pods-QingTianUITests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		90B22E3322B6139D00D5F93B /* QingTian */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 90B22E6022B6139F00D5F93B /* Build configuration list for PBXNativeTarget "QingTian" */;
+			buildPhases = (
+				0A291F6D3FE712C0700DAA23 /* [CP] Check Pods Manifest.lock */,
+				90B22E3022B6139D00D5F93B /* Sources */,
+				90B22E3122B6139D00D5F93B /* Frameworks */,
+				90B22E3222B6139D00D5F93B /* Resources */,
+				505937AB6F6767D1823DBD79 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = QingTian;
+			productName = QingTian;
+			productReference = 90B22E3422B6139D00D5F93B /* QingTian.app */;
+			productType = "com.apple.product-type.application";
+		};
+		90B22E4B22B6139F00D5F93B /* QingTianTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 90B22E6322B6139F00D5F93B /* Build configuration list for PBXNativeTarget "QingTianTests" */;
+			buildPhases = (
+				8989E202BDC40B2E930A2EF7 /* [CP] Check Pods Manifest.lock */,
+				90B22E4822B6139F00D5F93B /* Sources */,
+				90B22E4922B6139F00D5F93B /* Frameworks */,
+				90B22E4A22B6139F00D5F93B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				90B22E4E22B6139F00D5F93B /* PBXTargetDependency */,
+			);
+			name = QingTianTests;
+			productName = QingTianTests;
+			productReference = 90B22E4C22B6139F00D5F93B /* QingTianTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		90B22E5622B6139F00D5F93B /* QingTianUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 90B22E6622B6139F00D5F93B /* Build configuration list for PBXNativeTarget "QingTianUITests" */;
+			buildPhases = (
+				277910E6CCD448AE32552B4C /* [CP] Check Pods Manifest.lock */,
+				90B22E5322B6139F00D5F93B /* Sources */,
+				90B22E5422B6139F00D5F93B /* Frameworks */,
+				90B22E5522B6139F00D5F93B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				90B22E5922B6139F00D5F93B /* PBXTargetDependency */,
+			);
+			name = QingTianUITests;
+			productName = QingTianUITests;
+			productReference = 90B22E5722B6139F00D5F93B /* QingTianUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		90B22E2C22B6139C00D5F93B /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 1010;
+				ORGANIZATIONNAME = Stephanie;
+				TargetAttributes = {
+					90B22E3322B6139D00D5F93B = {
+						CreatedOnToolsVersion = 10.1;
+					};
+					90B22E4B22B6139F00D5F93B = {
+						CreatedOnToolsVersion = 10.1;
+						TestTargetID = 90B22E3322B6139D00D5F93B;
+					};
+					90B22E5622B6139F00D5F93B = {
+						CreatedOnToolsVersion = 10.1;
+						TestTargetID = 90B22E3322B6139D00D5F93B;
+					};
+				};
+			};
+			buildConfigurationList = 90B22E2F22B6139C00D5F93B /* Build configuration list for PBXProject "QingTian" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 90B22E2B22B6139C00D5F93B;
+			productRefGroup = 90B22E3522B6139D00D5F93B /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				90B22E3322B6139D00D5F93B /* QingTian */,
+				90B22E4B22B6139F00D5F93B /* QingTianTests */,
+				90B22E5622B6139F00D5F93B /* QingTianUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		90B22E3222B6139D00D5F93B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				90B22E4422B6139F00D5F93B /* LaunchScreen.storyboard in Resources */,
+				90B22E4122B6139F00D5F93B /* Assets.xcassets in Resources */,
+				90B22EE322B6293B00D5F93B /* Me.storyboard in Resources */,
+				90B22EE522B62C9200D5F93B /* images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		90B22E4A22B6139F00D5F93B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		90B22E5522B6139F00D5F93B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		0A291F6D3FE712C0700DAA23 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-QingTian-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		277910E6CCD448AE32552B4C /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-QingTianUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		505937AB6F6767D1823DBD79 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-QingTian/Pods-QingTian-resources.sh",
+				"${PODS_ROOT}/IQKeyboardManager/IQKeyboardManager/Resources/IQKeyboardManager.bundle",
+				"${PODS_ROOT}/SAMKeychain/Support/SAMKeychain.bundle",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/IQKeyboardManager.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/SAMKeychain.bundle",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-QingTian/Pods-QingTian-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		8989E202BDC40B2E930A2EF7 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-QingTianTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		90B22E3022B6139D00D5F93B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				90EC7DF122B636790002EEEF /* QTLoginTextField.m in Sources */,
+				90B22EE022B6263F00D5F93B /* Tool.m in Sources */,
+				90B22ED422B6207200D5F93B /* Macro.m in Sources */,
+				90B22EB222B6180500D5F93B /* UIImage+XMGExtension.m in Sources */,
+				90B22EAC22B6180500D5F93B /* NSTimer+invoke.m in Sources */,
+				90B22EDE22B625A000D5F93B /* QTMEVC.m in Sources */,
+				90EC7E0122B669760002EEEF /* NSString+Helper.m in Sources */,
+				90EC7E0522B671520002EEEF /* QTUser.m in Sources */,
+				90B22EE822B62E0D00D5F93B /* QTLoginVC.m in Sources */,
+				90B22EBA22B6180500D5F93B /* UIImage+Extension.m in Sources */,
+				90B22EAD22B6180500D5F93B /* UIImageView+XMGExtension.m in Sources */,
+				90B22EB022B6180500D5F93B /* NSMutableDictionary+AvoidNil.m in Sources */,
+				90B22EDA22B6242800D5F93B /* QTNaviC.m in Sources */,
+				90B22E4722B6139F00D5F93B /* main.m in Sources */,
+				90B22ECE22B61EC700D5F93B /* SteFont.m in Sources */,
+				90B22EB322B6180500D5F93B /* NSDate+Common.m in Sources */,
+				90B22EC222B61B8100D5F93B /* AppDelegate+Service.m in Sources */,
+				90EC7E0922B673BD0002EEEF /* QTConfigurationHelper.m in Sources */,
+				90B22ED722B6213E00D5F93B /* Colors.m in Sources */,
+				90B22E3922B6139D00D5F93B /* AppDelegate.m in Sources */,
+				90EC7DF422B63C9D0002EEEF /* QTRegisterVC.m in Sources */,
+				90B22EA522B6180500D5F93B /* UIView+TKCategory.m in Sources */,
+				90B22EAE22B6180500D5F93B /* UIColor+Addition.m in Sources */,
+				90B22EA922B6180500D5F93B /* UIViewController+CustomAlertView.m in Sources */,
+				90B22EB922B6180500D5F93B /* NSDate+Utilities.m in Sources */,
+				90B22EBC22B6180500D5F93B /* NSCalendar+XMGExtension.m in Sources */,
+				90B22EC622B61C7D00D5F93B /* QTROOTVC.m in Sources */,
+				90B22EB622B6180500D5F93B /* NSArray+AvoidNil.m in Sources */,
+				90EC7DF822B65C8B0002EEEF /* QTNetWork.m in Sources */,
+				90B22EC922B61CB800D5F93B /* QTTabBarVC.m in Sources */,
+				90B22EB522B6180500D5F93B /* NSDateUtilities.m in Sources */,
+				90EC7E0022B669760002EEEF /* NSString+Common.m in Sources */,
+				90EC7DFB22B6682A0002EEEF /* QTTextFieldDelegate.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		90B22E4822B6139F00D5F93B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				90B22E5122B6139F00D5F93B /* QingTianTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		90B22E5322B6139F00D5F93B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				90B22E5C22B6139F00D5F93B /* QingTianUITests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		90B22E4E22B6139F00D5F93B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 90B22E3322B6139D00D5F93B /* QingTian */;
+			targetProxy = 90B22E4D22B6139F00D5F93B /* PBXContainerItemProxy */;
+		};
+		90B22E5922B6139F00D5F93B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 90B22E3322B6139D00D5F93B /* QingTian */;
+			targetProxy = 90B22E5822B6139F00D5F93B /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		90B22E4222B6139F00D5F93B /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				90B22E4322B6139F00D5F93B /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		90B22E5E22B6139F00D5F93B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		90B22E5F22B6139F00D5F93B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		90B22E6122B6139F00D5F93B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 48F2418C791632E5255FC977 /* Pods-QingTian.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = J3Y5FLL6V8;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/AppConfigure/prefix.pch";
+				INFOPLIST_FILE = QingTian/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.stephanie.www.QingTian;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		90B22E6222B6139F00D5F93B /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8DFEEFA0D4D82823C38C315D /* Pods-QingTian.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = J3Y5FLL6V8;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/AppConfigure/prefix.pch";
+				INFOPLIST_FILE = QingTian/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.stephanie.www.QingTian;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		90B22E6422B6139F00D5F93B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7CBB7C0FA88C12EC8F4EFB9D /* Pods-QingTianTests.debug.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = J3Y5FLL6V8;
+				INFOPLIST_FILE = QingTianTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.stephanie.www.QingTianTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/QingTian.app/QingTian";
+			};
+			name = Debug;
+		};
+		90B22E6522B6139F00D5F93B /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = C11F498CC86BB6D95E599B84 /* Pods-QingTianTests.release.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = J3Y5FLL6V8;
+				INFOPLIST_FILE = QingTianTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.stephanie.www.QingTianTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/QingTian.app/QingTian";
+			};
+			name = Release;
+		};
+		90B22E6722B6139F00D5F93B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = D4D29ED0B7F3CBA0F897A80B /* Pods-QingTianUITests.debug.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = J3Y5FLL6V8;
+				INFOPLIST_FILE = QingTianUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.stephanie.www.QingTianUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = QingTian;
+			};
+			name = Debug;
+		};
+		90B22E6822B6139F00D5F93B /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = BBEFDA534E43E8510F35F26C /* Pods-QingTianUITests.release.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = J3Y5FLL6V8;
+				INFOPLIST_FILE = QingTianUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.stephanie.www.QingTianUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = QingTian;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		90B22E2F22B6139C00D5F93B /* Build configuration list for PBXProject "QingTian" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				90B22E5E22B6139F00D5F93B /* Debug */,
+				90B22E5F22B6139F00D5F93B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		90B22E6022B6139F00D5F93B /* Build configuration list for PBXNativeTarget "QingTian" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				90B22E6122B6139F00D5F93B /* Debug */,
+				90B22E6222B6139F00D5F93B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		90B22E6322B6139F00D5F93B /* Build configuration list for PBXNativeTarget "QingTianTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				90B22E6422B6139F00D5F93B /* Debug */,
+				90B22E6522B6139F00D5F93B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		90B22E6622B6139F00D5F93B /* Build configuration list for PBXNativeTarget "QingTianUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				90B22E6722B6139F00D5F93B /* Debug */,
+				90B22E6822B6139F00D5F93B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 90B22E2C22B6139C00D5F93B /* Project object */;
+}
