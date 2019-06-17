@@ -151,7 +151,7 @@ static NSInteger const kCountdown = 60;
         // [self.view addHUDWithType:OnlyMessage lableTitle:@"注册成功" yOffSet:-100.f hideAfterDelay:1.5];
         dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
             // 登录
-            TBSUserSingleton* user = [TBSUserSingleton shareUser];
+            //TBSUserSingleton* user = [TBSUserSingleton shareUser];
             
             NSDictionary* dict = @{}.mutableCopy ;
             [dict setValue:self.phoneTF.text forKey: @"userName"];
@@ -176,32 +176,32 @@ static NSInteger const kCountdown = 60;
                            };
     
     
-    [NetWorkRequsetTool postRequestWithParameter:dict successBlock:^(NSDictionary* successData ) {
-        
-        
-        if ([successData[@"error_code"] isEqualToString:@"0"]) {
-            
-            TBSUserSingleton* user = [TBSUserSingleton shareUser];
-            
-            user.hasLogion = YES;
-            
-            user.name = self.phoneTextFiled.text;
-            
-            [user saveUserInfoCounter: self.phoneTextFiled.text passwd:self.paswdTextFiled.text];
-            
-            [self autoGoBack];
-            
-        }
-        
-        
-        [self.view addHUDWithType:OnlyMessage lableTitle:successData[@"error_msg"] yOffSet:-100.f hideAfterDelay:1.5];
-        
-        
-    } failureBlock:^(NSString *errorNum) {
-        
-        [self.view addHUDWithType:OnlyMessage lableTitle:@"网络无法访问" yOffSet:-100.f hideAfterDelay:1.5];
-        
-    }];
+//    [NetWorkRequsetTool postRequestWithParameter:dict successBlock:^(NSDictionary* successData ) {
+//
+//
+//        if ([successData[@"error_code"] isEqualToString:@"0"]) {
+//
+//            TBSUserSingleton* user = [TBSUserSingleton shareUser];
+//
+//            user.hasLogion = YES;
+//
+//            user.name = self.phoneTextFiled.text;
+//
+//            [user saveUserInfoCounter: self.phoneTextFiled.text passwd:self.paswdTextFiled.text];
+//
+//            [self autoGoBack];
+//
+//        }
+//
+//
+//        [self.view addHUDWithType:OnlyMessage lableTitle:successData[@"error_msg"] yOffSet:-100.f hideAfterDelay:1.5];
+//
+//
+//    } failureBlock:^(NSString *errorNum) {
+//
+//        [self.view addHUDWithType:OnlyMessage lableTitle:@"网络无法访问" yOffSet:-100.f hideAfterDelay:1.5];
+//
+//    }];
     
     
 }
@@ -232,18 +232,18 @@ static NSInteger const kCountdown = 60;
             
             weakSelf.countDownNum--;
             
-            if (weakSelf.secondCouter == 0)
-            {
-                [weakSelf.timer  invalidate] ;
-                weakSelf.timer = nil;
-                self.secondCouter = Seconds;
-                self.minusCounterLabel.superview.hidden = YES;
-                weakSender.hidden = NO;
-                
-            }
-            
-            weakSelf.minusCounterLabel.text = [NSString stringWithFormat:@"%d",self.secondCouter];
-            
+//            if (weakSelf.secondCouter == 0)
+//            {
+//                [weakSelf.timer  invalidate] ;
+//                weakSelf.timer = nil;
+//                self.secondCouter = Seconds;
+//                self.minusCounterLabel.superview.hidden = YES;
+//                weakSender.hidden = NO;
+//
+//            }
+//
+//            weakSelf.minusCounterLabel.text = [NSString stringWithFormat:@"%d",self.secondCouter];
+//
         } userInfo:nil repeats:YES];
         
     }
@@ -266,38 +266,38 @@ static NSInteger const kCountdown = 60;
         operType = @"register";
     }
     
-    NSDictionary* dict = @{
-                           
-                           @"appType":@"ios",
-                           @"mobile":self.phoneTextFiled.text,
-                           @"method":@"zte.memberService.member.getsmscode",
-                           @"operType":operType,
-                           
-                           };
-    
-    
-    [NetWorkRequsetTool postRequestWithParameter:dict successBlock:^(NSDictionary* successData ) {
-        
-        if ([successData[@"error_code"] isEqualToString:@"0"]) {
-        
-        }
-        
-        NSString* ssionId = [successData objectForKey:@"userSessionId"];
-        
-        if ([ssionId isKindOfClass:[NSNull class]] || ssionId.length == 0 || !ssionId ) {
-        
-        }else{
-            
-            //保存
-          
-            
-        }
-        
-        
-    } failureBlock:^(NSString *errorNum) {
-        //[self.view addHUDWithType:OnlyMessage lableTitle:@"网络无法访问" yOffSet:-100.f hideAfterDelay:1.5];
-        
-    }];
+//    NSDictionary* dict = @{
+//                           
+//                           @"appType":@"ios",
+//                           @"mobile":self.phoneTextFiled.text,
+//                           @"method":@"zte.memberService.member.getsmscode",
+//                           @"operType":operType,
+//                           
+//                           };
+//    
+//    
+//    [NetWorkRequsetTool postRequestWithParameter:dict successBlock:^(NSDictionary* successData ) {
+//        
+//        if ([successData[@"error_code"] isEqualToString:@"0"]) {
+//        
+//        }
+//        
+//        NSString* ssionId = [successData objectForKey:@"userSessionId"];
+//        
+//        if ([ssionId isKindOfClass:[NSNull class]] || ssionId.length == 0 || !ssionId ) {
+//        
+//        }else{
+//            
+//            //保存
+//          
+//            
+//        }
+//        
+//        
+//    } failureBlock:^(NSString *errorNum) {
+//        //[self.view addHUDWithType:OnlyMessage lableTitle:@"网络无法访问" yOffSet:-100.f hideAfterDelay:1.5];
+//        
+//    }];
     
     
     
@@ -315,13 +315,8 @@ static NSInteger const kCountdown = 60;
 #pragma mark- GetterAndSetter
 
 #pragma mark- PrivateMethod
--(void)dealloc
-{
-#ifdef DEBUG
-    NSLog(@"Dealloc ViewControllerName:%@",[[self class]description]);
-    
-#endif
-}
+
+DellocCheck
 
 
 @end

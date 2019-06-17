@@ -8,6 +8,7 @@ target 'QingTian' do
   # Pods for QingTian
   
   pod 'YYKit'
+  pod 'MBProgressHUD'
   pod 'SAMKeychain'
   pod 'AFNetworking'
   pod 'SDWebImage'

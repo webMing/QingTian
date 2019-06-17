@@ -9,14 +9,7 @@
 
 #import <UIKit/UIKit.h>
 
-inline UIViewController * InstanceVC(NSString* sbn,NSString* identify){
-    UIStoryboard *sb = [UIStoryboard storyboardWithName:sbn bundle:nil];
-    UIViewController *vc = [sb instantiateViewControllerWithIdentifier:identify];
-    return vc;
-}
-
 inline void SteCallPhone(NSString* phoneNumber){
-    
     NSMutableString * phoneNumberString=[[NSMutableString alloc] initWithFormat:@"telprompt://%@",phoneNumber];
     dispatch_async(dispatch_get_main_queue(), ^{
         if ([[UIApplication sharedApplication] respondsToSelector:@selector(openURL:completionHandler:)]) {
@@ -28,3 +21,19 @@ inline void SteCallPhone(NSString* phoneNumber){
     });
     
 }
+
+/** 获取 navigationBar 底部坐标;相当于 statusBarHeight + navigationBarHeight */
+inline CGFloat JXBNavBarMaxYValueWithVC(UIViewController *vc) {
+    return CGRectGetMinX(vc.navigationController.navigationBar.frame) + CGRectGetMaxY(vc.navigationController.navigationBar.frame);
+}
+
+/** 禁止 scrollView auto ajsut content inset */
+void JXBNeverAutoAjustScrollViewContentInset(UIViewController *vc,UIScrollView *sc) {
+    if (@available(iOS 11.0, *)) {
+        sc.contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentNever;
+    }
+    else {
+        vc.automaticallyAdjustsScrollViewInsets = NO;
+    }
+}
+

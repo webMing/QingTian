@@ -11,10 +11,10 @@
 
 #define StePF_Medium_Font_Size(size)     StePFMediumFontWithSize(size)
 #define StePF_Semibold_Font_Size(size)   StePFSemiboldFontWithSize(size)
-#define StePF_Light_Font_Size(size)      StePFLightFontWithSize(size)
-#define StePF_Ultralight_Font_Size(size) StePFUltralightFontWithSize(size)
-#define StePF_Regular_Font_Size(size)    StePFRegularFontWithSize(size)
-#define StePF_Thin_Font_Size(size)       StePFThinFontWithSize(size)
+#define StePF_Light_Font_Size(size)          StePFLightFontWithSize(size)
+#define StePF_Ultralight_Font_Size(size)   StePFUltralightFontWithSize(size)
+#define StePF_Regular_Font_Size(size)      StePFRegularFontWithSize(size)
+#define StePF_Thin_Font_Size(size)           StePFThinFontWithSize(size)
 
 FOUNDATION_EXPORT UIFont* StePFMediumFontWithSize(CGFloat size);
 FOUNDATION_EXPORT UIFont* StePFSemiboldFontWithSize(CGFloat size);

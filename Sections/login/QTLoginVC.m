@@ -8,6 +8,8 @@
 
 #import "QTLoginVC.h"
 
+#import "UIViewController+Initialize.h"
+
 @interface QTLoginVC ()
 
 @end
@@ -22,7 +24,7 @@
 
 #pragma mark- EventRespone
 - (IBAction)userRegister:(UIButton *)btn {
-    UIViewController* vc = InstanceVC(@"Me", @"QTRegisterVC");
+    UIViewController* vc = [UIViewController ViewControllerInitWithSB:@"Me" className:@"QTRegisterVC"];
     vc.hidesBottomBarWhenPushed = YES;
     [self.navigationController pushViewController:vc animated:YES];
 }
@@ -34,5 +36,6 @@
 
 #pragma mark- PrivateMethod
 
+DellocCheck
 
 @end

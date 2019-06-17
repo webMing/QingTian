@@ -23,7 +23,6 @@
 #pragma mark- SetUpView
 - (void)setUpViews {
     self.view.backgroundColor = UIColor.whiteColor;
-    
     QTTabBarVC* vc = [[QTTabBarVC alloc]init];
     [self addChildViewController:vc];
     [self.view addSubview:vc.view];

@@ -11,6 +11,8 @@
 
 #import "QTLoginVC.h"
 
+#import "UIViewController+Initialize.h"
+
 @interface QTTabBarVC ()
 
 @end
@@ -27,9 +29,9 @@
 - (void)setUpViews {
     
     self.view.backgroundColor = UIColor.whiteColor;
-    
     // Me
-    [self addChildViewController:InstanceVC(@"Me", @"QTLoginVC") title:@"我" image:@"tabbar_me" selectedImage:@"tabbar_me_highLight"];
+    UIViewController* vc = [UIViewController ViewControllerInitWithSB:@"Me" className:@"QTLoginVC"];
+    [self addChildViewController:vc title:@"我" image:@"tabbar_me" selectedImage:@"tabbar_me_highLight"];
 }
 
 - (void)addCustomViews {

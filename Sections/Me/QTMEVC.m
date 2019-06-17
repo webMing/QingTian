@@ -30,5 +30,6 @@
 
 #pragma mark- PrivateMethod
 
+DellocCheck
 
 @end

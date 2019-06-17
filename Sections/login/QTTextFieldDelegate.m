@@ -39,7 +39,6 @@
         self.textDidChangeBlock    = textDidChangeBlock;
         self.endEditingBlock      = endEdtingBlock;
        
-        
         [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(textFieldDidChangeResponseMethod:) name:UITextFieldTextDidChangeNotification object:nil];
         
     }else{
@@ -53,7 +52,6 @@
 
 - (void)textFieldDidChangeResponseMethod:(NSNotification*) notification{
    
-    
     UITextField* textField = notification.object;
     
     /*防止通知多发*/
@@ -72,13 +70,9 @@
         if (![textField.text isPureInteger])
         {
             self.textDidChangeBlock(textField,@"验证码只能是数字");
-        
             NSUInteger length = textField.text.length - self.currentInputSting.length;
-            
             textField.text = [textField.text substringWithRange:NSMakeRange(0, length)];
-            
             return;
-            
         }
         
         /*超过了验证码的长度*/
@@ -87,7 +81,6 @@
             textField.text = [textField.text substringWithRange:NSMakeRange(0,self.verityCodeLentch)];
             self.textDidChangeBlock(textField,[NSString stringWithFormat:@"验证码为%lu位数字",(unsigned long)self.verityCodeLentch]);
             return;
-
         }
         
         self.textDidChangeBlock(textField,nil);
@@ -102,26 +95,18 @@
         {
             
             NSUInteger length = textField.text.length - self.currentInputSting.length;
-            
             textField.text = [textField.text substringWithRange:NSMakeRange(0, length)];
-        
             self.textDidChangeBlock(textField,@"手机号只能是数字");
-
             return;
         }
         
-
        if(textField.text.length > 11){
-           
              textField.text = [textField.text substringWithRange:NSMakeRange(0,11)];
              self.textDidChangeBlock(textField,@"手机号为11位数字");/*截取了字符串*/
             return;
         }
-        
         self.textDidChangeBlock(textField,nil);
-       
     }
-    
     
     if(self.checkMode == CheckIdentifyCardMode)
     {
@@ -154,13 +139,9 @@
         if (![textField.text isPureInteger])
         {
             self.textDidChangeBlock(textField,@"口令只能是数字");
-            
             NSUInteger length = textField.text.length - self.currentInputSting.length;
-            
             textField.text = [textField.text substringWithRange:NSMakeRange(0, length)];
-            
             return;
-            
         }
         
         /*超过口令长度*/
@@ -171,12 +152,10 @@
             return;
             
         }
-        
         self.textDidChangeBlock(textField,nil);
 
     }
 }
-
 
 #pragma mark --UITextFieldDelegate
 - (BOOL)textFieldShouldBeginEditing:(UITextField *)textField{
@@ -191,14 +170,11 @@
     
 }
 
-
 - (BOOL)textFieldShouldEndEditing:(UITextField *)textField{
     return YES;
 }
 
-
 - (void)textFieldDidEndEditing:(UITextField *)textField{
-    
     
     if (self.checkMode == CheckVerificationCodeMode)
     {
@@ -212,7 +188,6 @@
         }
 
     }
-        
     
     if(self.checkMode == CheckPhoneNumberCodeMode)
     {
@@ -223,9 +198,7 @@
         {
             self.endEditingBlock(textField,@"手机号如如正确",YES);
         }
-      
     }
-    
     
     /*身份证号*/
     if (self.checkMode == CheckIdentifyCardMode) {
@@ -234,8 +207,7 @@
             self.endEditingBlock(textField,@"身份证号输入有误", NO);
         }
     }
-    
-    
+
     if (self.checkMode == CheckPasswordMode)
     {
         /*检测密码 --是否需要移除其中的空格*/
@@ -259,7 +231,6 @@
         self.endEditingBlock(textField,nil,YES);
     }
     
-    
     if (self.checkMode == CheckCommand) {
         /*检测口令 */
         if (textField.text.length != self.verityCodeLentch) {
@@ -268,24 +239,14 @@
             self.endEditingBlock(textField,nil,NO);
         }
     }
-
-    
 }
-
-
 
 - (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string{
-    
     self.currentInputSting = string;
     return YES;
-    
 }
-
-
 - (void)dealloc{
-    
     [[NSNotificationCenter defaultCenter]removeObserver:self];
 }
-
 
 @end

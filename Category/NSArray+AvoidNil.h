@@ -10,14 +10,13 @@
 
 @interface NSArray (AvoidNil)
 
-- (id)objectAtIndexCheck:(NSUInteger)index;
+- (id)ste_objAtIndex:(NSInteger)index;
 
 @end
 
 @interface NSMutableArray (AvoidNil)
 
-- (void)addCheckObject:(id)anObject;
-
-- (id)objectAtIndexCheck:(NSUInteger)index;
+- (id)ste_objAtIndex:(NSInteger)index;
+- (void)ste_addNonNilObj:(id)obj;
 
 @end

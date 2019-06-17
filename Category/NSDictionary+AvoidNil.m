@@ -6,7 +6,7 @@
 //  Copyright © 2016年 com.taobus.www. All rights reserved.
 //
 
-#import "NSMutableDictionary+AvoidNil.h"
+#import "NSDictionary+AvoidNil.h"
 
 
 /*
@@ -25,18 +25,38 @@
  
  */
 
-@implementation NSMutableDictionary (AvoidNil)
-
-- (void)setCheckObject:(id)anCheckObject forKey:(id<NSCopying>)aKey{
-    
-    if (anCheckObject) {
-        [self setObject:anCheckObject forKey:aKey];
-    }
-    
-    
+@implementation NSDictionary (AvoidNil)
+//如果obj为nil；则空字符串会添加到dict中
+- (void)ste_setEmptyStringWithObjIsNil:(id)obj forKey:(NSString *)key {
+    [self setValue:obj?obj:@"" forKey:key];
 }
 
+- (void)ste_setNonNilObj:(id)obj forKey:(NSString *)key {
+    if (obj) {
+        [self setValue:obj forKey:key];
+    }
+}
 
+- (void)ste_setObj:(id)obj forKey:(NSString *)key optionValue:(id)option{
+    if (obj) {
+        [self setValue:obj forKey:key];
+    }else if(option) {
+        [self setValue:option forKey:key];
+    }
+}
 
+- (id)ste_objForKey:(NSString *)key optionValue:(id)option {
+    id value = [self valueForKey:key];
+    return value?value:option;
+}
+
+- (id)ste_valueForKey:(NSString *)key {
+    id value = [self valueForKey:key];
+    return [value isKindOfClass:NSNull.class] ? nil : value;
+}
+- (id)ste_objForKey:(NSString *)key {
+    id value = [self objectForKey:key];
+    return [value isKindOfClass:NSNull.class] ? nil : value;
+}
 
 @end

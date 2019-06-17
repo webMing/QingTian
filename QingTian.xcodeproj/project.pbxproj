@@ -9,6 +9,11 @@
 /* Begin PBXBuildFile section */
 		17907F923ECAF5F940193A2E /* libPods-QingTianUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E80AD6D5A2114F168485189C /* libPods-QingTianUITests.a */; };
 		27D9D6B13D9B495517ACC732 /* libPods-QingTian.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3BDF41A86A5ED68A0B7D335B /* libPods-QingTian.a */; };
+		43B7F9C922B75D7500863949 /* QTConst.m in Sources */ = {isa = PBXBuildFile; fileRef = 43B7F9C822B75D7500863949 /* QTConst.m */; };
+		43B7F9CC22B7622600863949 /* UIView+STEHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 43B7F9CB22B7622600863949 /* UIView+STEHUD.m */; };
+		43B7F9CF22B7677600863949 /* UIView+Xib.m in Sources */ = {isa = PBXBuildFile; fileRef = 43B7F9CE22B7677600863949 /* UIView+Xib.m */; };
+		43B7F9D222B7683700863949 /* UIViewController+Initialize.m in Sources */ = {isa = PBXBuildFile; fileRef = 43B7F9D122B7683700863949 /* UIViewController+Initialize.m */; };
+		43B7F9D822B76A0A00863949 /* NSObject+Dealloc.m in Sources */ = {isa = PBXBuildFile; fileRef = 43B7F9D722B76A0A00863949 /* NSObject+Dealloc.m */; };
 		90B22E3922B6139D00D5F93B /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 90B22E3822B6139D00D5F93B /* AppDelegate.m */; };
 		90B22E4122B6139F00D5F93B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 90B22E4022B6139F00D5F93B /* Assets.xcassets */; };
 		90B22E4422B6139F00D5F93B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 90B22E4222B6139F00D5F93B /* LaunchScreen.storyboard */; };
@@ -20,7 +25,7 @@
 		90B22EAC22B6180500D5F93B /* NSTimer+invoke.m in Sources */ = {isa = PBXBuildFile; fileRef = 90B22E8222B6180200D5F93B /* NSTimer+invoke.m */; };
 		90B22EAD22B6180500D5F93B /* UIImageView+XMGExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 90B22E8322B6180200D5F93B /* UIImageView+XMGExtension.m */; };
 		90B22EAE22B6180500D5F93B /* UIColor+Addition.m in Sources */ = {isa = PBXBuildFile; fileRef = 90B22E8622B6180200D5F93B /* UIColor+Addition.m */; };
-		90B22EB022B6180500D5F93B /* NSMutableDictionary+AvoidNil.m in Sources */ = {isa = PBXBuildFile; fileRef = 90B22E8922B6180200D5F93B /* NSMutableDictionary+AvoidNil.m */; };
+		90B22EB022B6180500D5F93B /* NSDictionary+AvoidNil.m in Sources */ = {isa = PBXBuildFile; fileRef = 90B22E8922B6180200D5F93B /* NSDictionary+AvoidNil.m */; };
 		90B22EB222B6180500D5F93B /* UIImage+XMGExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 90B22E8D22B6180300D5F93B /* UIImage+XMGExtension.m */; };
 		90B22EB322B6180500D5F93B /* NSDate+Common.m in Sources */ = {isa = PBXBuildFile; fileRef = 90B22E8E22B6180300D5F93B /* NSDate+Common.m */; };
 		90B22EB522B6180500D5F93B /* NSDateUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 90B22E9022B6180300D5F93B /* NSDateUtilities.m */; };
@@ -70,6 +75,16 @@
 
 /* Begin PBXFileReference section */
 		3BDF41A86A5ED68A0B7D335B /* libPods-QingTian.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-QingTian.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		43B7F9C722B75D7500863949 /* QTConst.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = QTConst.h; sourceTree = "<group>"; };
+		43B7F9C822B75D7500863949 /* QTConst.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = QTConst.m; sourceTree = "<group>"; };
+		43B7F9CA22B7622600863949 /* UIView+STEHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+STEHUD.h"; sourceTree = "<group>"; };
+		43B7F9CB22B7622600863949 /* UIView+STEHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+STEHUD.m"; sourceTree = "<group>"; };
+		43B7F9CD22B7677600863949 /* UIView+Xib.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIView+Xib.h"; sourceTree = "<group>"; };
+		43B7F9CE22B7677600863949 /* UIView+Xib.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIView+Xib.m"; sourceTree = "<group>"; };
+		43B7F9D022B7683700863949 /* UIViewController+Initialize.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIViewController+Initialize.h"; sourceTree = "<group>"; };
+		43B7F9D122B7683700863949 /* UIViewController+Initialize.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+Initialize.m"; sourceTree = "<group>"; };
+		43B7F9D622B76A0A00863949 /* NSObject+Dealloc.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSObject+Dealloc.h"; sourceTree = "<group>"; };
+		43B7F9D722B76A0A00863949 /* NSObject+Dealloc.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSObject+Dealloc.m"; sourceTree = "<group>"; };
 		48F2418C791632E5255FC977 /* Pods-QingTian.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-QingTian.debug.xcconfig"; path = "Pods/Target Support Files/Pods-QingTian/Pods-QingTian.debug.xcconfig"; sourceTree = "<group>"; };
 		7CBB7C0FA88C12EC8F4EFB9D /* Pods-QingTianTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-QingTianTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-QingTianTests/Pods-QingTianTests.debug.xcconfig"; sourceTree = "<group>"; };
 		8DFEEFA0D4D82823C38C315D /* Pods-QingTian.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-QingTian.release.xcconfig"; path = "Pods/Target Support Files/Pods-QingTian/Pods-QingTian.release.xcconfig"; sourceTree = "<group>"; };
@@ -87,7 +102,7 @@
 		90B22E5B22B6139F00D5F93B /* QingTianUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = QingTianUITests.m; sourceTree = "<group>"; };
 		90B22E5D22B6139F00D5F93B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		90B22E7022B6180100D5F93B /* UIView+TKCategory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+TKCategory.m"; sourceTree = "<group>"; };
-		90B22E7422B6180100D5F93B /* NSMutableDictionary+AvoidNil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSMutableDictionary+AvoidNil.h"; sourceTree = "<group>"; };
+		90B22E7422B6180100D5F93B /* NSDictionary+AvoidNil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+AvoidNil.h"; sourceTree = "<group>"; };
 		90B22E7822B6180100D5F93B /* UIViewController+CustomAlertView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+CustomAlertView.m"; sourceTree = "<group>"; };
 		90B22E7922B6180100D5F93B /* NSDate+Common.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+Common.h"; sourceTree = "<group>"; };
 		90B22E7C22B6180100D5F93B /* NSDate+Utilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+Utilities.h"; sourceTree = "<group>"; };
@@ -97,7 +112,7 @@
 		90B22E8422B6180200D5F93B /* UIView+TKCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+TKCategory.h"; sourceTree = "<group>"; };
 		90B22E8522B6180200D5F93B /* NSArray+AvoidNil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+AvoidNil.h"; sourceTree = "<group>"; };
 		90B22E8622B6180200D5F93B /* UIColor+Addition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+Addition.m"; sourceTree = "<group>"; };
-		90B22E8922B6180200D5F93B /* NSMutableDictionary+AvoidNil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSMutableDictionary+AvoidNil.m"; sourceTree = "<group>"; };
+		90B22E8922B6180200D5F93B /* NSDictionary+AvoidNil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+AvoidNil.m"; sourceTree = "<group>"; };
 		90B22E8B22B6180200D5F93B /* UIViewController+CustomAlertView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+CustomAlertView.h"; sourceTree = "<group>"; };
 		90B22E8D22B6180300D5F93B /* UIImage+XMGExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+XMGExtension.m"; sourceTree = "<group>"; };
 		90B22E8E22B6180300D5F93B /* NSDate+Common.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+Common.m"; sourceTree = "<group>"; };
@@ -300,6 +315,8 @@
 		90B22E6E22B617CD00D5F93B /* Category */ = {
 			isa = PBXGroup;
 			children = (
+				43B7F9CA22B7622600863949 /* UIView+STEHUD.h */,
+				43B7F9CB22B7622600863949 /* UIView+STEHUD.m */,
 				90B22E8522B6180200D5F93B /* NSArray+AvoidNil.h */,
 				90B22E9122B6180300D5F93B /* NSArray+AvoidNil.m */,
 				90B22E9822B6180400D5F93B /* NSCalendar+XMGExtension.h */,
@@ -310,8 +327,8 @@
 				90B22E9522B6180300D5F93B /* NSDate+Utilities.m */,
 				90B22E7F22B6180100D5F93B /* NSDateUtilities.h */,
 				90B22E9022B6180300D5F93B /* NSDateUtilities.m */,
-				90B22E7422B6180100D5F93B /* NSMutableDictionary+AvoidNil.h */,
-				90B22E8922B6180200D5F93B /* NSMutableDictionary+AvoidNil.m */,
+				90B22E7422B6180100D5F93B /* NSDictionary+AvoidNil.h */,
+				90B22E8922B6180200D5F93B /* NSDictionary+AvoidNil.m */,
 				90EC7DFF22B669750002EEEF /* NSString+Common.h */,
 				90EC7DFC22B669750002EEEF /* NSString+Common.m */,
 				90EC7DFE22B669750002EEEF /* NSString+Helper.h */,
@@ -328,8 +345,14 @@
 				90B22E8322B6180200D5F93B /* UIImageView+XMGExtension.m */,
 				90B22E8422B6180200D5F93B /* UIView+TKCategory.h */,
 				90B22E7022B6180100D5F93B /* UIView+TKCategory.m */,
+				43B7F9CD22B7677600863949 /* UIView+Xib.h */,
+				43B7F9CE22B7677600863949 /* UIView+Xib.m */,
 				90B22E8B22B6180200D5F93B /* UIViewController+CustomAlertView.h */,
 				90B22E7822B6180100D5F93B /* UIViewController+CustomAlertView.m */,
+				43B7F9D022B7683700863949 /* UIViewController+Initialize.h */,
+				43B7F9D122B7683700863949 /* UIViewController+Initialize.m */,
+				43B7F9D622B76A0A00863949 /* NSObject+Dealloc.h */,
+				43B7F9D722B76A0A00863949 /* NSObject+Dealloc.m */,
 			);
 			path = Category;
 			sourceTree = "<group>";
@@ -359,6 +382,8 @@
 				90B22ED622B6213E00D5F93B /* Colors.m */,
 				90B22EE122B6264F00D5F93B /* Tool.h */,
 				90B22EDF22B6263F00D5F93B /* Tool.m */,
+				43B7F9C722B75D7500863949 /* QTConst.h */,
+				43B7F9C822B75D7500863949 /* QTConst.m */,
 			);
 			path = AppConfigure;
 			sourceTree = "<group>";
@@ -637,6 +662,8 @@
 			files = (
 				90EC7DF122B636790002EEEF /* QTLoginTextField.m in Sources */,
 				90B22EE022B6263F00D5F93B /* Tool.m in Sources */,
+				43B7F9D822B76A0A00863949 /* NSObject+Dealloc.m in Sources */,
+				43B7F9CF22B7677600863949 /* UIView+Xib.m in Sources */,
 				90B22ED422B6207200D5F93B /* Macro.m in Sources */,
 				90B22EB222B6180500D5F93B /* UIImage+XMGExtension.m in Sources */,
 				90B22EAC22B6180500D5F93B /* NSTimer+invoke.m in Sources */,
@@ -644,15 +671,18 @@
 				90EC7E0122B669760002EEEF /* NSString+Helper.m in Sources */,
 				90EC7E0522B671520002EEEF /* QTUser.m in Sources */,
 				90B22EE822B62E0D00D5F93B /* QTLoginVC.m in Sources */,
+				43B7F9CC22B7622600863949 /* UIView+STEHUD.m in Sources */,
 				90B22EBA22B6180500D5F93B /* UIImage+Extension.m in Sources */,
 				90B22EAD22B6180500D5F93B /* UIImageView+XMGExtension.m in Sources */,
-				90B22EB022B6180500D5F93B /* NSMutableDictionary+AvoidNil.m in Sources */,
+				43B7F9D222B7683700863949 /* UIViewController+Initialize.m in Sources */,
+				90B22EB022B6180500D5F93B /* NSDictionary+AvoidNil.m in Sources */,
 				90B22EDA22B6242800D5F93B /* QTNaviC.m in Sources */,
 				90B22E4722B6139F00D5F93B /* main.m in Sources */,
 				90B22ECE22B61EC700D5F93B /* SteFont.m in Sources */,
 				90B22EB322B6180500D5F93B /* NSDate+Common.m in Sources */,
 				90B22EC222B61B8100D5F93B /* AppDelegate+Service.m in Sources */,
 				90EC7E0922B673BD0002EEEF /* QTConfigurationHelper.m in Sources */,
+				43B7F9C922B75D7500863949 /* QTConst.m in Sources */,
 				90B22ED722B6213E00D5F93B /* Colors.m in Sources */,
 				90B22E3922B6139D00D5F93B /* AppDelegate.m in Sources */,
 				90EC7DF422B63C9D0002EEEF /* QTRegisterVC.m in Sources */,
@@ -832,7 +862,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = J3Y5FLL6V8;
+				DEVELOPMENT_TEAM = TE4FWMBS7N;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/AppConfigure/prefix.pch";
 				INFOPLIST_FILE = QingTian/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
@@ -852,7 +882,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = J3Y5FLL6V8;
+				DEVELOPMENT_TEAM = TE4FWMBS7N;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/AppConfigure/prefix.pch";
 				INFOPLIST_FILE = QingTian/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
