@@ -1,11 +1,10 @@
 //
-//  UIImage+Extension.h
-//  BusManager
+//  NSObject+Dealloc.h
+//  QingTian
 //
-//  Created by tangzhiqiang on 17/2/6.
-//  Copyright © 2017年 com.yjihua. All rights reserved.
+//  Created by Stephanie on 2019/6/17.
+//  Copyright © 2019 Stephanie. All rights reserved.
 //
-
 #import <UIKit/UIKit.h>
 
 @interface UIImage (Extension)

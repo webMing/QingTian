@@ -27,7 +27,8 @@
 
 #pragma mark- SetUpView
 - (void)setUpViews {
-    
+    self.tabBar.backgroundImage = [UIImage new];
+    self.tabBar.shadowImage = [UIImage new];
     self.view.backgroundColor = UIColor.whiteColor;
     // Me
     UIViewController* vc = [UIViewController ViewControllerInitWithSB:@"Me" className:@"QTLoginVC"];
@@ -59,7 +60,7 @@
     [childController.tabBarItem setTitleTextAttributes:selectedAttr forState:UIControlStateSelected];
 
     QTNaviC *nav = [[QTNaviC alloc] initWithRootViewController:childController];
-
+    
     [self addChildViewController:nav];
 }
 

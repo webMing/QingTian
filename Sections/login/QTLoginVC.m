@@ -26,6 +26,7 @@
 #pragma mark- EventRespone
 - (IBAction)userRegister:(UIButton *)btn {
     QTRegisterVC* vc = (QTRegisterVC*) [UIViewController ViewControllerInitWithSB:@"Me" className:@"QTRegisterVC"];
+    vc.hidesBottomBarWhenPushed = YES;
     vc.useType = UseAsRegisterCounter;
     [self.navigationController pushViewController:vc animated:YES];
 }

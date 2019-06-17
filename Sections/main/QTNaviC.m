@@ -29,7 +29,7 @@
     self.navigationBar.tintColor = UIColor.whiteColor;
     
     [self.navigationBar setTitleTextAttributes:@{NSForegroundColorAttributeName:UIColor.whiteColor,NSFontAttributeName:StePFMediumFontWithSize(17)}];
-
+    
     [self.navigationBar setShadowImage:[[UIImage alloc] init]];
     [self.navigationBar setBackgroundImage:[[UIImage alloc] init] forBarMetrics:UIBarMetricsDefault];
     
@@ -44,9 +44,6 @@
 #pragma mark- EventRespone
 - (UIViewController *)childViewControllerForStatusBarStyle{
     return self.topViewController;
-}
-- (void)backAction {
-    [self.navigationController popViewControllerAnimated:YES];
 }
 #pragma mark- CustomDelegateMethod
 

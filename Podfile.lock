@@ -37,7 +37,7 @@ DEPENDENCIES:
   - YYKit
 
 SPEC REPOS:
-  https://github.com/cocoapods/specs.git:
+  https://github.com/CocoaPods/Specs.git:
     - AFNetworking
     - IQKeyboardManager
     - Masonry
@@ -59,4 +59,4 @@ SPEC CHECKSUMS:
 
 PODFILE CHECKSUM: 93368d362f79c77b439a4f1ef547a69595576ab0
 
-COCOAPODS: 1.5.3
+COCOAPODS: 1.5.0

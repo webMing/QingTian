@@ -19,4 +19,21 @@
     UIStoryboard *sb = [UIStoryboard storyboardWithName:sbn bundle:nil];
     return [sb instantiateViewControllerWithIdentifier:cn];
 }
+
+/***************************************************************************************/
+
+- (void)addLeftBtnItem {
+    UIButton* btn = [UIButton buttonWithType:UIButtonTypeCustom];
+    [btn setImage:[UIImage imageNamed:@"back"] forState:UIControlStateNormal];
+    [btn addTarget:self action:@selector(backAction) forControlEvents:UIControlEventTouchUpInside];
+    [btn setImageEdgeInsets:UIEdgeInsetsMake(0, -30, 0, 0)];
+    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:btn];
+    //恢复侧滑返回
+    self.navigationController.interactivePopGestureRecognizer.delegate =(id<UIGestureRecognizerDelegate>)self;
+}
+
+- (void)backAction {
+    [self.navigationController popViewControllerAnimated:YES];
+}
+
 @end

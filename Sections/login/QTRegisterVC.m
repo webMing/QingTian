@@ -49,11 +49,10 @@ static NSInteger const kCountdown = 60;
 #pragma mark- SetUpView
 - (void)setUpViews {
     
+    [self addLeftBtnItem];
     self.countDownLB.superview.hidden = YES;
     self.countDownNum = kCountdown;
-    
-    [self.navigationItem leftItemWithTarget:self action:@selector(backAction)];
-    
+
     if (_useType == UseAsPasswordRetake) {
         self.title = @"重置密码";
         [self.confirmBTN setTitle:@"提交" forState:UIControlStateNormal];
@@ -151,7 +150,7 @@ static NSInteger const kCountdown = 60;
                                  @"name":self.phoneTF.text,
                                  @"password":self.paswdTF.text,
                                  @"col3":@"ios",
-                                 @"col2":self.identifyTF.text, //验证码
+                                 //@"col2":self.identifyTF.text, //验证码
                                  };
     [QTNetWork postRequest:memberDict ssBlock:^(NSURLSessionDataTask * _Nonnull task, id  _Nonnull responseObject) {
         // [self.view addHUDWithType:OnlyMessage lableTitle:@"注册成功" yOffSet:-100.f hideAfterDelay:1.5];
@@ -176,7 +175,7 @@ static NSInteger const kCountdown = 60;
     
     NSDictionary* dict = @{
                            @"phone_no":self.phoneTF.text,
-                           @"valicode":self.identifyTF.text,
+                           //@"valicode":self.identifyTF.text,
                            @"app_type":@"ios",
                            @"password":self.paswdTF.text,
                            };
@@ -236,7 +235,7 @@ static NSInteger const kCountdown = 60;
         
         self.timer = [NSTimer scheduledTimerWithTimeInterval:1.0f block:^{
             
-            weakSelf.countDownNum--;
+           // weakSelf.countDownNum--;
             
 //            if (weakSelf.secondCouter == 0)
 //            {
