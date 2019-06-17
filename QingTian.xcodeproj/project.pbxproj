@@ -14,6 +14,8 @@
 		43B7F9CF22B7677600863949 /* UIView+Xib.m in Sources */ = {isa = PBXBuildFile; fileRef = 43B7F9CE22B7677600863949 /* UIView+Xib.m */; };
 		43B7F9D222B7683700863949 /* UIViewController+Initialize.m in Sources */ = {isa = PBXBuildFile; fileRef = 43B7F9D122B7683700863949 /* UIViewController+Initialize.m */; };
 		43B7F9D822B76A0A00863949 /* NSObject+Dealloc.m in Sources */ = {isa = PBXBuildFile; fileRef = 43B7F9D722B76A0A00863949 /* NSObject+Dealloc.m */; };
+		43B7F9DB22B7828E00863949 /* QTDashLine.m in Sources */ = {isa = PBXBuildFile; fileRef = 43B7F9DA22B7828E00863949 /* QTDashLine.m */; };
+		43B7F9DE22B79A7300863949 /* UINavigationItem+Extention.m in Sources */ = {isa = PBXBuildFile; fileRef = 43B7F9DD22B79A7300863949 /* UINavigationItem+Extention.m */; };
 		90B22E3922B6139D00D5F93B /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 90B22E3822B6139D00D5F93B /* AppDelegate.m */; };
 		90B22E4122B6139F00D5F93B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 90B22E4022B6139F00D5F93B /* Assets.xcassets */; };
 		90B22E4422B6139F00D5F93B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 90B22E4222B6139F00D5F93B /* LaunchScreen.storyboard */; };
@@ -85,6 +87,10 @@
 		43B7F9D122B7683700863949 /* UIViewController+Initialize.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+Initialize.m"; sourceTree = "<group>"; };
 		43B7F9D622B76A0A00863949 /* NSObject+Dealloc.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSObject+Dealloc.h"; sourceTree = "<group>"; };
 		43B7F9D722B76A0A00863949 /* NSObject+Dealloc.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSObject+Dealloc.m"; sourceTree = "<group>"; };
+		43B7F9D922B7828E00863949 /* QTDashLine.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = QTDashLine.h; path = Category/QTDashLine.h; sourceTree = SOURCE_ROOT; };
+		43B7F9DA22B7828E00863949 /* QTDashLine.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = QTDashLine.m; path = Category/QTDashLine.m; sourceTree = SOURCE_ROOT; };
+		43B7F9DC22B79A7300863949 /* UINavigationItem+Extention.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UINavigationItem+Extention.h"; sourceTree = "<group>"; };
+		43B7F9DD22B79A7300863949 /* UINavigationItem+Extention.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UINavigationItem+Extention.m"; sourceTree = "<group>"; };
 		48F2418C791632E5255FC977 /* Pods-QingTian.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-QingTian.debug.xcconfig"; path = "Pods/Target Support Files/Pods-QingTian/Pods-QingTian.debug.xcconfig"; sourceTree = "<group>"; };
 		7CBB7C0FA88C12EC8F4EFB9D /* Pods-QingTianTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-QingTianTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-QingTianTests/Pods-QingTianTests.debug.xcconfig"; sourceTree = "<group>"; };
 		8DFEEFA0D4D82823C38C315D /* Pods-QingTian.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-QingTian.release.xcconfig"; path = "Pods/Target Support Files/Pods-QingTian/Pods-QingTian.release.xcconfig"; sourceTree = "<group>"; };
@@ -285,6 +291,8 @@
 		90B22E6B22B6153800D5F93B /* Vender */ = {
 			isa = PBXGroup;
 			children = (
+				43B7F9D922B7828E00863949 /* QTDashLine.h */,
+				43B7F9DA22B7828E00863949 /* QTDashLine.m */,
 			);
 			path = Vender;
 			sourceTree = "<group>";
@@ -353,6 +361,8 @@
 				43B7F9D122B7683700863949 /* UIViewController+Initialize.m */,
 				43B7F9D622B76A0A00863949 /* NSObject+Dealloc.h */,
 				43B7F9D722B76A0A00863949 /* NSObject+Dealloc.m */,
+				43B7F9DC22B79A7300863949 /* UINavigationItem+Extention.h */,
+				43B7F9DD22B79A7300863949 /* UINavigationItem+Extention.m */,
 			);
 			path = Category;
 			sourceTree = "<group>";
@@ -689,10 +699,12 @@
 				90B22EA522B6180500D5F93B /* UIView+TKCategory.m in Sources */,
 				90B22EAE22B6180500D5F93B /* UIColor+Addition.m in Sources */,
 				90B22EA922B6180500D5F93B /* UIViewController+CustomAlertView.m in Sources */,
+				43B7F9DE22B79A7300863949 /* UINavigationItem+Extention.m in Sources */,
 				90B22EB922B6180500D5F93B /* NSDate+Utilities.m in Sources */,
 				90B22EBC22B6180500D5F93B /* NSCalendar+XMGExtension.m in Sources */,
 				90B22EC622B61C7D00D5F93B /* QTROOTVC.m in Sources */,
 				90B22EB622B6180500D5F93B /* NSArray+AvoidNil.m in Sources */,
+				43B7F9DB22B7828E00863949 /* QTDashLine.m in Sources */,
 				90EC7DF822B65C8B0002EEEF /* QTNetWork.m in Sources */,
 				90B22EC922B61CB800D5F93B /* QTTabBarVC.m in Sources */,
 				90B22EB522B6180500D5F93B /* NSDateUtilities.m in Sources */,

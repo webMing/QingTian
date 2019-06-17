@@ -35,6 +35,7 @@ static NSInteger const kCountdown = 60;
 @end
 
 @implementation QTRegisterVC
+
 #pragma mark- LifeCicle
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -50,7 +51,9 @@ static NSInteger const kCountdown = 60;
     
     self.countDownLB.superview.hidden = YES;
     self.countDownNum = kCountdown;
-
+    
+    [self.navigationItem leftItemWithTarget:self action:@selector(backAction)];
+    
     if (_useType == UseAsPasswordRetake) {
         self.title = @"重置密码";
         [self.confirmBTN setTitle:@"提交" forState:UIControlStateNormal];
@@ -87,7 +90,6 @@ static NSInteger const kCountdown = 60;
     identifyDelegate.checkMode = CheckVerificationCodeMode;
     self.identifyTF.delegate = identifyDelegate;
   
-   
    QTTextFieldDelegate* passwdDelegate = [[QTTextFieldDelegate alloc]initWithBeginEditingBlock:^(UITextField *textFiled) {
         
     } textDidChangeBlock:^(UITextField *textFiled, NSString *message) {
@@ -105,6 +107,10 @@ static NSInteger const kCountdown = 60;
 }
 
 #pragma mark- EventRespone
+- (void)backAction{
+    [self.navigationController popViewControllerAnimated:YES];
+}
+
 //注册或者找回密码
 - (IBAction)confirm:(id)sender {
     if (self.phoneTF.text.length != 11) {

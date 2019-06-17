@@ -8,6 +8,7 @@
 
 #import "QTLoginVC.h"
 
+#import "QTRegisterVC.h"
 #import "UIViewController+Initialize.h"
 
 @interface QTLoginVC ()
@@ -24,8 +25,8 @@
 
 #pragma mark- EventRespone
 - (IBAction)userRegister:(UIButton *)btn {
-    UIViewController* vc = [UIViewController ViewControllerInitWithSB:@"Me" className:@"QTRegisterVC"];
-    vc.hidesBottomBarWhenPushed = YES;
+    QTRegisterVC* vc = (QTRegisterVC*) [UIViewController ViewControllerInitWithSB:@"Me" className:@"QTRegisterVC"];
+    vc.useType = UseAsRegisterCounter;
     [self.navigationController pushViewController:vc animated:YES];
 }
 #pragma mark- CustomDelegateMethod
