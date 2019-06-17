@@ -10,10 +10,9 @@
 
 #import "QTTextFieldDelegate.h"
 #import "NSString+Helper.h"
-#import "NSTimer+invoke.h"
 #import "QTNetWork.h"
 
-static NSInteger const kCountdown = 60;
+static NSInteger const kCountdown = 10;
 
 @interface QTRegisterVC ()
 
@@ -30,8 +29,6 @@ static NSInteger const kCountdown = 60;
 
 @property (assign, nonatomic) BOOL isAcceptServiceTerms;
 
-@property (strong, nonatomic) NSTimer* timer;
-
 @end
 
 @implementation QTRegisterVC
@@ -41,11 +38,7 @@ static NSInteger const kCountdown = 60;
     [super viewDidLoad];
     [self setUpViews];
 }
-- (void)viewWillAppear:(BOOL)animated {
-    [super viewWillAppear:animated];
-    [self.timer invalidate];
-    self.timer = nil;
-}
+
 #pragma mark- SetUpView
 - (void)setUpViews {
     
@@ -60,15 +53,17 @@ static NSInteger const kCountdown = 60;
         self.title = @"新用户注册";
         [self.confirmBTN setTitle:@"注册并登陆" forState:UIControlStateNormal];
     }
-    
+    @weakify(self)
     QTTextFieldDelegate* phoneDelegate = [[QTTextFieldDelegate alloc]initWithBeginEditingBlock:^(UITextField *textFiled) {
     } textDidChangeBlock:^(UITextField *textFiled, NSString *message) {
         if (message) {
-            //[weakSelf.view addHUDWithType:OnlyMessage lableTitle:message yOffSet:-100.0f hideAfterDelay:1.5f];
+            @strongify(self)
+            [self.view showHUDWithTitle:message dismissAfter:1.5];
         }
     } endEditingBlock:^(UITextField *textFiled, NSString *message, BOOL isVerytifySuccess) {
         if (!isVerytifySuccess) {
-            //[weakSelf.view addHUDWithType:OnlyMessage lableTitle:message yOffSet:-100.0f hideAfterDelay:1.5f];
+            @strongify(self)
+            [self.view showHUDWithTitle:message dismissAfter:1.5];
         }
     }];
     phoneDelegate.checkMode = CheckPhoneNumberCodeMode;
@@ -78,11 +73,13 @@ static NSInteger const kCountdown = 60;
 
     } textDidChangeBlock:^(UITextField *textFiled, NSString *message) {
         if (message) {
-            //[weakSelf.view addHUDWithType:OnlyMessage lableTitle:message yOffSet:-100.0f hideAfterDelay:1.5f];
+            @strongify(self)
+            [self.view showHUDWithTitle:message dismissAfter:1.5];
         }
     } endEditingBlock:^(UITextField *textFiled, NSString *message, BOOL isVerytifySuccess) {
         if (!isVerytifySuccess) {
-        //[weakSelf.view addHUDWithType:OnlyMessage lableTitle:message yOffSet:-100.0f hideAfterDelay:1.5f];
+            @strongify(self)
+            [self.view showHUDWithTitle:message dismissAfter:1.5];
         }
     }];
     identifyDelegate.verityCodeLentch = 6;
@@ -93,11 +90,13 @@ static NSInteger const kCountdown = 60;
         
     } textDidChangeBlock:^(UITextField *textFiled, NSString *message) {
         if (message) {
-            //[weakSelf.view addHUDWithType:OnlyMessage lableTitle:message yOffSet:-100.0f hideAfterDelay:1.5f];
+            @strongify(self)
+            [self.view showHUDWithTitle:message dismissAfter:1.5];
         }
     } endEditingBlock:^(UITextField *textFiled, NSString *message, BOOL isVerytifySuccess) {
         if (!isVerytifySuccess) {
-            //[weakSelf.view addHUDWithType:OnlyMessage lableTitle:message yOffSet:-100.0f hideAfterDelay:1.5f];
+            @strongify(self)
+            [self.view showHUDWithTitle:message dismissAfter:1.5];
         }
     }];
     passwdDelegate.checkMode = CheckPasswordMode;
@@ -113,23 +112,23 @@ static NSInteger const kCountdown = 60;
 //注册或者找回密码
 - (IBAction)confirm:(id)sender {
     if (self.phoneTF.text.length != 11) {
-        //[self.view addHUDWithType:OnlyMessage lableTitle:@"手机号位数不对" yOffSet:-100.0f hideAfterDelay:1.5f];
+        [self.view showHUDWithTitle:@"手机号位数不对" dismissAfter:1.5];
         return;
     }
     if (![NSString isMobileNumber:self.phoneTF.text]) {
-        //[self.view addHUDWithType:OnlyMessage lableTitle:@"手机号码无效" yOffSet:-100.0f hideAfterDelay:0.5];
+        [self.view showHUDWithTitle:@"手机号码无效" dismissAfter:1.5];
         return;
     }
     if (self.identifyTF.text.length < 4) {
-        //[self.view addHUDWithType:OnlyMessage lableTitle:@"验证码位数不对" yOffSet:-100.0f hideAfterDelay:1.5f];
+        [self.view showHUDWithTitle:@"验证码位数不对" dismissAfter:1.5];
         return;
     }
     if (self.paswdTF.text.length < 6 ||self.paswdTF.text.length >16 ) {
-        //[self.view addHUDWithType:OnlyMessage lableTitle:@"密码位数不对" yOffSet:-100.0f hideAfterDelay:1.5f];
+        [self.view showHUDWithTitle:@"密码位数不对" dismissAfter:1.5];
         return;
     }
     if (!self.isAcceptServiceTerms) {
-        //[self.view addHUDWithType:OnlyMessage lableTitle:@"请同意淘巴士服务条款" yOffSet:-100.0f hideAfterDelay:1.5f];
+        [self.view showHUDWithTitle:@"我是小晴天" dismissAfter:1.5];
         return;
     }
     
@@ -142,8 +141,7 @@ static NSInteger const kCountdown = 60;
 
 - (void)registerCounter{
     
-    
-    //[self.view addHUDWithType:OnlyMessage lableTitle:@"注册中..." yOffSet:-100.f hideAfterDelay:0];
+    [self.view showHUDWithTitle:@"注册中" dismissAfter:0];
     NSDictionary* memberDict = @{
                                  @"mobile":self.phoneTF.text,
                                  @"uname":self.phoneTF.text,
@@ -153,21 +151,18 @@ static NSInteger const kCountdown = 60;
                                  //@"col2":self.identifyTF.text, //验证码
                                  };
     [QTNetWork postRequest:memberDict ssBlock:^(NSURLSessionDataTask * _Nonnull task, id  _Nonnull responseObject) {
-        // [self.view addHUDWithType:OnlyMessage lableTitle:@"注册成功" yOffSet:-100.f hideAfterDelay:1.5];
+        [self.view showHUDWithTitle:@"注册成功" dismissAfter:1.5];
         dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
             // 登录
             //TBSUserSingleton* user = [TBSUserSingleton shareUser];
-            
             NSDictionary* dict = @{}.mutableCopy ;
             [dict setValue:self.phoneTF.text forKey: @"userName"];
             [dict setValue:self.phoneTF.text forKey: @"mobile"];
             [dict setValue:self.paswdTF.text forKey: @"pwd"];
             
-            //[self.view addHUDWithType:OnlyMessage lableTitle:@"登录中" yOffSet:-100.f hideAfterDelay:0];
-        
         });
     } ftBlock:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
-        // [self.view addHUDWithType:OnlyMessage lableTitle:@"网络无法访问" yOffSet:-100.f hideAfterDelay:1.5];
+        [self.view showHUDWithTitle:@"注册失败" dismissAfter:1.5];
     }];
 }
 
@@ -215,45 +210,35 @@ static NSInteger const kCountdown = 60;
 - (IBAction)applyIdentifyCode:(UIButton *)sender {
     
     if (self.phoneTF.text.length != 11) {
-        //[self.view addHUDWithType:OnlyMessage lableTitle:@"手机号位数不对" yOffSet:-100.0f hideAfterDelay:0.5];
+        [self.view showHUDWithTitle:@"手机号位数不对" dismissAfter:1.5f];
         return;
     }
     if (![NSString isMobileNumber:self.phoneTF.text]) {
-        //[self.view addHUDWithType:OnlyMessage lableTitle:@"手机号码无效" yOffSet:-100.0f hideAfterDelay:0.5];
+        [self.view showHUDWithTitle:@"手机号码无效" dismissAfter:1.5f];
         return;
     }
-    self.countDownLB.superview.hidden = NO;
-    [self identifyCode];
-    [sender setTitle:@"重新发送" forState:UIControlStateNormal];
     
     sender.hidden = YES;
+    [sender setTitle:@"重新发送" forState:UIControlStateNormal];
+    self.countDownLB.superview.hidden = NO;
+    [self identifyCode];
     
-    __weak typeof(self) weakSelf = self;
-    __weak typeof (sender) weakSender = sender;
+    @weakify(self)
+    [NSTimer scheduledTimerWithTimeInterval:1.0 block:^(NSTimer * _Nonnull timer) {
+        @strongify(self)
+        self.countDownNum--;
+        self.countDownLB.text = [NSString stringWithFormat:@"%ld",(long)self.countDownNum];
+        if (self.countDownNum == 0)
+        {
+            [timer  invalidate];
+            timer = nil;
+            self.countDownNum = kCountdown;
+            self.countDownLB.superview.hidden = YES;
+            sender.hidden = NO;
+        }
+    } repeats:YES];
     
-    if (!self.timer) {
-        
-        self.timer = [NSTimer scheduledTimerWithTimeInterval:1.0f block:^{
-            
-           // weakSelf.countDownNum--;
-            
-//            if (weakSelf.secondCouter == 0)
-//            {
-//                [weakSelf.timer  invalidate] ;
-//                weakSelf.timer = nil;
-//                self.secondCouter = Seconds;
-//                self.minusCounterLabel.superview.hidden = YES;
-//                weakSender.hidden = NO;
-//
-//            }
-//
-//            weakSelf.minusCounterLabel.text = [NSString stringWithFormat:@"%d",self.secondCouter];
-//
-        } userInfo:nil repeats:YES];
-        
-    }
-    
-    
+
 }
 
 
@@ -310,7 +295,6 @@ static NSInteger const kCountdown = 60;
 
 - (IBAction)chooseServiceItems:(id)sender {
     self.isAcceptServiceTerms = !self.isAcceptServiceTerms;
-//    self.servierItemsIV
 }
 
 #pragma mark- CustomDelegateMethod

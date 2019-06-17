@@ -19,6 +19,7 @@
     if (!hud) hud = [MBProgressHUD showHUDAddedTo:self animated:YES];
     hud.mode = MBProgressHUDModeText;
     hud.label.text = title;
+    hud.offset = CGPointMake(0, -120);
     if (time > 0) {
         dispatch_async(dispatch_get_main_queue(), ^{
             [hud hideAnimated:YES afterDelay:time];
@@ -34,6 +35,7 @@
     hud.mode = MBProgressHUDModeText;
     hud.label.text = title;
     hud.detailsLabel.text = subTitle;
+    hud.offset = CGPointMake(0, -120);
     if (time > 0) {
         dispatch_async(dispatch_get_main_queue(), ^{
             [hud hideAnimated:YES afterDelay:time];
@@ -47,6 +49,7 @@
     MBProgressHUD *hud = [MBProgressHUD HUDForView:self];
     if (!hud) hud = [MBProgressHUD showHUDAddedTo:self animated:YES];
     hud.mode = MBProgressHUDModeIndeterminate;
+    hud.offset = CGPointMake(0, -120);
     if (time > 0) {
         dispatch_async(dispatch_get_main_queue(), ^{
              [hud hideAnimated:YES afterDelay:time];
@@ -61,6 +64,7 @@
     if (!hud) hud = [MBProgressHUD showHUDAddedTo:self animated:YES];
     hud.mode = MBProgressHUDModeIndeterminate;
     hud.label.text = title;
+    hud.offset = CGPointMake(0, -120);
     if (time > 0) {
         dispatch_async(dispatch_get_main_queue(), ^{
             [hud hideAnimated:YES afterDelay:time];
@@ -76,6 +80,7 @@
     hud.mode = MBProgressHUDModeIndeterminate;
     hud.label.text = title;
     hud.detailsLabel.text = subTitle;
+    hud.offset = CGPointMake(0, -120);
     if (time > 0) {
         dispatch_async(dispatch_get_main_queue(), ^{
             [hud hideAnimated:YES afterDelay:time];

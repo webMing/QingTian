@@ -16,6 +16,8 @@
 
 #import <YYKit.h>
 
+#import "UIView+STEHUD.h"
+
 #import "UIViewController+Initialize.h"
 
 #endif /* prefix_pch */

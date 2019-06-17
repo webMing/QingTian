@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -249,7 +249,7 @@
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="60" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OiR-yY-Wg3">
-                                                                <rect key="frame" x="0.0" y="0.0" width="21" height="50"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="19" height="50"/>
                                                                 <fontDescription key="fontDescription" name="PingFangSC-Regular" family="PingFang SC" pointSize="12"/>
                                                                 <color key="textColor" red="0.15686274510000001" green="0.23529411759999999" blue="0.35294117650000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                 <nil key="highlightedColor"/>
@@ -260,7 +260,7 @@
                                                             <constraint firstItem="swR-SK-kgO" firstAttribute="top" secondItem="EtD-WX-Ybg" secondAttribute="top" id="7gO-rn-sXR"/>
                                                             <constraint firstAttribute="width" constant="101" id="C48-7w-g71"/>
                                                             <constraint firstItem="OiR-yY-Wg3" firstAttribute="top" secondItem="EtD-WX-Ybg" secondAttribute="top" id="GWr-nF-IUv"/>
-                                                            <constraint firstItem="swR-SK-kgO" firstAttribute="leading" secondItem="OiR-yY-Wg3" secondAttribute="trailing" id="Hoc-Xc-edO"/>
+                                                            <constraint firstItem="swR-SK-kgO" firstAttribute="leading" secondItem="OiR-yY-Wg3" secondAttribute="trailing" constant="2" id="Hoc-Xc-edO"/>
                                                             <constraint firstAttribute="trailing" secondItem="swR-SK-kgO" secondAttribute="trailing" id="SFj-sF-QLM"/>
                                                             <constraint firstAttribute="bottom" secondItem="swR-SK-kgO" secondAttribute="bottom" id="YdL-BN-DNc"/>
                                                             <constraint firstItem="OiR-yY-Wg3" firstAttribute="leading" secondItem="EtD-WX-Ybg" secondAttribute="leading" id="f2X-RG-s3f"/>
@@ -273,6 +273,9 @@
                                                         <state key="normal" title="获取验证码">
                                                             <color key="titleColor" red="0.15686274509803921" green="0.23529411764705882" blue="0.3529411764705882" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         </state>
+                                                        <connections>
+                                                            <action selector="applyIdentifyCode:" destination="7kr-fY-hoe" eventType="touchUpInside" id="vbV-6k-8uJ"/>
+                                                        </connections>
                                                     </button>
                                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="login_ico_tel" translatesAutoresizingMaskIntoConstraints="NO" id="wUG-sW-BZK">
                                                         <rect key="frame" x="13" y="14" width="22" height="22"/>
@@ -505,7 +508,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Xg4-4e-Bfg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-282" y="-385"/>
+            <point key="canvasLocation" x="-428" y="-385"/>
         </scene>
     </scenes>
     <resources>

@@ -17,7 +17,6 @@ PODS:
   - IQKeyboardManager (6.1.1)
   - Masonry (1.1.0)
   - MBProgressHUD (1.1.0)
-  - SAMKeychain (1.5.3)
   - SDWebImage (4.4.2):
     - SDWebImage/Core (= 4.4.2)
   - SDWebImage/Core (4.4.2)
@@ -31,7 +30,6 @@ DEPENDENCIES:
   - IQKeyboardManager
   - Masonry
   - MBProgressHUD
-  - SAMKeychain
   - SDWebImage
   - UICollectionViewLeftAlignedLayout
   - YYKit
@@ -42,7 +40,6 @@ SPEC REPOS:
     - IQKeyboardManager
     - Masonry
     - MBProgressHUD
-    - SAMKeychain
     - SDWebImage
     - UICollectionViewLeftAlignedLayout
     - YYKit
@@ -52,11 +49,10 @@ SPEC CHECKSUMS:
   IQKeyboardManager: 79c57795f5c2408d259d37b9da2ed07efcbb5225
   Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
   MBProgressHUD: e7baa36a220447d8aeb12769bf0585582f3866d9
-  SAMKeychain: 483e1c9f32984d50ca961e26818a534283b4cd5c
   SDWebImage: 624d6e296c69b244bcede364c72ae0430ac14681
   UICollectionViewLeftAlignedLayout: 830bf6fa5bab9f9b464f62e3384f9d2e00b3c0f6
   YYKit: 7cda43304a8dc3696c449041e2cb3107b4e236e7
 
-PODFILE CHECKSUM: 93368d362f79c77b439a4f1ef547a69595576ab0
+PODFILE CHECKSUM: 4354df84df3a385cd9c76d0c49814ff660847eeb
 
 COCOAPODS: 1.5.0

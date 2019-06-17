@@ -9,7 +9,6 @@ target 'QingTian' do
   
   pod 'YYKit'
   pod 'MBProgressHUD'
-  pod 'SAMKeychain'
   pod 'AFNetworking'
   pod 'SDWebImage'
   pod 'IQKeyboardManager'

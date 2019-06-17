@@ -6,28 +6,25 @@
 //  Copyright © 2019 Stephanie. All rights reserved.
 //
 
-#import "QTUser.h"
-
-#import "SAMKeychain.h"
-#import "SAMKeychainQuery.h"
+#import "QTUserManager.h"
 
 static NSString*  const QTUserKeyChainServerName = @"QTUserKeyChainServerName";
 static NSString*  const QTLastLoginUserKey = @"QTLastLoginUserKey";
 
-@interface QTUser()
+@interface QTUserManager()
 
 @end
 
-@implementation QTUser
+@implementation QTUserManager
 
 #pragma mark- LifeCicle
-+(instancetype)User{
-    static QTUser* user = nil;
++(instancetype)Manager{
+    static QTUserManager* manager = nil;
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
-        user = [[QTUser alloc]init];
+        manager = [[QTUserManager alloc]init];
     });
-    return user;
+    return manager;
 }
 
 #pragma mark- SetUpView
@@ -46,15 +43,21 @@ static NSString*  const QTLastLoginUserKey = @"QTLastLoginUserKey";
     if (!phoneNum|| !pwd ) {
         return NO;
     }
-    QTUser* user = [QTUser User];
+    QTUserManager* manager = [QTUserManager Manager];
+    QTUser *user = manager.user;
     user.mobile  = phoneNum;
     user.passwd = pwd;
     NSError *error;
-    BOOL suss = [SAMKeychain setPassword:pwd forService:QTUserKeyChainServerName account:phoneNum error:&error];
+    BOOL suss =[YYKeychain setPassword:pwd forService:QTUserKeyChainServerName account:QTUserKeyChainServerName error:&error];
     if(!suss && !error){
         QTLog(@"%@", error);
     }
     return suss;
+}
+
+- (void)saveUser:(NSDictionary*)userInfo {
+    QTUser* user = [[QTUser alloc]init];
+//    user.userID =
 }
 
 - (void)saveUserHeaderImage:(UIImage*)image {
@@ -64,6 +67,7 @@ static NSString*  const QTLastLoginUserKey = @"QTLastLoginUserKey";
 - (UIImage*)userHeaderImage {
     return nil;
 }
+
 #pragma mark- CustomDelegateMethod
 
 #pragma mark- DelegateMethod
@@ -71,5 +75,13 @@ static NSString*  const QTLastLoginUserKey = @"QTLastLoginUserKey";
 #pragma mark- GetterAndSetter
 
 #pragma mark- PrivateMethod
+
+@end 
+
+
+/******************************************* QTUser ************************************************************/
+
+@implementation QTUser
+
 
 @end

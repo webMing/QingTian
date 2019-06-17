@@ -53,7 +53,7 @@
 		90EC7DFB22B6682A0002EEEF /* QTTextFieldDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 90EC7DFA22B6682A0002EEEF /* QTTextFieldDelegate.m */; };
 		90EC7E0022B669760002EEEF /* NSString+Common.m in Sources */ = {isa = PBXBuildFile; fileRef = 90EC7DFC22B669750002EEEF /* NSString+Common.m */; };
 		90EC7E0122B669760002EEEF /* NSString+Helper.m in Sources */ = {isa = PBXBuildFile; fileRef = 90EC7DFD22B669750002EEEF /* NSString+Helper.m */; };
-		90EC7E0522B671520002EEEF /* QTUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 90EC7E0422B671520002EEEF /* QTUser.m */; };
+		90EC7E0522B671520002EEEF /* QTUserManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 90EC7E0422B671520002EEEF /* QTUserManager.m */; };
 		90EC7E0922B673BD0002EEEF /* QTConfigurationHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 90EC7E0722B673BD0002EEEF /* QTConfigurationHelper.m */; };
 		F2C908BE6BC545A2EDB6419F /* libPods-QingTianTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = EE36F8F1D571AEE20CBC4D04 /* libPods-QingTianTests.a */; };
 /* End PBXBuildFile section */
@@ -168,8 +168,8 @@
 		90EC7DFD22B669750002EEEF /* NSString+Helper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Helper.m"; sourceTree = "<group>"; };
 		90EC7DFE22B669750002EEEF /* NSString+Helper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Helper.h"; sourceTree = "<group>"; };
 		90EC7DFF22B669750002EEEF /* NSString+Common.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Common.h"; sourceTree = "<group>"; };
-		90EC7E0322B671520002EEEF /* QTUser.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = QTUser.h; sourceTree = "<group>"; };
-		90EC7E0422B671520002EEEF /* QTUser.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = QTUser.m; sourceTree = "<group>"; };
+		90EC7E0322B671520002EEEF /* QTUserManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = QTUserManager.h; sourceTree = "<group>"; };
+		90EC7E0422B671520002EEEF /* QTUserManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = QTUserManager.m; sourceTree = "<group>"; };
 		90EC7E0722B673BD0002EEEF /* QTConfigurationHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QTConfigurationHelper.m; sourceTree = "<group>"; };
 		90EC7E0822B673BD0002EEEF /* QTConfigurationHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QTConfigurationHelper.h; sourceTree = "<group>"; };
 		BBEFDA534E43E8510F35F26C /* Pods-QingTianUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-QingTianUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-QingTianUITests/Pods-QingTianUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -279,7 +279,7 @@
 		90B22E6A22B6152800D5F93B /* Sections */ = {
 			isa = PBXGroup;
 			children = (
-				90EC7E0222B670990002EEEF /* User */,
+				90EC7E0222B670990002EEEF /* UserManager */,
 				90EC7DF522B65C3E0002EEEF /* NetWork */,
 				90B22EDB22B6254C00D5F93B /* Me */,
 				90B22EC322B61C5F00D5F93B /* main */,
@@ -417,13 +417,13 @@
 			path = NetWork;
 			sourceTree = "<group>";
 		};
-		90EC7E0222B670990002EEEF /* User */ = {
+		90EC7E0222B670990002EEEF /* UserManager */ = {
 			isa = PBXGroup;
 			children = (
-				90EC7E0322B671520002EEEF /* QTUser.h */,
-				90EC7E0422B671520002EEEF /* QTUser.m */,
+				90EC7E0322B671520002EEEF /* QTUserManager.h */,
+				90EC7E0422B671520002EEEF /* QTUserManager.m */,
 			);
-			path = User;
+			path = UserManager;
 			sourceTree = "<group>";
 		};
 		90EC7E0622B673870002EEEF /* Tools */ = {
@@ -633,12 +633,10 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-QingTian/Pods-QingTian-resources.sh",
 				"${PODS_ROOT}/IQKeyboardManager/IQKeyboardManager/Resources/IQKeyboardManager.bundle",
-				"${PODS_ROOT}/SAMKeychain/Support/SAMKeychain.bundle",
 			);
 			name = "[CP] Copy Pods Resources";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/IQKeyboardManager.bundle",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/SAMKeychain.bundle",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -679,7 +677,7 @@
 				90B22EAC22B6180500D5F93B /* NSTimer+invoke.m in Sources */,
 				90B22EDE22B625A000D5F93B /* QTMEVC.m in Sources */,
 				90EC7E0122B669760002EEEF /* NSString+Helper.m in Sources */,
-				90EC7E0522B671520002EEEF /* QTUser.m in Sources */,
+				90EC7E0522B671520002EEEF /* QTUserManager.m in Sources */,
 				90B22EE822B62E0D00D5F93B /* QTLoginVC.m in Sources */,
 				43B7F9CC22B7622600863949 /* UIView+STEHUD.m in Sources */,
 				90B22EBA22B6180500D5F93B /* UIImage+Extension.m in Sources */,
