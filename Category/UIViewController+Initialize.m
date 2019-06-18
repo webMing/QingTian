@@ -28,8 +28,6 @@
     [btn addTarget:self action:@selector(backAction) forControlEvents:UIControlEventTouchUpInside];
     [btn setImageEdgeInsets:UIEdgeInsetsMake(0, -30, 0, 0)];
     self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:btn];
-    //恢复侧滑返回
-    self.navigationController.interactivePopGestureRecognizer.delegate =(id<UIGestureRecognizerDelegate>)self;
 }
 
 - (void)backAction {

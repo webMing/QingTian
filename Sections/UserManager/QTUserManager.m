@@ -62,7 +62,6 @@ static NSString*  const QTLastLoginUserKey = @"QTLastLoginUserKey";
     user.mobile = [userInfo objectForKey:@"mobile"];
     
     NSAssert(user.mobile.length != 0, @"User.mobile.lenth == 0");
-    
     [self.cache setObject:user forKey:user.mobile];
 }
 

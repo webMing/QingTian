@@ -13,9 +13,9 @@
 		43B7F9CC22B7622600863949 /* UIView+STEHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 43B7F9CB22B7622600863949 /* UIView+STEHUD.m */; };
 		43B7F9CF22B7677600863949 /* UIView+Xib.m in Sources */ = {isa = PBXBuildFile; fileRef = 43B7F9CE22B7677600863949 /* UIView+Xib.m */; };
 		43B7F9D222B7683700863949 /* UIViewController+Initialize.m in Sources */ = {isa = PBXBuildFile; fileRef = 43B7F9D122B7683700863949 /* UIViewController+Initialize.m */; };
-		43B7F9D822B76A0A00863949 /* NSObject+Dealloc.m in Sources */ = {isa = PBXBuildFile; fileRef = 43B7F9D722B76A0A00863949 /* NSObject+Dealloc.m */; };
 		43B7F9DB22B7828E00863949 /* QTDashLine.m in Sources */ = {isa = PBXBuildFile; fileRef = 43B7F9DA22B7828E00863949 /* QTDashLine.m */; };
 		43B7F9DE22B79A7300863949 /* UINavigationItem+Extention.m in Sources */ = {isa = PBXBuildFile; fileRef = 43B7F9DD22B79A7300863949 /* UINavigationItem+Extention.m */; };
+		900342BE22B92253008CCF76 /* NaviGestureDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 900342BD22B92253008CCF76 /* NaviGestureDelegate.m */; };
 		90B22E3922B6139D00D5F93B /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 90B22E3822B6139D00D5F93B /* AppDelegate.m */; };
 		90B22E4122B6139F00D5F93B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 90B22E4022B6139F00D5F93B /* Assets.xcassets */; };
 		90B22E4422B6139F00D5F93B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 90B22E4222B6139F00D5F93B /* LaunchScreen.storyboard */; };
@@ -84,8 +84,6 @@
 		43B7F9CE22B7677600863949 /* UIView+Xib.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIView+Xib.m"; sourceTree = "<group>"; };
 		43B7F9D022B7683700863949 /* UIViewController+Initialize.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIViewController+Initialize.h"; sourceTree = "<group>"; };
 		43B7F9D122B7683700863949 /* UIViewController+Initialize.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+Initialize.m"; sourceTree = "<group>"; };
-		43B7F9D622B76A0A00863949 /* NSObject+Dealloc.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSObject+Dealloc.h"; sourceTree = "<group>"; };
-		43B7F9D722B76A0A00863949 /* NSObject+Dealloc.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSObject+Dealloc.m"; sourceTree = "<group>"; };
 		43B7F9D922B7828E00863949 /* QTDashLine.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = QTDashLine.h; path = Category/QTDashLine.h; sourceTree = SOURCE_ROOT; };
 		43B7F9DA22B7828E00863949 /* QTDashLine.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = QTDashLine.m; path = Category/QTDashLine.m; sourceTree = SOURCE_ROOT; };
 		43B7F9DC22B79A7300863949 /* UINavigationItem+Extention.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UINavigationItem+Extention.h"; sourceTree = "<group>"; };
@@ -93,6 +91,8 @@
 		48F2418C791632E5255FC977 /* Pods-QingTian.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-QingTian.debug.xcconfig"; path = "Pods/Target Support Files/Pods-QingTian/Pods-QingTian.debug.xcconfig"; sourceTree = "<group>"; };
 		7CBB7C0FA88C12EC8F4EFB9D /* Pods-QingTianTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-QingTianTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-QingTianTests/Pods-QingTianTests.debug.xcconfig"; sourceTree = "<group>"; };
 		8DFEEFA0D4D82823C38C315D /* Pods-QingTian.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-QingTian.release.xcconfig"; path = "Pods/Target Support Files/Pods-QingTian/Pods-QingTian.release.xcconfig"; sourceTree = "<group>"; };
+		900342BC22B92253008CCF76 /* NaviGestureDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NaviGestureDelegate.h; sourceTree = "<group>"; };
+		900342BD22B92253008CCF76 /* NaviGestureDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NaviGestureDelegate.m; sourceTree = "<group>"; };
 		90B22E3422B6139D00D5F93B /* QingTian.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = QingTian.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		90B22E3722B6139D00D5F93B /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		90B22E3822B6139D00D5F93B /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -354,8 +354,6 @@
 				90B22E7822B6180100D5F93B /* UIViewController+CustomAlertView.m */,
 				43B7F9D022B7683700863949 /* UIViewController+Initialize.h */,
 				43B7F9D122B7683700863949 /* UIViewController+Initialize.m */,
-				43B7F9D622B76A0A00863949 /* NSObject+Dealloc.h */,
-				43B7F9D722B76A0A00863949 /* NSObject+Dealloc.m */,
 				43B7F9DC22B79A7300863949 /* UINavigationItem+Extention.h */,
 				43B7F9DD22B79A7300863949 /* UINavigationItem+Extention.m */,
 			);
@@ -371,6 +369,8 @@
 				90B22EC822B61CB800D5F93B /* QTTabBarVC.m */,
 				90B22ED822B6242700D5F93B /* QTNaviC.h */,
 				90B22ED922B6242800D5F93B /* QTNaviC.m */,
+				900342BC22B92253008CCF76 /* NaviGestureDelegate.h */,
+				900342BD22B92253008CCF76 /* NaviGestureDelegate.m */,
 			);
 			path = main;
 			sourceTree = "<group>";
@@ -663,9 +663,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				900342BE22B92253008CCF76 /* NaviGestureDelegate.m in Sources */,
 				90EC7DF122B636790002EEEF /* QTLoginTextField.m in Sources */,
 				90B22EE022B6263F00D5F93B /* Tool.m in Sources */,
-				43B7F9D822B76A0A00863949 /* NSObject+Dealloc.m in Sources */,
 				43B7F9CF22B7677600863949 /* UIView+Xib.m in Sources */,
 				90B22ED422B6207200D5F93B /* Macro.m in Sources */,
 				90B22EB222B6180500D5F93B /* UIImage+XMGExtension.m in Sources */,
@@ -866,7 +866,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = TE4FWMBS7N;
+				DEVELOPMENT_TEAM = J3Y5FLL6V8;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/AppConfigure/prefix.pch";
 				INFOPLIST_FILE = QingTian/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
@@ -886,7 +886,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = TE4FWMBS7N;
+				DEVELOPMENT_TEAM = J3Y5FLL6V8;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/AppConfigure/prefix.pch";
 				INFOPLIST_FILE = QingTian/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;

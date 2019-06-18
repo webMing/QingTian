@@ -15,12 +15,6 @@
 #pragma mark- SetUpView
 
 #pragma mark- EventRespone
-- (void)addLeftItem{
-//    UIButton* btn = [UIButton buttonWithType:UIButtonTypeCustom];
-//    [btn setImage:[UIImage imageNamed:@"back"] forState:UIControlStateNormal];
-//    [btn addTarget:target action: forControlEvents:UIControlEventTouchUpInside];
-//    self.leftBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:btn];
-}
 
 - (void)leftItemWithTarget:(id)target action:(SEL)action {
     UIButton* btn = [UIButton buttonWithType:UIButtonTypeCustom];
@@ -28,9 +22,7 @@
     [btn addTarget:target action:action forControlEvents:UIControlEventTouchUpInside];
     self.leftBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:btn];
 }
-- (void)se {
-    
-}
+
 #pragma mark- CustomDelegateMethod
 
 #pragma mark- DelegateMethod

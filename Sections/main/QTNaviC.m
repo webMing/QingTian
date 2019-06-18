@@ -8,8 +8,10 @@
 
 #import "QTNaviC.h"
 
-@interface QTNaviC ()
+#import "NaviGestureDelegate.h"
 
+@interface QTNaviC ()
+@property (nonatomic, strong) NaviGestureDelegate* gestureDelegate;
 @end
 
 @implementation QTNaviC
@@ -32,7 +34,10 @@
     
     [self.navigationBar setShadowImage:[[UIImage alloc] init]];
     [self.navigationBar setBackgroundImage:[[UIImage alloc] init] forBarMetrics:UIBarMetricsDefault];
-    
+   
+    self.gestureDelegate = [[NaviGestureDelegate alloc]init];
+    self.gestureDelegate.navi = self;
+    self.interactivePopGestureRecognizer.delegate = self.gestureDelegate;
 }
 
 - (void)addCustomViews {
