@@ -12,7 +12,7 @@ static NSString*  const QTUserKeyChainServerName = @"QTUserKeyChainServerName";
 static NSString*  const QTLastLoginUserKey = @"QTLastLoginUserKey";
 
 @interface QTUserManager()
-
+@property (nonatomic, strong) YYCache* cache;
 @end
 
 @implementation QTUserManager
@@ -31,11 +31,11 @@ static NSString*  const QTLastLoginUserKey = @"QTLastLoginUserKey";
 
 #pragma mark- EventRespone
 
-+ (void)ReadDiskUserInfo {
++ (void)readDiskUserInfo {
     
 }
 
-+ (BOOL)ClearUserInfo {
++ (BOOL)clearUserInfo {
     return NO;
 }
 
@@ -56,8 +56,14 @@ static NSString*  const QTLastLoginUserKey = @"QTLastLoginUserKey";
 }
 
 - (void)saveUser:(NSDictionary*)userInfo {
+    
     QTUser* user = [[QTUser alloc]init];
-//    user.userID =
+    user.userID = [userInfo objectForKey:@"userID"];
+    user.name =  [userInfo objectForKey:@"name"];
+    user.mobile = [userInfo objectForKey:@"mobile"];
+    
+    NSAssert(user.mobile.length != 0, @"User.mobile.lenth == 0");
+    [self.cache setObject:user forKey:user.mobile];
 }
 
 - (void)saveUserHeaderImage:(UIImage*)image {
@@ -75,7 +81,12 @@ static NSString*  const QTLastLoginUserKey = @"QTLastLoginUserKey";
 #pragma mark- GetterAndSetter
 
 #pragma mark- PrivateMethod
-
+- (YYCache *)cache{
+    if (!_cache) {
+        _cache = [YYCache cacheWithName:@"QTUSER"];
+    }
+    return _cache;
+}
 @end 
 
 
@@ -88,7 +99,29 @@ static NSString*  const QTLastLoginUserKey = @"QTLastLoginUserKey";
 #pragma mark- SetUpView
 
 #pragma mark- EventRespone
+- (void)encodeWithCoder:(NSCoder *)aCoder {
+    
+    [aCoder encodeObject:self.name forKey:@"name"];
+    [aCoder encodeObject:self.unionID forKey:@"userID"];
+    [aCoder encodeObject:self.unionID forKey:@"unionID"];
+    [aCoder encodeObject:self.email forKey:@"email"];
+    [aCoder encodeObject:self.mobile forKey:@"mobile"];
+    [aCoder encodeObject:self.sessionID forKey:@"sessionID"];
+    [aCoder encodeObject:self.headURL forKey:@"headURL"];
+    
+}
 
+- (nullable instancetype)initWithCoder:(NSCoder *)aDecoder {
+    QTUser* user = [[QTUser alloc]init];
+    user.name = [aDecoder decodeObjectForKey:@"name"];
+    user.userID = [aDecoder decodeObjectForKey:@"userID"];
+    user.unionID = [aDecoder decodeObjectForKey:@"unionID"];
+    user.email = [aDecoder decodeObjectForKey:@"email"];
+    user.mobile = [aDecoder decodeObjectForKey:@"mobile"];
+    user.sessionID = [aDecoder decodeObjectForKey:@"sessionID"];
+    user.headURL = [aDecoder decodeObjectForKey:@"headURL"];
+    return user;
+}
 #pragma mark- CustomDelegateMethod
 
 #pragma mark- DelegateMethod

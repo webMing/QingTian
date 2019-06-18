@@ -135,7 +135,7 @@ static NSInteger const kCountdown = 60;
         return;
     }
     if (!self.isAcceptServiceTerms) {
-        [self.view showHUDWithTitle:@"我是小晴天" dismissAfter:1.5];
+        [self.view showHUDWithTitle:@"选中我是小晴天哦, 嘻嘻" dismissAfter:1.5];
         return;
     }
     if (self.useType == UseAsPasswordRetake) {

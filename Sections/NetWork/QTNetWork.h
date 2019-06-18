@@ -12,15 +12,13 @@ typedef void(^NetRequestProssBlock)(NSProgress * _Nonnull progress);
 typedef void(^NetRequestSuccBlock)(NSURLSessionDataTask * _Nonnull task, id _Nonnull responseObject);
 typedef void(^NetRequestFailtBlock)(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error);
 
-NS_ASSUME_NONNULL_BEGIN
 
 @interface QTNetWork : NSObject
 
-+ (void)postRequest:(NSDictionary *)para ssBlock:(NetRequestSuccBlock)ssBlock ftBlock:(NetRequestFailtBlock)ftBlock;
-+ (void)getRequest:(NSDictionary *)para ssBlock:(NetRequestSuccBlock)ssBlock ftBlock:(NetRequestFailtBlock)ftBlock;
++ (void)postRequest:(NSDictionary *)para ssBlock:(NetRequestSuccBlock _Nullable)ssBlock ftBlock:(NetRequestFailtBlock _Nullable)ftBlock;
++ (void)getRequest:(NSDictionary *)para ssBlock:(NetRequestSuccBlock _Nullable)ssBlock ftBlock:(NetRequestFailtBlock _Nullable)ftBlock;
 
-+ (void)postRequest:(NSDictionary *)para ps:(NetRequestProssBlock)ps ssBlock:(NetRequestSuccBlock)ssBlock ftBlock:(NetRequestFailtBlock)ftBlock;
-+ (void)getRequest:(NSDictionary *)para ps:(NetRequestProssBlock)ps ssBlock:(NetRequestSuccBlock)ssBlock ftBlock:(NetRequestFailtBlock)ftBlock;
++ (void)postRequest:(NSDictionary *)para ps:(NetRequestProssBlock _Nullable)ps ssBlock:(NetRequestSuccBlock _Nullable)ssBlock ftBlock:(NetRequestFailtBlock _Nullable)ftBlock;
++ (void)getRequest:(NSDictionary *)para ps:(NetRequestProssBlock _Nullable)ps ssBlock:(NetRequestSuccBlock _Nullable)ssBlock ftBlock:(NetRequestFailtBlock _Nullable)ftBlock;
+
 @end
-
-NS_ASSUME_NONNULL_END

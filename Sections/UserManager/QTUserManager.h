@@ -18,9 +18,9 @@ NS_ASSUME_NONNULL_BEGIN
 
 + (instancetype)Manager;
 
-+ (void)ReadDiskUserInfo;
++ (void)readDiskUserInfo;
 
-+ (BOOL)ClearUserInfo;
++ (BOOL)clearUserInfo;
 
 + (BOOL)saveUserInfo:(NSString* )counter passwd:(NSString*)pwd;
 
@@ -33,12 +33,14 @@ NS_ASSUME_NONNULL_BEGIN
 @end
 
 
-@interface QTUser: NSObject
+@interface QTUser: NSObject<NSCoding>
+
 @property (nonatomic, copy)    NSString*  mobile; //手机
 @property (nonatomic, copy)    NSString*  name;  //"昵称 名字
 @property (nonatomic, copy)    NSString*  passwd; //密码
 @property (nonatomic, copy)    NSString*  email; //邮件
 @property (nonatomic, copy)    NSString*  userID; //userID
+@property (nonatomic, copy)    NSString*  unionID;
 @property (nonatomic, copy)    NSString*  headURL;
 
 @property (nonatomic, copy)    NSString*  sessionID;

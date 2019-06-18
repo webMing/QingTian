@@ -13,15 +13,15 @@ static CGFloat const kNetworkRequestTimeoutInterval = 10.0f;
 
 @implementation QTNetWork
 
-+ (void)postRequest:(NSDictionary *)para ssBlock:(NetRequestSuccBlock )ssBlock ftBlock:(NetRequestFailtBlock)ftBlock {
-    [self postRequest:para ps:^(NSProgress *ss){} ssBlock:ssBlock ftBlock:ftBlock];
++ (void)postRequest:(NSDictionary *)para ssBlock:(NetRequestSuccBlock _Nullable)ssBlock ftBlock:(NetRequestFailtBlock _Nullable)ftBlock {
+    [self postRequest:para ps:nil ssBlock:ssBlock ftBlock:ftBlock];
 }
 
-+ (void)getRequest:(NSDictionary *)para ssBlock:(NetRequestSuccBlock)ssBlock ftBlock:(NetRequestFailtBlock)ftBlock {
-    [self getRequest:para ps:^(NSProgress *ss){} ssBlock:ssBlock ftBlock:ftBlock];
++ (void)getRequest:(NSDictionary *)para ssBlock:(NetRequestSuccBlock _Nullable)ssBlock ftBlock:(NetRequestFailtBlock _Nullable)ftBlock {
+    [self getRequest:para ps:nil ssBlock:ssBlock ftBlock:ftBlock];
 }
 
-+ (void)postRequest:(NSDictionary *)para ps:(NetRequestProssBlock)ps ssBlock:(NetRequestSuccBlock)ssBlock ftBlock:(NetRequestFailtBlock)ftBlock {
++ (void)postRequest:(NSDictionary *)para ps:(NetRequestProssBlock _Nullable)ps ssBlock:(NetRequestSuccBlock _Nullable)ssBlock ftBlock:(NetRequestFailtBlock _Nullable)ftBlock {
     AFHTTPSessionManager* manager = [AFHTTPSessionManager manager];
     manager.requestSerializer.timeoutInterval = kNetworkRequestTimeoutInterval;
     manager.responseSerializer =[AFJSONResponseSerializer serializer];
@@ -35,18 +35,18 @@ static CGFloat const kNetworkRequestTimeoutInterval = 10.0f;
         if(ftBlock)ftBlock(task,error); // ??
     }];
 }
-+ (void)getRequest:(NSDictionary *)para ps:(NetRequestProssBlock)ps ssBlock:(NetRequestSuccBlock)ssBlock ftBlock:(NetRequestFailtBlock)ftBlock {
++ (void)getRequest:(NSDictionary *)para ps:(NetRequestProssBlock _Nullable)ps ssBlock:(NetRequestSuccBlock _Nullable)ssBlock ftBlock:(NetRequestFailtBlock _Nullable)ftBlock {
     AFHTTPSessionManager* manager = [AFHTTPSessionManager manager];
     manager.requestSerializer.timeoutInterval = kNetworkRequestTimeoutInterval;
     manager.responseSerializer =[AFJSONResponseSerializer serializer];
     manager.requestSerializer=[AFJSONRequestSerializer serializer];
     manager.responseSerializer.acceptableContentTypes = [NSSet setWithObjects:@"application/json", @"text/json", @"text/javascript", @"text/html",nil];
     [manager GET:BASEURL parameters:para progress:^(NSProgress * _Nonnull downloadProgress) {
-        ps(downloadProgress);
+        if(ps)ps(downloadProgress);
     } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
-        ssBlock(task,responseObject);
+        if(ssBlock)ssBlock(task,responseObject);
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
-        ftBlock(task,error);
+        if(ftBlock)ftBlock(task,error);
     }];
 }
 
