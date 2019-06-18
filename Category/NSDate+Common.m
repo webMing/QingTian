@@ -19,7 +19,6 @@
     return key;
 }
 
-
 //传入的时间戳是 北京时间的时间戳.
 + (NSString* )getStart:(NSString*)startTime AndEndTime:(NSString*)endTime{
     

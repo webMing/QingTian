@@ -24,7 +24,6 @@
 		90B22E5C22B6139F00D5F93B /* QingTianUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 90B22E5B22B6139F00D5F93B /* QingTianUITests.m */; };
 		90B22EA522B6180500D5F93B /* UIView+TKCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 90B22E7022B6180100D5F93B /* UIView+TKCategory.m */; };
 		90B22EA922B6180500D5F93B /* UIViewController+CustomAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = 90B22E7822B6180100D5F93B /* UIViewController+CustomAlertView.m */; };
-		90B22EAC22B6180500D5F93B /* NSTimer+invoke.m in Sources */ = {isa = PBXBuildFile; fileRef = 90B22E8222B6180200D5F93B /* NSTimer+invoke.m */; };
 		90B22EAD22B6180500D5F93B /* UIImageView+XMGExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 90B22E8322B6180200D5F93B /* UIImageView+XMGExtension.m */; };
 		90B22EAE22B6180500D5F93B /* UIColor+Addition.m in Sources */ = {isa = PBXBuildFile; fileRef = 90B22E8622B6180200D5F93B /* UIColor+Addition.m */; };
 		90B22EB022B6180500D5F93B /* NSDictionary+AvoidNil.m in Sources */ = {isa = PBXBuildFile; fileRef = 90B22E8922B6180200D5F93B /* NSDictionary+AvoidNil.m */; };
@@ -113,7 +112,6 @@
 		90B22E7922B6180100D5F93B /* NSDate+Common.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+Common.h"; sourceTree = "<group>"; };
 		90B22E7C22B6180100D5F93B /* NSDate+Utilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+Utilities.h"; sourceTree = "<group>"; };
 		90B22E7F22B6180100D5F93B /* NSDateUtilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSDateUtilities.h; sourceTree = "<group>"; };
-		90B22E8222B6180200D5F93B /* NSTimer+invoke.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSTimer+invoke.m"; sourceTree = "<group>"; };
 		90B22E8322B6180200D5F93B /* UIImageView+XMGExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+XMGExtension.m"; sourceTree = "<group>"; };
 		90B22E8422B6180200D5F93B /* UIView+TKCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+TKCategory.h"; sourceTree = "<group>"; };
 		90B22E8522B6180200D5F93B /* NSArray+AvoidNil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+AvoidNil.h"; sourceTree = "<group>"; };
@@ -130,7 +128,6 @@
 		90B22E9922B6180400D5F93B /* UIImage+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Extension.m"; sourceTree = "<group>"; };
 		90B22E9C22B6180400D5F93B /* UIImage+XMGExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+XMGExtension.h"; sourceTree = "<group>"; };
 		90B22E9D22B6180400D5F93B /* NSCalendar+XMGExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSCalendar+XMGExtension.m"; sourceTree = "<group>"; };
-		90B22E9E22B6180400D5F93B /* NSTimer+invoke.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSTimer+invoke.h"; sourceTree = "<group>"; };
 		90B22EA122B6180500D5F93B /* UIImage+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Extension.h"; sourceTree = "<group>"; };
 		90B22EA422B6180500D5F93B /* UIColor+Addition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+Addition.h"; sourceTree = "<group>"; };
 		90B22EC022B61B8100D5F93B /* AppDelegate+Service.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "AppDelegate+Service.h"; sourceTree = "<group>"; };
@@ -341,8 +338,6 @@
 				90EC7DFC22B669750002EEEF /* NSString+Common.m */,
 				90EC7DFE22B669750002EEEF /* NSString+Helper.h */,
 				90EC7DFD22B669750002EEEF /* NSString+Helper.m */,
-				90B22E9E22B6180400D5F93B /* NSTimer+invoke.h */,
-				90B22E8222B6180200D5F93B /* NSTimer+invoke.m */,
 				90B22EA422B6180500D5F93B /* UIColor+Addition.h */,
 				90B22E8622B6180200D5F93B /* UIColor+Addition.m */,
 				90B22EA122B6180500D5F93B /* UIImage+Extension.h */,
@@ -674,7 +669,6 @@
 				43B7F9CF22B7677600863949 /* UIView+Xib.m in Sources */,
 				90B22ED422B6207200D5F93B /* Macro.m in Sources */,
 				90B22EB222B6180500D5F93B /* UIImage+XMGExtension.m in Sources */,
-				90B22EAC22B6180500D5F93B /* NSTimer+invoke.m in Sources */,
 				90B22EDE22B625A000D5F93B /* QTMEVC.m in Sources */,
 				90EC7E0122B669760002EEEF /* NSString+Helper.m in Sources */,
 				90EC7E0522B671520002EEEF /* QTUserManager.m in Sources */,

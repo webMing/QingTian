@@ -12,7 +12,7 @@ static NSString*  const QTUserKeyChainServerName = @"QTUserKeyChainServerName";
 static NSString*  const QTLastLoginUserKey = @"QTLastLoginUserKey";
 
 @interface QTUserManager()
-@property (nonatomic, strong) YYCache* cache;
+@property (nonatomic, strong) YYDiskCache* cache;
 @end
 
 @implementation QTUserManager
@@ -32,7 +32,6 @@ static NSString*  const QTLastLoginUserKey = @"QTLastLoginUserKey";
 #pragma mark- EventRespone
 
 + (void)readDiskUserInfo {
-    
 }
 
 + (BOOL)clearUserInfo {
@@ -63,6 +62,7 @@ static NSString*  const QTLastLoginUserKey = @"QTLastLoginUserKey";
     user.mobile = [userInfo objectForKey:@"mobile"];
     
     NSAssert(user.mobile.length != 0, @"User.mobile.lenth == 0");
+    
     [self.cache setObject:user forKey:user.mobile];
 }
 
