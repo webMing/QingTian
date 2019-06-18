@@ -13,12 +13,12 @@ static CGFloat const kNetworkRequestTimeoutInterval = 10.0f;
 
 @implementation QTNetWork
 
-+ (void)postRequest:(NSDictionary *)para ssBlock:(NetRequestSuccBlock)ssBlock ftBlock:(NetRequestFailtBlock)ftBlock {
-    [self postRequest:para ssBlock:ssBlock ftBlock:ftBlock];
++ (void)postRequest:(NSDictionary *)para ssBlock:(NetRequestSuccBlock )ssBlock ftBlock:(NetRequestFailtBlock)ftBlock {
+    [self postRequest:para ps:^(NSProgress *ss){} ssBlock:ssBlock ftBlock:ftBlock];
 }
 
 + (void)getRequest:(NSDictionary *)para ssBlock:(NetRequestSuccBlock)ssBlock ftBlock:(NetRequestFailtBlock)ftBlock {
-    [self getRequest:para ssBlock:ssBlock ftBlock:ftBlock];
+    [self getRequest:para ps:^(NSProgress *ss){} ssBlock:ssBlock ftBlock:ftBlock];
 }
 
 + (void)postRequest:(NSDictionary *)para ps:(NetRequestProssBlock)ps ssBlock:(NetRequestSuccBlock)ssBlock ftBlock:(NetRequestFailtBlock)ftBlock {
@@ -28,11 +28,11 @@ static CGFloat const kNetworkRequestTimeoutInterval = 10.0f;
     manager.requestSerializer=[AFJSONRequestSerializer serializer];
     manager.responseSerializer.acceptableContentTypes = [NSSet setWithObjects:@"application/json", @"text/json", @"text/javascript", @"text/html",nil];
     [manager POST:BASEURL parameters:para progress:^(NSProgress * _Nonnull uploadProgress) {
-        ps(uploadProgress);
+        if(ps)ps(uploadProgress);// ??
     } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
-        ssBlock(task,responseObject);
+        if(ssBlock)ssBlock(task,responseObject); // ??
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
-        ftBlock(task,error);
+        if(ftBlock)ftBlock(task,error); // ??
     }];
 }
 + (void)getRequest:(NSDictionary *)para ps:(NetRequestProssBlock)ps ssBlock:(NetRequestSuccBlock)ssBlock ftBlock:(NetRequestFailtBlock)ftBlock {

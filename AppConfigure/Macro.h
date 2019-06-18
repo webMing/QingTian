@@ -45,4 +45,6 @@
      #define BASEURL  @"http:localhost"
 #endif
 
+//#define BASEURL @"http://192.168.0.236"
+
 #endif /* Macro_h */

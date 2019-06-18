@@ -13,6 +13,7 @@ typedef void(^DidBeginEditingBlock)(UITextField* textFiled);
 typedef void(^DidEndEditingBlock)(UITextField* textFiled, NSString*  message,BOOL isVerytifySuccess);
 typedef void(^TextDidChangeBlock)(UITextField* textFiled, NSString*  message);
 
+
 typedef NS_ENUM(NSUInteger, CheckMode) {
     
     CheckVerificationCodeMode = 1,
@@ -37,5 +38,7 @@ typedef NS_ENUM(NSUInteger, CheckMode) {
 - (instancetype)initWithBeginEditingBlock:(DidBeginEditingBlock) beginEditingBlock
                         textDidChangeBlock:(TextDidChangeBlock)   textDidChangeBlock
                             endEditingBlock:(DidEndEditingBlock)   endEdtingBlock;
+
+- (NSString *)checkTF:(UITextField*)tf;
 
 @end

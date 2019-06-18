@@ -12,13 +12,17 @@
 #import "NSString+Helper.h"
 #import "QTNetWork.h"
 
-static NSInteger const kCountdown = 10;
+static NSInteger const kCountdown = 60;
 
 @interface QTRegisterVC ()
 
 @property (weak, nonatomic) IBOutlet UITextField *phoneTF;
 @property (weak, nonatomic) IBOutlet UITextField *paswdTF;
 @property (weak, nonatomic) IBOutlet UITextField *identifyTF;
+
+@property (strong, nonatomic) QTTextFieldDelegate*  phoneDelegate;
+@property (strong, nonatomic) QTTextFieldDelegate*  passwdDelegate;
+@property (strong, nonatomic) QTTextFieldDelegate*  identifyDelegate;
 
 @property (weak, nonatomic) IBOutlet UILabel *countDownLB;
 @property (weak, nonatomic) IBOutlet UIButton *confirmBTN;
@@ -68,6 +72,7 @@ static NSInteger const kCountdown = 10;
     }];
     phoneDelegate.checkMode = CheckPhoneNumberCodeMode;
     self.phoneTF.delegate = phoneDelegate;
+    self.phoneDelegate = phoneDelegate;
 
     QTTextFieldDelegate* identifyDelegate = [[QTTextFieldDelegate alloc]initWithBeginEditingBlock:^(UITextField *textFiled) {
 
@@ -85,6 +90,7 @@ static NSInteger const kCountdown = 10;
     identifyDelegate.verityCodeLentch = 6;
     identifyDelegate.checkMode = CheckVerificationCodeMode;
     self.identifyTF.delegate = identifyDelegate;
+    self.identifyDelegate = identifyDelegate;
   
    QTTextFieldDelegate* passwdDelegate = [[QTTextFieldDelegate alloc]initWithBeginEditingBlock:^(UITextField *textFiled) {
         
@@ -101,6 +107,7 @@ static NSInteger const kCountdown = 10;
     }];
     passwdDelegate.checkMode = CheckPasswordMode;
     self.paswdTF.delegate = passwdDelegate;
+    self.passwdDelegate = passwdDelegate;
 
 }
 
@@ -111,34 +118,35 @@ static NSInteger const kCountdown = 10;
 
 //注册或者找回密码
 - (IBAction)confirm:(id)sender {
-    if (self.phoneTF.text.length != 11) {
-        [self.view showHUDWithTitle:@"手机号位数不对" dismissAfter:1.5];
+    
+    NSString *message =[self.phoneDelegate checkTF:self.phoneTF];
+    if (message) {
+        [self.view showHUDWithTitle:message dismissAfter:1.5];
         return;
     }
-    if (![NSString isMobileNumber:self.phoneTF.text]) {
-        [self.view showHUDWithTitle:@"手机号码无效" dismissAfter:1.5];
+    message = [self.identifyDelegate checkTF:self.identifyTF];
+    if (message) {
+        [self.view showHUDWithTitle:message dismissAfter:1.5];
         return;
     }
-    if (self.identifyTF.text.length < 4) {
-        [self.view showHUDWithTitle:@"验证码位数不对" dismissAfter:1.5];
-        return;
-    }
-    if (self.paswdTF.text.length < 6 ||self.paswdTF.text.length >16 ) {
-        [self.view showHUDWithTitle:@"密码位数不对" dismissAfter:1.5];
+    message = [self.passwdDelegate checkTF:self.paswdTF];
+    if (message) {
+        [self.view showHUDWithTitle:message dismissAfter:1.5];
         return;
     }
     if (!self.isAcceptServiceTerms) {
         [self.view showHUDWithTitle:@"我是小晴天" dismissAfter:1.5];
         return;
     }
-    
     if (self.useType == UseAsPasswordRetake) {
         [self resetingPasswd];
     }else if (self.useType == UseAsRegisterCounter){
         [self registerCounter];
     }
+
 }
 
+// 注册新用户
 - (void)registerCounter{
     
     [self.view showHUDWithTitle:@"注册中" dismissAfter:0];
@@ -166,6 +174,7 @@ static NSInteger const kCountdown = 10;
     }];
 }
 
+// 重置密码
 - (void)resetingPasswd{
     
     NSDictionary* dict = @{
@@ -227,7 +236,6 @@ static NSInteger const kCountdown = 10;
     [NSTimer scheduledTimerWithTimeInterval:1.0 block:^(NSTimer * _Nonnull timer) {
         @strongify(self)
         self.countDownNum--;
-        self.countDownLB.text = [NSString stringWithFormat:@"%ld",(long)self.countDownNum];
         if (self.countDownNum == 0)
         {
             [timer  invalidate];
@@ -236,21 +244,18 @@ static NSInteger const kCountdown = 10;
             self.countDownLB.superview.hidden = YES;
             sender.hidden = NO;
         }
+         self.countDownLB.text = [NSString stringWithFormat:@"%ld",(long)self.countDownNum];
     } repeats:YES];
     
-
 }
 
-
-
+//
 -(void)identifyCode{
     
     NSString* operType = @"other";
-    
     if (self.useType == UseAsPasswordRetake) {
         // 忘记密码
         operType = @"findPass";
-        
     }else if(self.useType == UseAsRegisterCounter){
         // 注册
         operType = @"register";
@@ -280,7 +285,7 @@ static NSInteger const kCountdown = 10;
 //            
 //            //保存
 //          
-//            
+//
 //        }
 //        
 //        
@@ -289,12 +294,11 @@ static NSInteger const kCountdown = 10;
 //        
 //    }];
     
-    
-    
 }
 
 - (IBAction)chooseServiceItems:(id)sender {
     self.isAcceptServiceTerms = !self.isAcceptServiceTerms;
+    self.servierItemsIV.highlighted = self.isAcceptServiceTerms;
 }
 
 #pragma mark- CustomDelegateMethod
@@ -306,6 +310,5 @@ static NSInteger const kCountdown = 10;
 #pragma mark- PrivateMethod
 
 DellocCheck
-
 
 @end

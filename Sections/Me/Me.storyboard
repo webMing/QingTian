@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -446,6 +446,9 @@
                                                         <constraints>
                                                             <constraint firstAttribute="width" constant="99" id="Nwo-1W-xas"/>
                                                         </constraints>
+                                                        <connections>
+                                                            <action selector="chooseServiceItems:" destination="7kr-fY-hoe" eventType="touchUpInside" id="3c6-76-Mzf"/>
+                                                        </connections>
                                                     </button>
                                                 </subviews>
                                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
@@ -504,6 +507,7 @@
                         <outlet property="identifyTF" destination="A5D-H0-hvF" id="wVn-mJ-MQJ"/>
                         <outlet property="paswdTF" destination="C4X-Px-hkm" id="C3N-G0-UMs"/>
                         <outlet property="phoneTF" destination="wbp-NC-Shv" id="BhK-1S-osy"/>
+                        <outlet property="servierItemsIV" destination="D76-cY-lv5" id="4Po-ae-Hru"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Xg4-4e-Bfg" userLabel="First Responder" sceneMemberID="firstResponder"/>

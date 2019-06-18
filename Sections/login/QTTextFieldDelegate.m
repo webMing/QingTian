@@ -149,6 +149,7 @@
 }
 
 - (void)textFieldDidEndEditing:(UITextField *)textField{
+    
     if (self.checkMode == CheckVerificationCodeMode)
     {
         /*检测验证码*/
@@ -212,6 +213,63 @@
     self.currentInputSting = string;
     return YES;
 }
+
+- (NSString *)checkTF:(UITextField *)tf {
+    if (self.checkMode == CheckVerificationCodeMode)
+    {
+        /*检测验证码*/
+        if (tf.text.length  < self.verityCodeLentch)
+        {
+            return @"验证码长度不够";
+        }
+        return nil;
+    }
+    
+    if(self.checkMode == CheckPhoneNumberCodeMode)
+    {
+        /*检测手机号*/
+        if (tf.text.length != 11) {
+            return @"手机位数不对";
+        }
+        return nil;
+    }
+    
+    if (self.checkMode == CheckIdentifyCardMode) {
+        if (![tf.text validateIdentityCard]) {
+            return @"身份证号输入有误";
+        }
+        return nil;
+    }
+    
+    if (self.checkMode == CheckPasswordMode)
+    {
+        /*检测密码 --是否需要移除其中的空格*/
+        /*比如说是 数字 字母 标点符号的组合*/
+        if (tf.text.length < 6 || tf.text.length > 16) {
+            return @"请输入6~16位密码";
+        }
+        return nil;
+    }
+    
+    if (self.checkMode == CheckAccountMode)
+    {
+        /*检测账号*/
+        /*不如说是 数字 字母  组合*/
+    }
+    if (self.checkMode == OtherMode) {
+        /*other mode */
+    }
+    if (self.checkMode == CheckCommand) {
+        /*检测口令 */
+        if (tf.text.length != self.verityCodeLentch) {
+            return @"口令不对";
+        }
+        return nil;
+    }
+    
+    return nil;
+}
+
 - (void)dealloc{
     [[NSNotificationCenter defaultCenter]removeObserver:self];
 }
