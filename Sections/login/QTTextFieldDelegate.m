@@ -17,7 +17,6 @@
 @property (nonatomic,  copy) DidEndEditingBlock    endEditingBlock;
 
 @property (nonatomic,  strong) UITextField*  tempTextField;
-
 @property (nonatomic,  copy) NSString*  currentInputSting;
 
 @end
@@ -30,40 +29,27 @@
                        textDidChangeBlock:(TextDidChangeBlock)   textDidChangeBlock
                           endEditingBlock:(DidEndEditingBlock)   endEdtingBlock;
 {
-    
     self = [super init];
-    
     if (self) {
-    
         self.beginEditingBlock    = beginEditingBlock;
         self.textDidChangeBlock    = textDidChangeBlock;
         self.endEditingBlock      = endEdtingBlock;
-       
         [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(textFieldDidChangeResponseMethod:) name:UITextFieldTextDidChangeNotification object:nil];
-        
-    }else{
-        return nil;
     }
     return self;
 }
 
-
 #pragma mark --NotificationResponseMethod
-
 - (void)textFieldDidChangeResponseMethod:(NSNotification*) notification{
-   
     UITextField* textField = notification.object;
-    
     /*防止通知多发*/
     if (self.tempTextField != textField) {
         return;
     }
-    
     /*防止删除的时候的情况*/
     if ([textField.text isEqualToString:@""]) {
         return;
     }
-    
     if (self.checkMode == CheckVerificationCodeMode)
     {
         /*检测验证码*/
@@ -74,7 +60,6 @@
             textField.text = [textField.text substringWithRange:NSMakeRange(0, length)];
             return;
         }
-        
         /*超过了验证码的长度*/
         if (textField.text.length > self.verityCodeLentch)
         {
@@ -82,24 +67,19 @@
             self.textDidChangeBlock(textField,[NSString stringWithFormat:@"验证码为%lu位数字",(unsigned long)self.verityCodeLentch]);
             return;
         }
-        
         self.textDidChangeBlock(textField,nil);
-        
     }
-    
-    
+
     if(self.checkMode == CheckPhoneNumberCodeMode)
     {
         /*检测手机号*/
         if (![textField.text isPureInteger] )
         {
-            
             NSUInteger length = textField.text.length - self.currentInputSting.length;
             textField.text = [textField.text substringWithRange:NSMakeRange(0, length)];
             self.textDidChangeBlock(textField,@"手机号只能是数字");
             return;
         }
-        
        if(textField.text.length > 11){
              textField.text = [textField.text substringWithRange:NSMakeRange(0,11)];
              self.textDidChangeBlock(textField,@"手机号为11位数字");/*截取了字符串*/
@@ -117,14 +97,12 @@
             self.textDidChangeBlock(textField,@"身份证号输入有误");
         }
         self.textDidChangeBlock(textField,nil);
-        
     }
     
     if (self.checkMode == CheckPasswordMode)
     {
         /*检测密码*/
         /*比如说是 数字 字母 标点符号的组合 */
-        
     }
     
     if (self.checkMode == CheckAccountMode)
@@ -143,14 +121,12 @@
             textField.text = [textField.text substringWithRange:NSMakeRange(0, length)];
             return;
         }
-        
         /*超过口令长度*/
         if (textField.text.length > self.verityCodeLentch)
         {
             textField.text = [textField.text substringWithRange:NSMakeRange(0,self.verityCodeLentch)];
             self.textDidChangeBlock(textField,[NSString stringWithFormat:@"口令为%lu位数字",(unsigned long)self.verityCodeLentch]);
             return;
-            
         }
         self.textDidChangeBlock(textField,nil);
 
@@ -163,11 +139,9 @@
     return YES;
 }
 - (void)textFieldDidBeginEditing:(UITextField *)textField{
-    
     if (self.beginEditingBlock) {
         self.beginEditingBlock(textField);
     }
-    
 }
 
 - (BOOL)textFieldShouldEndEditing:(UITextField *)textField{
@@ -175,7 +149,6 @@
 }
 
 - (void)textFieldDidEndEditing:(UITextField *)textField{
-    
     if (self.checkMode == CheckVerificationCodeMode)
     {
         /*检测验证码*/
@@ -186,9 +159,7 @@
         {
             self.endEditingBlock(textField,@"验证码输入正确",YES);
         }
-
     }
-    
     if(self.checkMode == CheckPhoneNumberCodeMode)
     {
         /*检测手机号*/
@@ -202,12 +173,10 @@
     
     /*身份证号*/
     if (self.checkMode == CheckIdentifyCardMode) {
-        
         if (![textField.text validateIdentityCard]) {
             self.endEditingBlock(textField,@"身份证号输入有误", NO);
         }
     }
-
     if (self.checkMode == CheckPasswordMode)
     {
         /*检测密码 --是否需要移除其中的空格*/
@@ -217,7 +186,6 @@
         }else{
              self.endEditingBlock(textField,nil,YES);
         }
-       
     }
         
     if (self.checkMode == CheckAccountMode)
@@ -225,7 +193,6 @@
         /*检测账号*/
         /*不如说是 数字 字母  组合*/
     }
-    
     if (self.checkMode == OtherMode) {
         /*other mode */
         self.endEditingBlock(textField,nil,YES);

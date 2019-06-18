@@ -83,5 +83,18 @@ static NSString*  const QTLastLoginUserKey = @"QTLastLoginUserKey";
 
 @implementation QTUser
 
+#pragma mark- LifeCicle
 
+#pragma mark- SetUpView
+
+#pragma mark- EventRespone
+
+#pragma mark- CustomDelegateMethod
+
+#pragma mark- DelegateMethod
+
+#pragma mark- GetterAndSetter
+
+#pragma mark- PrivateMethod
+DellocCheck
 @end
