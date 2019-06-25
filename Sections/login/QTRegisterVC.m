@@ -177,6 +177,7 @@ static NSInteger const kCountdown = 60;
 // 重置密码
 - (void)resetingPasswd{
     
+    [self.tabBarController.tabBar ];
     NSDictionary* dict = @{
                            @"phone_no":self.phoneTF.text,
                            //@"valicode":self.identifyTF.text,

@@ -15,9 +15,11 @@ inline void SteCallPhone(NSString* phoneNumber){
         if ([[UIApplication sharedApplication] respondsToSelector:@selector(openURL:completionHandler:)]) {
             [[UIApplication sharedApplication] openURL:[NSURL URLWithString:phoneNumberString] options:@{} completionHandler:nil];
         }else{
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wdeprecated-declarations"
             [[UIApplication sharedApplication] openURL:[NSURL URLWithString:phoneNumberString]];
+#pragma clang diagnostic pop
         }
-        
     });
     
 }

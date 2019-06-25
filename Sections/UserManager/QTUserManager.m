@@ -66,7 +66,7 @@ static NSString*  const QTLastLoginUserKey = @"QTLastLoginUserKey";
 }
 
 - (void)saveUserHeaderImage:(UIImage*)image {
-    
+    YYMemoryCache
 }
 
 - (UIImage*)userHeaderImage {
@@ -80,9 +80,9 @@ static NSString*  const QTLastLoginUserKey = @"QTLastLoginUserKey";
 #pragma mark- GetterAndSetter
 
 #pragma mark- PrivateMethod
-- (YYCache *)cache{
+- (YYDiskCache *)cache{
     if (!_cache) {
-        _cache = [YYCache cacheWithName:@"QTUSER"];
+        //_cache = [YYDiskCache cacheWithName:@"QTUSER"];
     }
     return _cache;
 }
