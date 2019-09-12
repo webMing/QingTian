@@ -158,7 +158,7 @@ static NSInteger const kCountdown = 60;
                                  @"col3":@"ios",
                                  //@"col2":self.identifyTF.text, //验证码
                                  };
-    [QTNetWork postRequest:memberDict ssBlock:^(NSURLSessionDataTask * _Nonnull task, id  _Nonnull responseObject) {
+    [QTNetWork postRequest:memberDict url:@"" ssBlock:^(NSURLSessionDataTask * _Nonnull task, id  _Nonnull responseObject) {
         [self.view showHUDWithTitle:@"注册成功" dismissAfter:1.5];
         dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
             // 登录
@@ -177,7 +177,7 @@ static NSInteger const kCountdown = 60;
 // 重置密码
 - (void)resetingPasswd{
     
-    [self.tabBarController.tabBar ];
+    //[self.tabBarController.tabBar ];
     NSDictionary* dict = @{
                            @"phone_no":self.phoneTF.text,
                            //@"valicode":self.identifyTF.text,
@@ -250,7 +250,7 @@ static NSInteger const kCountdown = 60;
     
 }
 
-//
+//获取验证码
 -(void)identifyCode{
     
     NSString* operType = @"other";
@@ -262,18 +262,15 @@ static NSInteger const kCountdown = 60;
         operType = @"register";
     }
     
-//    NSDictionary* dict = @{
-//                           
-//                           @"appType":@"ios",
-//                           @"mobile":self.phoneTextFiled.text,
-//                           @"method":@"zte.memberService.member.getsmscode",
-//                           @"operType":operType,
-//                           
-//                           };
-//    
-//    
+    NSMutableDictionary* para  = @{}.mutableCopy;
+    [para ste_setNonNilObj:self.phoneTF.text forKey:@"phone_num"];
+    
+    [QTNetWork postRequest:para url:@"/api/v1/verifyCode" ssBlock:^(NSURLSessionDataTask * _Nonnull task, id  _Nonnull responseObject) {
+        
+    } ftBlock:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+        
+    }];
 //    [NetWorkRequsetTool postRequestWithParameter:dict successBlock:^(NSDictionary* successData ) {
-//        
 //        if ([successData[@"error_code"] isEqualToString:@"0"]) {
 //        
 //        }
@@ -297,6 +294,7 @@ static NSInteger const kCountdown = 60;
     
 }
 
+// 同意服务条款
 - (IBAction)chooseServiceItems:(id)sender {
     self.isAcceptServiceTerms = !self.isAcceptServiceTerms;
     self.servierItemsIV.highlighted = self.isAcceptServiceTerms;

@@ -30,10 +30,7 @@
  */
 #import "UIView+TKCategory.h"
 
-
 @implementation UIView (TKCategory)
-
-
 
 CGPoint demoLGStart(CGRect bounds);
 CGPoint demoLGStart(CGRect bounds){
@@ -61,15 +58,11 @@ CGFloat demoRGInnerRadius(CGRect bounds){
 		[ar addObject:(id)c.CGColor];
 	}
 	
-	
 	CGContextRef context = UIGraphicsGetCurrentContext();
 	CGContextSaveGState(context);
-	
-	
-	
+
 	CGColorSpaceRef colorSpace = CGColorGetColorSpace([[colors lastObject] CGColor]);
 	CGGradientRef gradient = CGGradientCreateWithColors(colorSpace, (CFArrayRef)ar, NULL);
-	
 
 	CGContextClipToRect(context, rect);
 	
@@ -87,7 +80,6 @@ CGFloat demoRGInnerRadius(CGRect bounds){
 + (void) drawLinearGradientInRect:(CGRect)rect colors:(CGFloat[])colours{
 	
 	CGContextRef context = UIGraphicsGetCurrentContext();
-	
 	CGContextSaveGState(context);
 	
 	CGColorSpaceRef rgb = CGColorSpaceCreateDeviceRGB();
@@ -98,17 +90,13 @@ CGFloat demoRGInnerRadius(CGRect bounds){
 	start = demoLGStart(rect);
 	end = demoLGEnd(rect);
 	
-	
-	
 	CGContextClipToRect(context, rect);
 	CGContextDrawLinearGradient(context, gradient, start, end, kCGGradientDrawsBeforeStartLocation | kCGGradientDrawsAfterEndLocation);
 	
 	CGGradientRelease(gradient);
-	
 	CGContextRestoreGState(context);
 	
 }
-
 
 + (void) drawRoundRectangleInRect:(CGRect)rect withRadius:(CGFloat)radius{
 	CGContextRef context = UIGraphicsGetCurrentContext();

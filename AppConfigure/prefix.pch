@@ -17,6 +17,7 @@
 #import <YYKit.h>
 
 #import "UIView+STEHUD.h"
+#import "NSDictionary+AvoidNil.h"
 
 #import "UIViewController+Initialize.h"
 

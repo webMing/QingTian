@@ -35,7 +35,8 @@
                 #ifdef ENABLEINTERNALNET
                       #define BASEURL  @"http:localhost"
                 #else
-                     #define BASEURL  @"http:localhost"
+                    //#define BASEURL  @"http:localhost:8080"
+                    #define BASEURL  @"http://192.168.0.236:8080"
                 #endif
 
         #endif
