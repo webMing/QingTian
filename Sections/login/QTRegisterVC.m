@@ -150,23 +150,16 @@ static NSInteger const kCountdown = 60;
 - (void)registerCounter{
     
     [self.view showHUDWithTitle:@"注册中" dismissAfter:0];
-    NSDictionary* memberDict = @{
-                                 @"mobile":self.phoneTF.text,
-                                 @"uname":self.phoneTF.text,
-                                 @"name":self.phoneTF.text,
-                                 @"password":self.paswdTF.text,
-                                 @"col3":@"ios",
-                                 //@"col2":self.identifyTF.text, //验证码
+    NSDictionary* memberDict =
+                            @{
+                                     @"phone_num":self.phoneTF.text,
+                                     @"passwd":self.paswdTF.text,
+                                     @"user_client":@"iOS",
                                  };
-    [QTNetWork postRequest:memberDict url:@"" ssBlock:^(NSURLSessionDataTask * _Nonnull task, id  _Nonnull responseObject) {
+    [QTNetWork postRequest:memberDict url:@"/api/v1/register" ssBlock:^(NSURLSessionDataTask * _Nonnull task, id  _Nonnull responseObject) {
         [self.view showHUDWithTitle:@"注册成功" dismissAfter:1.5];
         dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-            // 登录
             //TBSUserSingleton* user = [TBSUserSingleton shareUser];
-            NSDictionary* dict = @{}.mutableCopy ;
-            [dict setValue:self.phoneTF.text forKey: @"userName"];
-            [dict setValue:self.phoneTF.text forKey: @"mobile"];
-            [dict setValue:self.paswdTF.text forKey: @"pwd"];
             
         });
     } ftBlock:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
