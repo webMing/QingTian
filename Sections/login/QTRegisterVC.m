@@ -157,11 +157,17 @@ static NSInteger const kCountdown = 60;
                                      @"user_client":@"iOS",
                                  };
     [QTNetWork postRequest:memberDict url:@"/api/v1/register" ssBlock:^(NSURLSessionDataTask * _Nonnull task, id  _Nonnull responseObject) {
-        [self.view showHUDWithTitle:@"注册成功" dismissAfter:1.5];
-        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-            //TBSUserSingleton* user = [TBSUserSingleton shareUser];
-            
-        });
+        NSString* msg = [responseObject objectForKey:@"msg"];
+        [self.view showHUDWithTitle:msg dismissAfter:1.5];
+        NSString* code = [responseObject objectForKey:@"code"];
+        if (code.integerValue == 0) {
+            //注册成功
+            dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+                //TBSUserSingleton* user = [TBSUserSingleton shareUser];
+                
+            });
+        }
+        
     } ftBlock:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
         [self.view showHUDWithTitle:@"注册失败" dismissAfter:1.5];
     }];
