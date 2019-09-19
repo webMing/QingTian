@@ -10,6 +10,9 @@
 
 #import "IQKeyboardManager.h"
 #import "QTROOTVC.h"
+#import "QTNetWork.h"
+
+#import "SteNetworkSpeedMonitor.h"
 
 @implementation AppDelegate (Service)
 
@@ -23,6 +26,7 @@
     [self.window makeKeyAndVisible];
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
           [self setUpIQKeyboardManager];
+          [QTNetWork checkNetConnection];
     });
   
 }
@@ -37,6 +41,18 @@
     manager.shouldResignOnTouchOutside = YES;
     manager.placeholderFont = [UIFont boldSystemFontOfSize:14];
     manager.enableAutoToolbar = YES;
+}
+
+//不要进行网卡监听
+- (void)setUpNetworkMonitor {
+    SteNetworkSpeedMonitor* m = [SteNetworkSpeedMonitor shareMonitor];
+    [m setUploadSpeedBlock:^(NSString * _Nonnull speed) {
+        QTLog(@"Upload Speed: %@",speed);
+    }];
+    [m setDownloadSpeedBlock:^(NSString * _Nonnull speed) {
+        QTLog(@"Download Seed: %@",speed);
+    }];
+    [m startNetworkSpeedMonitor];
 }
 #pragma mark- CustomDelegateMethod
 

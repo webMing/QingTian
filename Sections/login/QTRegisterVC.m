@@ -201,10 +201,7 @@ static NSInteger const kCountdown = 60;
 //            [self autoGoBack];
 //
 //        }
-//
-//
 //        [self.view addHUDWithType:OnlyMessage lableTitle:successData[@"error_msg"] yOffSet:-100.f hideAfterDelay:1.5];
-//
 //
 //    } failureBlock:^(NSString *errorNum) {
 //
@@ -265,32 +262,17 @@ static NSInteger const kCountdown = 60;
     [para ste_setNonNilObj:self.phoneTF.text forKey:@"phone_num"];
     
     [QTNetWork postRequest:para url:@"/api/v1/verifyCode" ssBlock:^(NSURLSessionDataTask * _Nonnull task, id  _Nonnull responseObject) {
-        
+        NSString* code = [responseObject objectForKey:@"code"];
+        NSString* msg  = [responseObject objectForKey:@"msg"];
+        if (code.integerValue == 0) {
+            [self.view showHUDWithTitle:@"已获取验证码请注意查收" dismissAfter:2];
+        }else{
+            [self.view showHUDWithTitle:msg dismissAfter:2];
+        }
     } ftBlock:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
-        
+          [self.view showHUDWithTitle:@"获取验证码失败" dismissAfter:2];
     }];
-//    [NetWorkRequsetTool postRequestWithParameter:dict successBlock:^(NSDictionary* successData ) {
-//        if ([successData[@"error_code"] isEqualToString:@"0"]) {
-//        
-//        }
-//        
-//        NSString* ssionId = [successData objectForKey:@"userSessionId"];
-//        
-//        if ([ssionId isKindOfClass:[NSNull class]] || ssionId.length == 0 || !ssionId ) {
-//        
-//        }else{
-//            
-//            //保存
-//          
-//
-//        }
-//        
-//        
-//    } failureBlock:^(NSString *errorNum) {
-//        //[self.view addHUDWithType:OnlyMessage lableTitle:@"网络无法访问" yOffSet:-100.f hideAfterDelay:1.5];
-//        
-//    }];
-    
+
 }
 
 // 同意服务条款

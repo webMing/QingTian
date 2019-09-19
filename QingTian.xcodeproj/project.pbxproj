@@ -15,6 +15,7 @@
 		43B7F9D222B7683700863949 /* UIViewController+Initialize.m in Sources */ = {isa = PBXBuildFile; fileRef = 43B7F9D122B7683700863949 /* UIViewController+Initialize.m */; };
 		43B7F9DB22B7828E00863949 /* QTDashLine.m in Sources */ = {isa = PBXBuildFile; fileRef = 43B7F9DA22B7828E00863949 /* QTDashLine.m */; };
 		43B7F9DE22B79A7300863949 /* UINavigationItem+Extention.m in Sources */ = {isa = PBXBuildFile; fileRef = 43B7F9DD22B79A7300863949 /* UINavigationItem+Extention.m */; };
+		43F9B1AE23336EED006938CA /* SteNetworkSpeedMonitor.m in Sources */ = {isa = PBXBuildFile; fileRef = 43F9B1AD23336EED006938CA /* SteNetworkSpeedMonitor.m */; };
 		900342BE22B92253008CCF76 /* NaviGestureDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 900342BD22B92253008CCF76 /* NaviGestureDelegate.m */; };
 		90B22E3922B6139D00D5F93B /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 90B22E3822B6139D00D5F93B /* AppDelegate.m */; };
 		90B22E4122B6139F00D5F93B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 90B22E4022B6139F00D5F93B /* Assets.xcassets */; };
@@ -88,6 +89,8 @@
 		43B7F9DA22B7828E00863949 /* QTDashLine.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = QTDashLine.m; path = Category/QTDashLine.m; sourceTree = SOURCE_ROOT; };
 		43B7F9DC22B79A7300863949 /* UINavigationItem+Extention.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UINavigationItem+Extention.h"; sourceTree = "<group>"; };
 		43B7F9DD22B79A7300863949 /* UINavigationItem+Extention.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UINavigationItem+Extention.m"; sourceTree = "<group>"; };
+		43F9B1AC23336EED006938CA /* SteNetworkSpeedMonitor.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SteNetworkSpeedMonitor.h; sourceTree = "<group>"; };
+		43F9B1AD23336EED006938CA /* SteNetworkSpeedMonitor.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SteNetworkSpeedMonitor.m; sourceTree = "<group>"; };
 		48F2418C791632E5255FC977 /* Pods-QingTian.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-QingTian.debug.xcconfig"; path = "Pods/Target Support Files/Pods-QingTian/Pods-QingTian.debug.xcconfig"; sourceTree = "<group>"; };
 		7CBB7C0FA88C12EC8F4EFB9D /* Pods-QingTianTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-QingTianTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-QingTianTests/Pods-QingTianTests.debug.xcconfig"; sourceTree = "<group>"; };
 		8DFEEFA0D4D82823C38C315D /* Pods-QingTian.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-QingTian.release.xcconfig"; path = "Pods/Target Support Files/Pods-QingTian/Pods-QingTian.release.xcconfig"; sourceTree = "<group>"; };
@@ -408,6 +411,8 @@
 			children = (
 				90EC7DF622B65C8B0002EEEF /* QTNetWork.h */,
 				90EC7DF722B65C8B0002EEEF /* QTNetWork.m */,
+				43F9B1AC23336EED006938CA /* SteNetworkSpeedMonitor.h */,
+				43F9B1AD23336EED006938CA /* SteNetworkSpeedMonitor.m */,
 			);
 			path = NetWork;
 			sourceTree = "<group>";
@@ -677,6 +682,7 @@
 				90B22EBA22B6180500D5F93B /* UIImage+Extension.m in Sources */,
 				90B22EAD22B6180500D5F93B /* UIImageView+XMGExtension.m in Sources */,
 				43B7F9D222B7683700863949 /* UIViewController+Initialize.m in Sources */,
+				43F9B1AE23336EED006938CA /* SteNetworkSpeedMonitor.m in Sources */,
 				90B22EB022B6180500D5F93B /* NSDictionary+AvoidNil.m in Sources */,
 				90B22EDA22B6242800D5F93B /* QTNaviC.m in Sources */,
 				90B22E4722B6139F00D5F93B /* main.m in Sources */,

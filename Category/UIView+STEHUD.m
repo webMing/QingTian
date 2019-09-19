@@ -19,6 +19,7 @@
     if (!hud) hud = [MBProgressHUD showHUDAddedTo:self animated:YES];
     hud.mode = MBProgressHUDModeText;
     hud.label.text = title;
+    hud.label.numberOfLines = 0;
     hud.offset = CGPointMake(0, -120);
     if (time > 0) {
         dispatch_async(dispatch_get_main_queue(), ^{

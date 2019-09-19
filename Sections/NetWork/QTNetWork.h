@@ -22,5 +22,7 @@ NS_ASSUME_NONNULL_BEGIN
 + (void)postRequest:(NSDictionary *)para  url:(NSString*)url ps:(NetRequestProssBlock _Nullable)ps ssBlock:(NetRequestSuccBlock _Nullable)ssBlock ftBlock:(NetRequestFailtBlock _Nullable)ftBlock;
 + (void)getRequest:(NSDictionary *)para  url:(NSString*)url ps:(NetRequestProssBlock _Nullable)ps ssBlock:(NetRequestSuccBlock _Nullable)ssBlock ftBlock:(NetRequestFailtBlock _Nullable)ftBlock;
 
++ (void)checkNetConnection;
+
 @end
 NS_ASSUME_NONNULL_END

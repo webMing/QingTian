@@ -52,4 +52,22 @@ static CGFloat const kNetworkRequestTimeoutInterval = 10.0f;
     }];
 }
 
+static BOOL hasDisconnect  = NO;
+
++ (void)checkNetConnection{
+   AFNetworkReachabilityManager* manager =  [AFNetworkReachabilityManager sharedManager];
+    [manager setReachabilityStatusChangeBlock:^(AFNetworkReachabilityStatus status) {
+        UIWindow* window = [[[UIApplication sharedApplication] delegate] window];
+        if (status == AFNetworkReachabilityStatusNotReachable) {
+            hasDisconnect = YES;
+            [window showHUDWithTitle:@"网络已断开" dismissAfter:2.0f];
+        }else if (status ==  AFNetworkReachabilityStatusReachableViaWWAN || status == AFNetworkReachabilityStatusReachableViaWiFi){
+            if (hasDisconnect) {
+                [window showHUDWithTitle:@"网络恢复" dismissAfter:2.0f];
+            }
+        }
+    }];
+    [manager startMonitoring];
+}
+
 @end
