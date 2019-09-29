@@ -14,9 +14,9 @@
 FOUNDATION_EXPORT void SteCallPhone(NSString* phoneNumber);
 
 /** 获取 navigationBar 底部坐标;相当于 statusBarHeight + navigationBarHeight */
-FOUNDATION_EXPORT CGFloat JXBNavBarMaxYValueWithVC(UIViewController *vc);
+FOUNDATION_EXPORT CGFloat QTNavBarMaxYValueWithVC(UIViewController *vc);
 
 /** 禁止 scrollView auto ajsut content inset */
-FOUNDATION_EXPORT void JXBNeverAutoAjustScrollViewContentInset(UIViewController *vc,UIScrollView *sc);
+FOUNDATION_EXPORT void QTNeverAutoAjustScrollViewContentInset(UIViewController *vc,UIScrollView *sc);
 
 #endif /* Tool_h */

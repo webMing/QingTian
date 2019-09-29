@@ -32,7 +32,11 @@
     self.view.backgroundColor = UIColor.whiteColor;
     // Me
     UIViewController* vc = [UIViewController ViewControllerInitWithSB:@"Me" className:@"QTLoginVC"];
-    [self addChildViewController:vc title:@"我" image:@"tabbar_me" selectedImage:@"tabbar_me_highLight"];
+    [self addChildViewController:vc title:@"Login" image:@"tabbar_me" selectedImage:@"tabbar_me_highLight"];
+    
+    // Me1
+    vc = [UIViewController ViewControllerInitWithSB:@"Me" className:@"QTMEVC"];
+    [self addChildViewController:vc title:@"Home" image:@"tabbar_me" selectedImage:@"tabbar_me_highLight"];
 }
 
 - (void)addCustomViews {

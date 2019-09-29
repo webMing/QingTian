@@ -59,7 +59,7 @@
 #pragma mark- DelegateMethod
 
 #pragma mark- GetterAndSetter
-
+ 
 #pragma mark- PrivateMethod
 
 

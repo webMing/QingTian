@@ -25,12 +25,12 @@ inline void SteCallPhone(NSString* phoneNumber){
 }
 
 /** 获取 navigationBar 底部坐标;相当于 statusBarHeight + navigationBarHeight */
-inline CGFloat JXBNavBarMaxYValueWithVC(UIViewController *vc) {
+inline CGFloat QTNavBarMaxYValueWithVC(UIViewController *vc) {
     return CGRectGetMinX(vc.navigationController.navigationBar.frame) + CGRectGetMaxY(vc.navigationController.navigationBar.frame);
 }
 
 /** 禁止 scrollView auto ajsut content inset */
-void JXBNeverAutoAjustScrollViewContentInset(UIViewController *vc,UIScrollView *sc) {
+void QTNeverAutoAjustScrollViewContentInset(UIViewController *vc,UIScrollView *sc) {
     if (@available(iOS 11.0, *)) {
         sc.contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentNever;
     }
