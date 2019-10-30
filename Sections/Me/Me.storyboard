@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14868" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15400" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14824"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15404"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -215,7 +215,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="m7V-MB-QWO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1057" y="-450"/>
+            <point key="canvasLocation" x="-679" y="-448"/>
         </scene>
         <!--RegisterVC-->
         <scene sceneID="MAX-OU-kkL">
@@ -530,7 +530,7 @@
                                                 <rect key="frame" x="0.0" y="0.0" width="375" height="128"/>
                                                 <subviews>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="nav_person_head_bg" translatesAutoresizingMaskIntoConstraints="NO" id="NEc-Ah-8qd">
-                                                        <rect key="frame" x="0.0" y="-100" width="375" height="228"/>
+                                                        <rect key="frame" x="0.0" y="-266" width="375" height="394"/>
                                                     </imageView>
                                                 </subviews>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -538,7 +538,7 @@
                                                     <constraint firstAttribute="bottom" secondItem="NEc-Ah-8qd" secondAttribute="bottom" id="Sdz-Mx-8SN"/>
                                                     <constraint firstItem="NEc-Ah-8qd" firstAttribute="leading" secondItem="1UC-XM-LJ8" secondAttribute="leading" id="Wmi-nc-Ak7"/>
                                                     <constraint firstAttribute="trailing" secondItem="NEc-Ah-8qd" secondAttribute="trailing" id="YDt-aa-GKa"/>
-                                                    <constraint firstItem="NEc-Ah-8qd" firstAttribute="top" secondItem="1UC-XM-LJ8" secondAttribute="top" constant="-100" id="dxo-Gh-weI"/>
+                                                    <constraint firstItem="NEc-Ah-8qd" firstAttribute="top" secondItem="1UC-XM-LJ8" secondAttribute="top" constant="-266" id="dxo-Gh-weI"/>
                                                     <constraint firstAttribute="height" constant="128" id="kNi-Q5-VPC"/>
                                                 </constraints>
                                             </view>
@@ -546,7 +546,7 @@
                                                 <rect key="frame" x="0.0" y="128" width="375" height="90"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="明月松间" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oHo-nH-1g2">
-                                                        <rect key="frame" x="157.5" y="34.5" width="60" height="21"/>
+                                                        <rect key="frame" x="157.5" y="44.5" width="60" height="21"/>
                                                         <fontDescription key="fontDescription" name="PingFangSC-Semibold" family="PingFang SC" pointSize="15"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
@@ -554,13 +554,17 @@
                                                 </subviews>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                                 <constraints>
-                                                    <constraint firstItem="oHo-nH-1g2" firstAttribute="centerY" secondItem="kZt-wy-rxA" secondAttribute="centerY" id="BQo-Nb-fli"/>
+                                                    <constraint firstItem="oHo-nH-1g2" firstAttribute="centerY" secondItem="kZt-wy-rxA" secondAttribute="centerY" constant="10" id="BQo-Nb-fli"/>
                                                     <constraint firstItem="oHo-nH-1g2" firstAttribute="centerX" secondItem="kZt-wy-rxA" secondAttribute="centerX" id="SAL-bc-xdU"/>
                                                     <constraint firstAttribute="height" constant="90" id="ysM-Rn-3aC"/>
                                                 </constraints>
                                             </view>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="tabbar_me" translatesAutoresizingMaskIntoConstraints="NO" id="ILN-x5-kF4">
-                                                <rect key="frame" x="173.5" y="118" width="28" height="28"/>
+                                                <rect key="frame" x="157.5" y="100" width="60" height="60"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="60" id="6kG-hn-Tx9"/>
+                                                    <constraint firstAttribute="width" secondItem="ILN-x5-kF4" secondAttribute="height" multiplier="1:1" id="w2F-5W-HhM"/>
+                                                </constraints>
                                             </imageView>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3bJ-io-ejM" customClass="UIControl">
                                                 <rect key="frame" x="0.0" y="228" width="375" height="50"/>
@@ -568,10 +572,10 @@
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="我的文章" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sbI-eN-H3v">
                                                         <rect key="frame" x="15" y="16" width="62" height="18"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                                        <nil key="textColor"/>
+                                                        <color key="textColor" red="0.15686274510000001" green="0.23529411759999999" blue="0.35294117650000001" alpha="1" colorSpace="calibratedRGB"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="IQButtonBarArrowRight.png" translatesAutoresizingMaskIntoConstraints="NO" id="bJP-WB-sdA">
+                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bJP-WB-sdA">
                                                         <rect key="frame" x="336" y="4" width="24" height="42"/>
                                                     </imageView>
                                                 </subviews>
@@ -583,6 +587,9 @@
                                                     <constraint firstAttribute="trailing" secondItem="bJP-WB-sdA" secondAttribute="trailing" constant="15" id="k5i-Mq-8hb"/>
                                                     <constraint firstItem="bJP-WB-sdA" firstAttribute="centerY" secondItem="3bJ-io-ejM" secondAttribute="centerY" id="tib-Xp-dag"/>
                                                 </constraints>
+                                                <connections>
+                                                    <action selector="articles:" destination="2YG-23-eHm" eventType="touchUpInside" id="Xot-k8-RXQ"/>
+                                                </connections>
                                             </view>
                                         </subviews>
                                         <color key="backgroundColor" red="0.94901960780000005" green="0.96078431369999995" blue="0.97254901959999995" alpha="1" colorSpace="calibratedRGB"/>
@@ -595,7 +602,7 @@
                                             <constraint firstItem="1UC-XM-LJ8" firstAttribute="top" secondItem="H9I-WE-jCl" secondAttribute="top" id="QpD-0J-DT5"/>
                                             <constraint firstItem="ILN-x5-kF4" firstAttribute="centerX" secondItem="H9I-WE-jCl" secondAttribute="centerX" id="jzW-4e-EaD"/>
                                             <constraint firstAttribute="trailing" secondItem="kZt-wy-rxA" secondAttribute="trailing" id="qhw-ZI-9xR"/>
-                                            <constraint firstItem="ILN-x5-kF4" firstAttribute="top" secondItem="H9I-WE-jCl" secondAttribute="top" constant="118" id="sM5-so-RwR"/>
+                                            <constraint firstItem="ILN-x5-kF4" firstAttribute="top" secondItem="H9I-WE-jCl" secondAttribute="top" constant="100" id="sM5-so-RwR"/>
                                             <constraint firstItem="kZt-wy-rxA" firstAttribute="leading" secondItem="H9I-WE-jCl" secondAttribute="leading" id="sOP-pq-Jfe"/>
                                             <constraint firstAttribute="trailing" secondItem="3bJ-io-ejM" secondAttribute="trailing" id="uzN-yY-G1F"/>
                                         </constraints>
@@ -622,6 +629,7 @@
                         <viewLayoutGuide key="safeArea" id="YMj-zm-LEG"/>
                     </view>
                     <connections>
+                        <outlet property="headImgView" destination="ILN-x5-kF4" id="XBJ-bF-tJ0"/>
                         <outlet property="scrollView" destination="byL-9T-RKF" id="5pc-E0-GWc"/>
                     </connections>
                 </viewController>
@@ -631,7 +639,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="IQButtonBarArrowRight.png" width="12" height="21"/>
         <image name="checkbox_l_off" width="24" height="24"/>
         <image name="checkbox_l_on" width="24" height="24"/>
         <image name="comm_m_l_nor" width="340" height="44"/>

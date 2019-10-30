@@ -10,6 +10,7 @@
 
 @interface QTMEVC ()
 @property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
+@property (weak, nonatomic) IBOutlet UIImageView *headImgView;
 @end
 
 @implementation QTMEVC
@@ -33,9 +34,16 @@
     self.extendedLayoutIncludesOpaqueBars = YES;
     self.edgesForExtendedLayout = UIRectEdgeTop;
     
+    self.headImgView.clipsToBounds = YES;
+    self.headImgView.layer.borderColor = UIColor.lightTextColor.CGColor;
+    self.headImgView.layer.borderWidth = 2;
+    self.headImgView.layer.cornerRadius = 30.0f;
 }
 #pragma mark- EventRespone
-
+// 文章列表
+- (IBAction)articles:(UIControl *)sender {
+    
+}
 #pragma mark- CustomDelegateMethod
 
 #pragma mark- DelegateMethod
