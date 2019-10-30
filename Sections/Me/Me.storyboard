@@ -41,10 +41,10 @@
                                                         </variation>
                                                     </textField>
                                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="login_ico_pw" translatesAutoresizingMaskIntoConstraints="NO" id="LxI-hz-Hmh">
-                                                        <rect key="frame" x="13" y="64" width="22" height="22"/>
+                                                        <rect key="frame" x="13" y="53" width="44" height="44"/>
                                                     </imageView>
                                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" image="login_ico_tel" translatesAutoresizingMaskIntoConstraints="NO" id="oCb-0v-C3Y">
-                                                        <rect key="frame" x="13" y="14" width="22" height="22"/>
+                                                        <rect key="frame" x="13" y="3" width="44" height="44"/>
                                                     </imageView>
                                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="请输入6~16位密码" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="A2R-2c-jfB" customClass="QTLoginTextField">
                                                         <rect key="frame" x="0.0" y="50" width="345" height="50"/>
@@ -276,7 +276,7 @@
                                                         </connections>
                                                     </button>
                                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="login_ico_tel" translatesAutoresizingMaskIntoConstraints="NO" id="wUG-sW-BZK">
-                                                        <rect key="frame" x="13" y="14" width="22" height="22"/>
+                                                        <rect key="frame" x="13" y="3" width="44" height="44"/>
                                                     </imageView>
                                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="输入手机号码" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="wbp-NC-Shv" customClass="QTLoginTextField">
                                                         <rect key="frame" x="0.0" y="0.0" width="244" height="50"/>
@@ -289,7 +289,7 @@
                                                         <textInputTraits key="textInputTraits" keyboardType="phonePad"/>
                                                     </textField>
                                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="register_ico_code" translatesAutoresizingMaskIntoConstraints="NO" id="TH7-3O-zlz">
-                                                        <rect key="frame" x="13" y="64" width="22" height="22"/>
+                                                        <rect key="frame" x="13" y="53" width="44" height="44"/>
                                                     </imageView>
                                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="输入短信验证码" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="A5D-H0-hvF" customClass="QTLoginTextField">
                                                         <rect key="frame" x="0.0" y="50" width="345" height="50"/>
@@ -376,7 +376,7 @@
                                                         <textInputTraits key="textInputTraits" keyboardType="emailAddress"/>
                                                     </textField>
                                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="login_ico_pw" translatesAutoresizingMaskIntoConstraints="NO" id="pyx-Gm-Thn">
-                                                        <rect key="frame" x="13" y="14" width="22" height="22"/>
+                                                        <rect key="frame" x="13" y="3" width="44" height="44"/>
                                                     </imageView>
                                                 </subviews>
                                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
@@ -546,25 +546,30 @@
                                                 <rect key="frame" x="0.0" y="128" width="375" height="90"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="明月松间" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oHo-nH-1g2">
-                                                        <rect key="frame" x="157.5" y="44.5" width="60" height="21"/>
+                                                        <rect key="frame" x="157.5" y="54.5" width="60" height="21"/>
                                                         <fontDescription key="fontDescription" name="PingFangSC-Semibold" family="PingFang SC" pointSize="15"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                 </subviews>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                                <gestureRecognizers/>
                                                 <constraints>
-                                                    <constraint firstItem="oHo-nH-1g2" firstAttribute="centerY" secondItem="kZt-wy-rxA" secondAttribute="centerY" constant="10" id="BQo-Nb-fli"/>
+                                                    <constraint firstItem="oHo-nH-1g2" firstAttribute="centerY" secondItem="kZt-wy-rxA" secondAttribute="centerY" constant="20" id="BQo-Nb-fli"/>
                                                     <constraint firstItem="oHo-nH-1g2" firstAttribute="centerX" secondItem="kZt-wy-rxA" secondAttribute="centerX" id="SAL-bc-xdU"/>
                                                     <constraint firstAttribute="height" constant="90" id="ysM-Rn-3aC"/>
                                                 </constraints>
                                             </view>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="tabbar_me" translatesAutoresizingMaskIntoConstraints="NO" id="ILN-x5-kF4">
-                                                <rect key="frame" x="157.5" y="100" width="60" height="60"/>
+                                            <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="tabbar_me" translatesAutoresizingMaskIntoConstraints="NO" id="ILN-x5-kF4">
+                                                <rect key="frame" x="147.5" y="90" width="80" height="80"/>
+                                                <gestureRecognizers/>
                                                 <constraints>
-                                                    <constraint firstAttribute="width" constant="60" id="6kG-hn-Tx9"/>
+                                                    <constraint firstAttribute="width" constant="80" id="6kG-hn-Tx9"/>
                                                     <constraint firstAttribute="width" secondItem="ILN-x5-kF4" secondAttribute="height" multiplier="1:1" id="w2F-5W-HhM"/>
                                                 </constraints>
+                                                <connections>
+                                                    <outletCollection property="gestureRecognizers" destination="SY9-ep-YIN" appends="YES" id="Ve7-yf-dgn"/>
+                                                </connections>
                                             </imageView>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3bJ-io-ejM" customClass="UIControl">
                                                 <rect key="frame" x="0.0" y="228" width="375" height="50"/>
@@ -602,7 +607,7 @@
                                             <constraint firstItem="1UC-XM-LJ8" firstAttribute="top" secondItem="H9I-WE-jCl" secondAttribute="top" id="QpD-0J-DT5"/>
                                             <constraint firstItem="ILN-x5-kF4" firstAttribute="centerX" secondItem="H9I-WE-jCl" secondAttribute="centerX" id="jzW-4e-EaD"/>
                                             <constraint firstAttribute="trailing" secondItem="kZt-wy-rxA" secondAttribute="trailing" id="qhw-ZI-9xR"/>
-                                            <constraint firstItem="ILN-x5-kF4" firstAttribute="top" secondItem="H9I-WE-jCl" secondAttribute="top" constant="100" id="sM5-so-RwR"/>
+                                            <constraint firstItem="ILN-x5-kF4" firstAttribute="top" secondItem="H9I-WE-jCl" secondAttribute="top" constant="90" id="sM5-so-RwR"/>
                                             <constraint firstItem="kZt-wy-rxA" firstAttribute="leading" secondItem="H9I-WE-jCl" secondAttribute="leading" id="sOP-pq-Jfe"/>
                                             <constraint firstAttribute="trailing" secondItem="3bJ-io-ejM" secondAttribute="trailing" id="uzN-yY-G1F"/>
                                         </constraints>
@@ -634,6 +639,11 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VEI-bJ-g4g" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="SY9-ep-YIN">
+                    <connections>
+                        <action selector="changeHeader:" destination="2YG-23-eHm" id="snH-1c-zwM"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="516" y="-489.80509745127438"/>
         </scene>
