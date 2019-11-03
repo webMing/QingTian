@@ -8,3 +8,4 @@
 
 #import "QTConst.h"
 
+NSString * const QTAPPLANTCHUUIDKEY = @"QTAPPLANTCHUUIDKEY";

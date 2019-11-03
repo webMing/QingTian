@@ -25,6 +25,7 @@
 }
 
 - (void)awakeFromNib{
+    [super awakeFromNib];
     //    CGFloat fontSize = self.font.pointSize;
     //    self.font = [UIFont systemFontOfSize:fontSize*SizeScale];
     //    [self setValue:[UIColor redColor] forKeyPath:@"_placeholderLabel.textColor"];

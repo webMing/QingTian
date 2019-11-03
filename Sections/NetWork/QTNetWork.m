@@ -9,7 +9,7 @@
 #import "QTNetWork.h"
 #import "AFHTTPSessionManager.h"
 
-static CGFloat const kNetworkRequestTimeoutInterval = 10.0f;
+static CGFloat const kNetworkRequestTimeoutInterval = 5.0f;
 
 @implementation QTNetWork
 

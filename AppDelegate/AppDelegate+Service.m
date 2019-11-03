@@ -12,6 +12,8 @@
 #import "QTROOTVC.h"
 #import "QTNetWork.h"
 
+#import "QTConfigurationHelper.h"
+
 #import "SteNetworkSpeedMonitor.h"
 
 @implementation AppDelegate (Service)
@@ -26,6 +28,7 @@
     [self.window makeKeyAndVisible];
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
           [self setUpIQKeyboardManager];
+          [self fetchUUID];
           [QTNetWork checkNetConnection];
     });
   
@@ -43,6 +46,28 @@
     manager.enableAutoToolbar = YES;
 }
 
+// 获取UUID
+- (void)fetchUUID{
+    
+    NSDictionary* memberDict =
+                                @{
+                                    @"user_client":@"iOS",
+                                 };
+   [QTNetWork postRequest:memberDict url:@"/api/v1/uuid" ssBlock:^(NSURLSessionDataTask * _Nonnull task, id  _Nonnull responseObject) {
+       //NSString* msg = [responseObject objectForKey:@"msg"];
+       NSString* code = [responseObject objectForKey:@"code"];
+       NSString* uuid = [responseObject objectForKey:@"uuid"];
+       if (code.integerValue == 0) {
+           //QTLog(@"-----------------------  : %d",[NSThread isMainThread]);
+           dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+               [QTConfigurationHelper setStringValueForConfigurationKey:QTAPPLANTCHUUIDKEY withValue:uuid];
+           });
+       }
+       
+   } ftBlock:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+       [self.window showHUDWithTitle:@"无法获取UUID" dismissAfter:1.5];
+   }];
+}
 //不要进行网卡监听
 - (void)setUpNetworkMonitor {
     SteNetworkSpeedMonitor* m = [SteNetworkSpeedMonitor shareMonitor];

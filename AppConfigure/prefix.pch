@@ -13,6 +13,7 @@
 #import "Macro.h"
 #import "Colors.h"
 #import "Tool.h"
+#import "QTConst.h"
 
 #import <YYKit.h>
 

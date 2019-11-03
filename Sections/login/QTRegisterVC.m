@@ -9,6 +9,7 @@
 #import "QTRegisterVC.h"
 
 #import "QTTextFieldDelegate.h"
+#import "QTConfigurationHelper.h"
 #import "NSString+Helper.h"
 #import "QTNetWork.h"
 
@@ -16,14 +17,18 @@ static NSInteger const kCountdown = 60;
 
 @interface QTRegisterVC ()
 
+@property (weak, nonatomic) IBOutlet UITextField *imageCodeTF;
+
 @property (weak, nonatomic) IBOutlet UITextField *phoneTF;
 @property (weak, nonatomic) IBOutlet UITextField *paswdTF;
 @property (weak, nonatomic) IBOutlet UITextField *identifyTF;
 
+@property (strong, nonatomic) QTTextFieldDelegate*  imageCodeDelegate;
 @property (strong, nonatomic) QTTextFieldDelegate*  phoneDelegate;
 @property (strong, nonatomic) QTTextFieldDelegate*  passwdDelegate;
 @property (strong, nonatomic) QTTextFieldDelegate*  identifyDelegate;
 
+@property (weak, nonatomic) IBOutlet UIButton *codeImgBtn;
 @property (weak, nonatomic) IBOutlet UILabel *countDownLB;
 @property (weak, nonatomic) IBOutlet UIButton *confirmBTN;
 
@@ -58,6 +63,25 @@ static NSInteger const kCountdown = 60;
         [self.confirmBTN setTitle:@"注册并登陆" forState:UIControlStateNormal];
     }
     @weakify(self)
+    
+    QTTextFieldDelegate* imageCodeDelegate = [[QTTextFieldDelegate alloc]initWithBeginEditingBlock:^(UITextField *textFiled) {
+
+    } textDidChangeBlock:^(UITextField *textFiled, NSString *message) {
+        if (message) {
+            @strongify(self)
+            [self.view showHUDWithTitle:message dismissAfter:1.5];
+        }
+    } endEditingBlock:^(UITextField *textFiled, NSString *message, BOOL isVerytifySuccess) {
+        if (!isVerytifySuccess) {
+            @strongify(self)
+            [self.view showHUDWithTitle:message dismissAfter:1.5];
+        }
+    }];
+    imageCodeDelegate.verityCodeLentch = 6;
+    imageCodeDelegate.checkMode = CheckVerificationCodeMode;
+    self.imageCodeTF.delegate = imageCodeDelegate;
+    self.imageCodeDelegate = imageCodeDelegate;
+    
     QTTextFieldDelegate* phoneDelegate = [[QTTextFieldDelegate alloc]initWithBeginEditingBlock:^(UITextField *textFiled) {
     } textDidChangeBlock:^(UITextField *textFiled, NSString *message) {
         if (message) {
@@ -108,12 +132,35 @@ static NSInteger const kCountdown = 60;
     passwdDelegate.checkMode = CheckPasswordMode;
     self.paswdTF.delegate = passwdDelegate;
     self.passwdDelegate = passwdDelegate;
+    
+    NSMutableDictionary* para  = @{}.mutableCopy;
+    NSString* UUID = [QTConfigurationHelper getStringValueForConfigurationKey:QTAPPLANTCHUUIDKEY];
+    [para ste_setNonNilObj:UUID forKey:@"uuid"];
+    [para ste_setNonNilObj:@"iOS" forKey:@"user_client"];
+    [QTNetWork postRequest:para url:@"/api/v1/imgCheckCode" ssBlock:^(NSURLSessionDataTask * _Nonnull task, id  _Nonnull responseObject) {
+       NSString* code = [responseObject objectForKey:@"code"];
+       NSString* msg  = [responseObject objectForKey:@"msg"];
+       if (code.integerValue == 0) {
+           NSString* img = [responseObject objectForKey:@"img"];
+           NSString* num = [responseObject objectForKey:@"num"];
+           QTLog(@"%@ %@",img,num);
+       }else{
+           [self.view showHUDWithTitle:msg dismissAfter:2];
+       }
+    } ftBlock:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+         [self.view showHUDWithTitle:@"无法获取图片验证码" dismissAfter:2];
+    }];
 
 }
 
 #pragma mark- EventRespone
 - (void)backAction{
     [self.navigationController popViewControllerAnimated:YES];
+}
+
+// 刷新图片验证码
+- (IBAction)refreshImageCode:(UIButton *)sender {
+    
 }
 
 //注册或者找回密码
@@ -215,6 +262,10 @@ static NSInteger const kCountdown = 60;
 
 - (IBAction)applyIdentifyCode:(UIButton *)sender {
     
+    if (self.imageCodeTF.text.length != 6) {
+        [self.view showHUDWithTitle:@"图片验证码输入有误" dismissAfter:1.5f];
+        return;
+    }
     if (self.phoneTF.text.length != 11) {
         [self.view showHUDWithTitle:@"手机号位数不对" dismissAfter:1.5f];
         return;

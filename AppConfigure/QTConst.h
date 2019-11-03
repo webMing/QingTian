@@ -11,4 +11,6 @@
 #ifndef QTConst_h
 #define QTConst_h
 
+FOUNDATION_EXPORT NSString* const QTAPPLANTCHUUIDKEY;
+
 #endif
