@@ -326,8 +326,11 @@ static NSInteger const kCountdown = 60;
     }
     
     NSMutableDictionary* para  = @{}.mutableCopy;
-    [para ste_setNonNilObj:self.phoneTF.text forKey:@"phone_num"];
-    
+    [para ste_setNonNilObj:self.phoneTF.text forKey:@"phone_num"]; //手机号
+    NSString* UUID = [QTConfigurationHelper getStringValueForConfigurationKey:QTAPPLANTCHUUIDKEY];
+    [para ste_setNonNilObj:UUID forKey:@"uuid"];   //uuid key
+    [para ste_setNonNilObj:self.imageCodeC forKey:@"check_num"]; // 图片验证码内容
+
     [QTNetWork postRequest:para url:@"/api/v1/verifyCode" ssBlock:^(NSURLSessionDataTask * _Nonnull task, id  _Nonnull responseObject) {
         NSString* code = [responseObject objectForKey:@"code"];
         NSString* msg  = [responseObject objectForKey:@"msg"];
