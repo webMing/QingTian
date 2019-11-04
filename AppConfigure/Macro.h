@@ -31,7 +31,9 @@
         // localhost 手机无法解析,yongIP地址
 
         #ifdef DEBUG_EXTERN
-                  #define BASEURL  @"http://192.168.1.100:8080"
+                  
+                  #define BASEURL  @"http://192.168.0.236:8080"
+                  //#define BASEURL  @"http://192.168.1.100:8080"
         #else
                 //#define ENABLEINTERNALNET
                 #ifdef ENABLEINTERNALNET

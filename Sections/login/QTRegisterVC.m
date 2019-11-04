@@ -28,6 +28,8 @@ static NSInteger const kCountdown = 60;
 @property (strong, nonatomic) QTTextFieldDelegate*  passwdDelegate;
 @property (strong, nonatomic) QTTextFieldDelegate*  identifyDelegate;
 
+@property (copy, nonatomic) NSString* imageCodeC; //验证码内容
+
 @property (weak, nonatomic) IBOutlet UIButton *codeImgBtn;
 @property (weak, nonatomic) IBOutlet UILabel *countDownLB;
 @property (weak, nonatomic) IBOutlet UIButton *confirmBTN;
@@ -141,8 +143,17 @@ static NSInteger const kCountdown = 60;
        NSString* code = [responseObject objectForKey:@"code"];
        NSString* msg  = [responseObject objectForKey:@"msg"];
        if (code.integerValue == 0) {
-           NSString* img = [responseObject objectForKey:@"img"];
-           NSString* num = [responseObject objectForKey:@"num"];
+           NSString* img = [responseObject objectForKey:@"img"]; //图片内容 string 类型
+           NSString* num = [responseObject objectForKey:@"num"]; //图片验证码内容
+           if (num.length == 0) {
+               [self.view showHUDWithTitle:@"图片验证码不能为空" dismissAfter:2];
+               return ;
+           }
+           self.imageCodeC = num;
+           NSData* data = [NSData dataWithBase64EncodedString:img];
+           UIImage* dis = [UIImage imageWithData:data];
+           [self.codeImgBtn setImage:dis forState:UIControlStateNormal];
+           
            QTLog(@"%@ %@",img,num);
        }else{
            [self.view showHUDWithTitle:msg dismissAfter:2];
