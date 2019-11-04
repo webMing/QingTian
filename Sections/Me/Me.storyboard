@@ -239,7 +239,10 @@
                                                         <constraints>
                                                             <constraint firstAttribute="width" constant="100" id="0gZ-bA-aSB"/>
                                                         </constraints>
-                                                        <state key="normal" title="Button"/>
+                                                        <fontDescription key="fontDescription" name="PingFangSC-Regular" family="PingFang SC" pointSize="13"/>
+                                                        <state key="normal" title="点击获取验证码">
+                                                            <color key="titleColor" red="0.15686274510000001" green="0.23529411759999999" blue="0.35294117650000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        </state>
                                                         <connections>
                                                             <action selector="refreshImageCode:" destination="7kr-fY-hoe" eventType="touchUpInside" id="3ar-OA-I22"/>
                                                         </connections>
@@ -586,7 +589,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Xg4-4e-Bfg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1100" y="-763"/>
+            <point key="canvasLocation" x="-678" y="-931"/>
         </scene>
         <!--QTMEVC-->
         <scene sceneID="q9S-RE-wCs">
@@ -636,7 +639,7 @@
                                                     <constraint firstAttribute="height" constant="90" id="ysM-Rn-3aC"/>
                                                 </constraints>
                                             </view>
-                                            <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="tabbar_me" translatesAutoresizingMaskIntoConstraints="NO" id="ILN-x5-kF4">
+                                            <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="avatar_def" translatesAutoresizingMaskIntoConstraints="NO" id="ILN-x5-kF4">
                                                 <rect key="frame" x="147.5" y="90" width="80" height="80"/>
                                                 <gestureRecognizers/>
                                                 <constraints>
@@ -656,8 +659,8 @@
                                                         <color key="textColor" red="0.15686274510000001" green="0.23529411759999999" blue="0.35294117650000001" alpha="1" colorSpace="calibratedRGB"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bJP-WB-sdA">
-                                                        <rect key="frame" x="336" y="4" width="24" height="42"/>
+                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="arrow_go" translatesAutoresizingMaskIntoConstraints="NO" id="bJP-WB-sdA">
+                                                        <rect key="frame" x="351" y="18" width="9" height="14"/>
                                                     </imageView>
                                                 </subviews>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -721,10 +724,12 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="26" y="-940"/>
+            <point key="canvasLocation" x="-322" y="-752"/>
         </scene>
     </scenes>
     <resources>
+        <image name="arrow_go" width="9" height="14"/>
+        <image name="avatar_def" width="60" height="61"/>
         <image name="checkbox_l_off" width="24" height="24"/>
         <image name="checkbox_l_on" width="24" height="24"/>
         <image name="comm_m_l_nor" width="340" height="44"/>
@@ -736,6 +741,5 @@
         <image name="nav_person_head_bg" width="375" height="180"/>
         <image name="register_ico_code" width="22" height="22"/>
         <image name="register_inputbox_pw_bg" width="300" height="50"/>
-        <image name="tabbar_me" width="28" height="28"/>
     </resources>
 </document>

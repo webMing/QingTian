@@ -278,7 +278,7 @@ static NSInteger const kCountdown = 60;
 
 - (IBAction)applyIdentifyCode:(UIButton *)sender {
     
-    if (self.imageCodeTF.text.length != 6) {
+    if (self.imageCodeTF.text.length != 4) {
         [self.view showHUDWithTitle:@"图片验证码输入有误" dismissAfter:1.5f];
         return;
     }
