@@ -78,8 +78,12 @@ static NSInteger const kCountdown = 60;
             @strongify(self)
             [self.view showHUDWithTitle:message dismissAfter:1.5];
         }
+        if (![self.imageCodeC isEqualToString:self.imageCodeTF.text]) {
+            @strongify(self)
+            [self.view showHUDWithTitle:@"输入内容与图片不一致" dismissAfter:1.5];
+        }
     }];
-    imageCodeDelegate.verityCodeLentch = 6;
+    imageCodeDelegate.verityCodeLentch = 4;
     imageCodeDelegate.checkMode = CheckVerificationCodeMode;
     self.imageCodeTF.delegate = imageCodeDelegate;
     self.imageCodeDelegate = imageCodeDelegate;
@@ -135,32 +139,8 @@ static NSInteger const kCountdown = 60;
     self.paswdTF.delegate = passwdDelegate;
     self.passwdDelegate = passwdDelegate;
     
-    NSMutableDictionary* para  = @{}.mutableCopy;
-    NSString* UUID = [QTConfigurationHelper getStringValueForConfigurationKey:QTAPPLANTCHUUIDKEY];
-    [para ste_setNonNilObj:UUID forKey:@"uuid"];
-    [para ste_setNonNilObj:@"iOS" forKey:@"user_client"];
-    [QTNetWork postRequest:para url:@"/api/v1/imgCheckCode" ssBlock:^(NSURLSessionDataTask * _Nonnull task, id  _Nonnull responseObject) {
-       NSString* code = [responseObject objectForKey:@"code"];
-       NSString* msg  = [responseObject objectForKey:@"msg"];
-       if (code.integerValue == 0) {
-           NSString* img = [responseObject objectForKey:@"img"]; //图片内容 string 类型
-           NSString* num = [responseObject objectForKey:@"num"]; //图片验证码内容
-           if (num.length == 0) {
-               [self.view showHUDWithTitle:@"图片验证码不能为空" dismissAfter:2];
-               return ;
-           }
-           self.imageCodeC = num;
-           NSData* data = [NSData dataWithBase64EncodedString:img];
-           UIImage* dis = [UIImage imageWithData:data];
-           [self.codeImgBtn setImage:dis forState:UIControlStateNormal];
-           
-           QTLog(@"%@ %@",img,num);
-       }else{
-           [self.view showHUDWithTitle:msg dismissAfter:2];
-       }
-    } ftBlock:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
-         [self.view showHUDWithTitle:@"无法获取图片验证码" dismissAfter:2];
-    }];
+    //获取图片验证码
+    [self refreshImageCode:nil];
 
 }
 
@@ -171,7 +151,32 @@ static NSInteger const kCountdown = 60;
 
 // 刷新图片验证码
 - (IBAction)refreshImageCode:(UIButton *)sender {
-    
+    NSMutableDictionary* para  = @{}.mutableCopy;
+   NSString* UUID = [QTConfigurationHelper getStringValueForConfigurationKey:QTAPPLANTCHUUIDKEY];
+   [para ste_setNonNilObj:UUID forKey:@"uuid"];
+   [para ste_setNonNilObj:@"iOS" forKey:@"user_client"];
+   [QTNetWork postRequest:para url:@"/api/v1/imgCheckCode" ssBlock:^(NSURLSessionDataTask * _Nonnull task, id  _Nonnull responseObject) {
+      NSString* code = [responseObject objectForKey:@"code"];
+      NSString* msg  = [responseObject objectForKey:@"msg"];
+      if (code.integerValue == 0) {
+          NSString* img = [responseObject objectForKey:@"img"]; //图片内容 string 类型
+          NSString* num = [responseObject objectForKey:@"num"]; //图片验证码内容
+          if (num.length == 0) {
+              [self.view showHUDWithTitle:@"图片验证码不能为空" dismissAfter:2];
+              return ;
+          }
+          self.imageCodeC = num;
+          NSData* data = [NSData dataWithBase64EncodedString:img];
+          UIImage* dis = [UIImage imageWithData:data];
+          [self.codeImgBtn setImage:dis forState:UIControlStateNormal];
+          
+//          QTLog(@"%@ %@",img,num);
+      }else{
+          [self.view showHUDWithTitle:msg dismissAfter:2];
+      }
+   } ftBlock:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+        [self.view showHUDWithTitle:@"无法获取图片验证码" dismissAfter:2];
+   }];
 }
 
 //注册或者找回密码
