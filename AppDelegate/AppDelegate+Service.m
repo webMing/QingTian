@@ -51,12 +51,13 @@
     
     NSDictionary* memberDict =
                                 @{
-                                    @"user_client":@"iOS",
+                                    @"client":@"iOS",
                                  };
    [QTNetWork postRequest:memberDict url:@"/api/v1/uuid" ssBlock:^(NSURLSessionDataTask * _Nonnull task, id  _Nonnull responseObject) {
        //NSString* msg = [responseObject objectForKey:@"msg"];
        NSString* code = [responseObject objectForKey:@"code"];
-       NSString* uuid = [responseObject objectForKey:@"uuid"];
+       NSDictionary* tmp = [responseObject objectForKey:@"data"];
+       NSString* uuid = [tmp objectForKey:@"uuid"];
        if (code.integerValue == 0) {
            //QTLog(@"-----------------------  : %d",[NSThread isMainThread]);
            dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
@@ -68,6 +69,7 @@
        [self.window showHUDWithTitle:@"无法获取UUID" dismissAfter:1.5];
    }];
 }
+
 //不要进行网卡监听
 - (void)setUpNetworkMonitor {
     SteNetworkSpeedMonitor* m = [SteNetworkSpeedMonitor shareMonitor];

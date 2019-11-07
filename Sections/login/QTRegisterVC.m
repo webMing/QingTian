@@ -154,18 +154,19 @@ static NSInteger const kCountdown = 60;
     NSMutableDictionary* para  = @{}.mutableCopy;
    NSString* UUID = [QTConfigurationHelper getStringValueForConfigurationKey:QTAPPLANTCHUUIDKEY];
    [para ste_setNonNilObj:UUID forKey:@"uuid"];
-   [para ste_setNonNilObj:@"iOS" forKey:@"user_client"];
+   [para ste_setNonNilObj:@"iOS" forKey:@"client"];
    [QTNetWork postRequest:para url:@"/api/v1/imgCheckCode" ssBlock:^(NSURLSessionDataTask * _Nonnull task, id  _Nonnull responseObject) {
       NSString* code = [responseObject objectForKey:@"code"];
       NSString* msg  = [responseObject objectForKey:@"msg"];
       if (code.integerValue == 0) {
-          NSString* img = [responseObject objectForKey:@"img"]; //图片内容 string 类型
-          NSString* num = [responseObject objectForKey:@"num"]; //图片验证码内容
-          if (num.length == 0) {
+          NSDictionary* dict = [responseObject objectForKey:@"data"];
+          NSString* imgCode = [dict objectForKey:@"imageCode"]; //图片内容 string 类型
+          NSString* img = [dict objectForKey:@"img"]; //图片验证码内容
+          if (imgCode.length == 0) {
               [self.view showHUDWithTitle:@"图片验证码不能为空" dismissAfter:2];
               return ;
           }
-          self.imageCodeC = num;
+          self.imageCodeC = imgCode;
           NSData* data = [NSData dataWithBase64EncodedString:img];
           UIImage* dis = [UIImage imageWithData:data];
           [self.codeImgBtn setImage:dis forState:UIControlStateNormal];
