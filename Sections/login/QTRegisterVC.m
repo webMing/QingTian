@@ -212,7 +212,7 @@ static NSInteger const kCountdown = 60;
 
 // 注册新用户
 - (void)registerCounter{
-    
+
     [self.view showHUDWithTitle:@"注册中" dismissAfter:0];
     NSDictionary* memberDict =
                             @{
