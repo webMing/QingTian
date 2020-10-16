@@ -218,7 +218,7 @@ static NSInteger const kCountdown = 60;
                             @{
                                      @"phone_num":self.phoneTF.text,
                                      @"passwd":self.paswdTF.text,
-                                     @"user_client":@"iOS",
+                                     @"client":@"iOS",
                                  };
     [QTNetWork postRequest:memberDict url:@"/api/v1/register" ssBlock:^(NSURLSessionDataTask * _Nonnull task, id  _Nonnull responseObject) {
         NSString* msg = [responseObject objectForKey:@"msg"];

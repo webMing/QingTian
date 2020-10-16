@@ -28,12 +28,11 @@
          */
         #define DEBUG_EXTERN
 
-        // localhost 手机无法解析,yongIP地址
+        // localhost 手机无法解析,用IP地址
 
         #ifdef DEBUG_EXTERN
-                  
-                  #define BASEURL  @"http://192.168.0.130:8080"
-//                  #define BASEURL  @"http://192.168.1.130:8080"
+                  #define BASEURL  @"http://192.168.31.189:8080"
+//
         #else
                 //#define ENABLEINTERNALNET
                 #ifdef ENABLEINTERNALNET
