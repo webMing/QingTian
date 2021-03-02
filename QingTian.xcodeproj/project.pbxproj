@@ -96,6 +96,7 @@
 		8DFEEFA0D4D82823C38C315D /* Pods-QingTian.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-QingTian.release.xcconfig"; path = "Pods/Target Support Files/Pods-QingTian/Pods-QingTian.release.xcconfig"; sourceTree = "<group>"; };
 		900342BC22B92253008CCF76 /* NaviGestureDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NaviGestureDelegate.h; sourceTree = "<group>"; };
 		900342BD22B92253008CCF76 /* NaviGestureDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NaviGestureDelegate.m; sourceTree = "<group>"; };
+		906F198125EE1A8100CA4C7D /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		90B22E3422B6139D00D5F93B /* QingTian.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = QingTian.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		90B22E3722B6139D00D5F93B /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		90B22E3822B6139D00D5F93B /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -210,6 +211,7 @@
 		90B22E2B22B6139C00D5F93B = {
 			isa = PBXGroup;
 			children = (
+				906F198125EE1A8100CA4C7D /* README.md */,
 				90EC7E0622B673870002EEEF /* Tools */,
 				90B22ECA22B61D9E00D5F93B /* AppConfigure */,
 				90B22E6E22B617CD00D5F93B /* Category */,
