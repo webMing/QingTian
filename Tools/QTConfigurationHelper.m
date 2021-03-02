@@ -1,6 +1,5 @@
 //
 //  STEConfigurationHelper.m
-//  BaXiaoEr
 //
 //  Created by Apple on 16/1/17.
 //  Copyright © 2016年 Stephanie. All rights reserved.

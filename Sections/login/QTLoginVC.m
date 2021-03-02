@@ -20,6 +20,7 @@
 #pragma mark- LifeCicle
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
 }
 #pragma mark- SetUpView
 
